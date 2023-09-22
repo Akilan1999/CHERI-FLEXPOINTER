@@ -66,51 +66,5 @@ dispatch for the PE from the frontend.
 ![STALL 
 FRONTEND](https://github.com/Akilan1999/PhD-Research/assets/31743758/6077895d-fb88-497a-863f-9e987ef1837a)
 
-## Summary: FlexPointer: Fast Address Translation Based on Range TLB and 
-Tagged Pointers
-The author proposes a tagged-pointer-based scheme, FlexPointer, to solve 
-the range indexing problem. 
-The core insight of FlexPointer is that large memory objects are rare, so 
-it is possible to create memory 
-ranges based on such objects and assign each of them a unique ID. With the 
-range ID integrated 
-into pointers, It can index the range TLB with IDs and greatly simplify 
-its structure. 
-Moreover, because the ID is stored in the unused bits of a pointer and is 
-not manipulated 
-by the address generation, It is possible shift the range lookup to an 
-earlier stage, working in parallel 
-with the address generation. According to the trace-based simulation 
-results, FlexPointer can 
-reduce nearly all the L1 TLB misses, and page walks for a variety of 
-memory-intensive workloads. 
-Compared with a 4K-page baseline system, FlexPointer shows a 14\% 
-performance improvement on average and up to 2.8x speedup in the best 
-case. 
-For other workloads, FlexPointer shows no performance degradation.
-
-### TLB performance evaluation by FLEXPointer
-The following paper selected benchmarks with large memory footprints. The 
-benchmarks include Graph 500, GUPS, XSBench and NASA parallel benchmarks.
-The threshold for large memory objects was 64KB to constraint the number 
-of 
-ranges. FlexPointer reduces L1 TLB misses and page walks by 70-99\%. 
-The limitation being is certain benchmarks there are more L2 TLB misses 
-(This is because 
-reduced L1 TLB misses reduces the number of L2 TLB accesses and some 
-untagged pointers still 
-miss in both L1 and L2 page TLB).
-When running the GCC benchmark FlexPointer does not show good number of 
-reductions in TLB L1 misses this 
-is because the range coverage is with large objects (This is due to the 
-limitation of the 
-number of bits that can be used to store RangeIDs, with CHERI this range 
-can be increased (Refer section
-with details)). It was proved that COLT(Which uses TLB coalescing) which 
-reduces many TLB misses and page walks.
-The paper does mention future work which could combine COLT with the 
-current paper (This would improve TLB misses for wider
-for a wider range of benchmarks.).
-
 
 
