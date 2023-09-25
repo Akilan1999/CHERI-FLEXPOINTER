@@ -1,4 +1,4 @@
-SRC := $(wildcard *.cpp)
+SRC := $(*.cpp)
 
 all: tlb-sim
 
