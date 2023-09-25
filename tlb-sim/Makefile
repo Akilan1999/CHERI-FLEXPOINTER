@@ -3,7 +3,7 @@ SRC := $(wildcard *.cpp)
 all: tlb-sim
 
 tlb-sim: $(SRC)
-	g++ -o $@ -g -Wno-unused-result -O2 $(SRC)
+	clang-morello -o $@ -g -Wno-unused-result -O2 $(SRC)
 
 .PHONY: clean
 clean:
