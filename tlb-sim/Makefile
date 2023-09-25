@@ -3,8 +3,8 @@ SRC := $(*.cpp)
 all: tlb-sim
 
 tlb-sim: $(SRC)
-	clang-morello -march=morello+c64 
--mabi=purecap -o $@ -g -Wno-unused-result -O2 $(SRC)
+	clang-morello -o tlb-sim -g -Wno-unused-result 
+-lc++ -static -fuse-ld=lld -O2 *.cpp
 
 .PHONY: clean
 clean:
