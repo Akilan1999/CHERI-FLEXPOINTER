@@ -32,6 +32,7 @@
 #include <sys/time.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "../../jemalloc/include/jemalloc/jemalloc.h"
 
 //#define TIMING
 
@@ -48,21 +49,21 @@
 
 static inline void *MALLOC(size_t size)
 {
-   void * temp = malloc(size);
+   void * temp = je_malloc(size);
    assert(temp);
    return temp;
 }
 
 static inline void *CALLOC(size_t num, size_t size)
 {
-   void * temp = calloc(num, size);
+   void * temp = je_calloc(num, size);
    assert(temp);
    return temp;
 }
 
 static inline void *REALLOC(void *ptr, size_t size)
 {
-   void * temp = realloc(ptr, size);
+   void * temp = je_realloc(ptr, size);
    assert(temp);
    return temp;
 }
