@@ -1,0 +1,1 @@
+clang-morello -march=morello+c64 -mabi=purecap -lpthread kmeans.c
