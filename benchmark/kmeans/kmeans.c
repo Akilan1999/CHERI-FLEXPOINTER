@@ -283,7 +283,7 @@ int main(int argc, char **argv)
    dprintf("Generating means\n");
    generate_points(means, num_means);
  
-   clusters = (int *)je_malloc(sizeof(int) * num_points);
+   clusters = (int *)new_je_malloc(sizeof(int) * num_points);
    memset(clusters, -1, sizeof(int) * num_points);
    
    
