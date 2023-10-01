@@ -58,30 +58,30 @@ extern "C" {
  * --with-jemalloc-prefix.  With default settings the je_ prefix is stripped by
  * these macro definitions.
  */
-//#ifndef JEMALLOC_NO_RENAME
-//#  define je_aligned_alloc aligned_alloc
-//#  define je_calloc calloc
-//#  define je_dallocx dallocx
-//#  define je_free free
-//#  define je_mallctl mallctl
-//#  define je_mallctlbymib mallctlbymib
-//#  define je_mallctlnametomib mallctlnametomib
-//#  define je_malloc malloc_new
-//#  define je_malloc_conf malloc_conf
-//#  define je_malloc_message malloc_message
-//#  define je_malloc_stats_print malloc_stats_print
-//#  define je_malloc_usable_size malloc_usable_size
-//#  define je_mallocx mallocx
-//#  define je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756 smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
-//#  define je_nallocx nallocx
-//#  define je_posix_memalign posix_memalign
-//#  define je_rallocx rallocx
-//#  define je_realloc realloc
-//#  define je_sallocx sallocx
-//#  define je_sdallocx sdallocx
-//#  define je_xallocx xallocx
-//#  define je_valloc valloc
-//#endif
+#ifndef JEMALLOC_NO_RENAME
+#  define je_aligned_alloc aligned_alloc
+#  define je_calloc calloc
+#  define je_dallocx dallocx
+#  define je_free free
+#  define je_mallctl mallctl
+#  define je_mallctlbymib mallctlbymib
+#  define je_mallctlnametomib mallctlnametomib
+#  define je_malloc malloc
+#  define je_malloc_conf malloc_conf
+#  define je_malloc_message malloc_message
+#  define je_malloc_stats_print malloc_stats_print
+#  define je_malloc_usable_size malloc_usable_size
+#  define je_mallocx mallocx
+#  define je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756 smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
+#  define je_nallocx nallocx
+#  define je_posix_memalign posix_memalign
+#  define je_rallocx rallocx
+#  define je_realloc realloc
+#  define je_sallocx sallocx
+#  define je_sdallocx sdallocx
+#  define je_xallocx xallocx
+#  define je_valloc valloc
+#endif
 
 #include "jemalloc_FreeBSD.h"
 
@@ -224,7 +224,7 @@ extern JEMALLOC_EXPORT const char	*je_malloc_conf;
 extern JEMALLOC_EXPORT void		(*je_malloc_message)(void *cbopaque,
     const char *s);
 
-JEMALLOC_EXPORT
+JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
     void JEMALLOC_NOTHROW	*je_malloc(size_t size)
     JEMALLOC_CXX_THROW JEMALLOC_ATTR(malloc) JEMALLOC_ALLOC_SIZE(1);
 JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
@@ -402,30 +402,30 @@ struct extent_hooks_s {
  * provide isolation from the name mangling specified via --with-mangling
  * and/or --with-jemalloc-prefix.
  */
-//#ifndef JEMALLOC_NO_DEMANGLE
-//#  undef je_aligned_alloc
-//#  undef je_calloc
-//#  undef je_dallocx
-//#  undef je_free
-//#  undef je_mallctl
-//#  undef je_mallctlbymib
-//#  undef je_mallctlnametomib
-//#  undef je_malloc
-//#  undef je_malloc_conf
-//#  undef je_malloc_message
-//#  undef je_malloc_stats_print
-//#  undef je_malloc_usable_size
-//#  undef je_mallocx
-//#  undef je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
-//#  undef je_nallocx
-//#  undef je_posix_memalign
-//#  undef je_rallocx
-//#  undef je_realloc
-//#  undef je_sallocx
-//#  undef je_sdallocx
-//#  undef je_xallocx
-//#  undef je_valloc
-//#endif
+#ifndef JEMALLOC_NO_DEMANGLE
+#  undef je_aligned_alloc
+#  undef je_calloc
+#  undef je_dallocx
+#  undef je_free
+#  undef je_mallctl
+#  undef je_mallctlbymib
+#  undef je_mallctlnametomib
+#  undef je_malloc
+#  undef je_malloc_conf
+#  undef je_malloc_message
+#  undef je_malloc_stats_print
+#  undef je_malloc_usable_size
+#  undef je_mallocx
+#  undef je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
+#  undef je_nallocx
+#  undef je_posix_memalign
+#  undef je_rallocx
+#  undef je_realloc
+#  undef je_sallocx
+#  undef je_sdallocx
+#  undef je_xallocx
+#  undef je_valloc
+#endif
 
 #ifdef __cplusplus
 }
