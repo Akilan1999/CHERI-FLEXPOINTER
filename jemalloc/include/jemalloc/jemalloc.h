@@ -66,7 +66,7 @@ extern "C" {
 #  define je_mallctl mallctl
 #  define je_mallctlbymib mallctlbymib
 #  define je_mallctlnametomib mallctlnametomib
-#  define je_malloc malloc
+#  define je_malloc new_malloc
 #  define je_malloc_conf malloc_conf
 #  define je_malloc_message malloc_message
 #  define je_malloc_stats_print malloc_stats_print
