@@ -58,6 +58,7 @@ extern "C" {
  * --with-jemalloc-prefix.  With default settings the je_ prefix is stripped by
  * these macro definitions.
  */
+#ifndef JEMALLOC_NO_RENAME
 #  define je_aligned_alloc aligned_alloc
 #  define je_calloc calloc
 #  define je_dallocx dallocx
@@ -65,7 +66,7 @@ extern "C" {
 #  define je_mallctl mallctl
 #  define je_mallctlbymib mallctlbymib
 #  define je_mallctlnametomib mallctlnametomib
-#  define je_malloc new_je_malloc
+#  define je_malloc malloc
 #  define je_malloc_conf malloc_conf
 #  define je_malloc_message malloc_message
 #  define je_malloc_stats_print malloc_stats_print
@@ -80,6 +81,7 @@ extern "C" {
 #  define je_sdallocx sdallocx
 #  define je_xallocx xallocx
 #  define je_valloc valloc
+#endif
 
 #include "jemalloc_FreeBSD.h"
 
@@ -400,30 +402,30 @@ struct extent_hooks_s {
  * provide isolation from the name mangling specified via --with-mangling
  * and/or --with-jemalloc-prefix.
  */
-#ifndef JEMALLOC_NO_DEMANGLE
-#  undef je_aligned_alloc
-#  undef je_calloc
-#  undef je_dallocx
-#  undef je_free
-#  undef je_mallctl
-#  undef je_mallctlbymib
-#  undef je_mallctlnametomib
-#  undef je_malloc
-#  undef je_malloc_conf
-#  undef je_malloc_message
-#  undef je_malloc_stats_print
-#  undef je_malloc_usable_size
-#  undef je_mallocx
-#  undef je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
-#  undef je_nallocx
-#  undef je_posix_memalign
-#  undef je_rallocx
-#  undef je_realloc
-#  undef je_sallocx
-#  undef je_sdallocx
-#  undef je_xallocx
-#  undef je_valloc
-#endif
+//#ifndef JEMALLOC_NO_DEMANGLE
+//#  undef je_aligned_alloc
+//#  undef je_calloc
+//#  undef je_dallocx
+//#  undef je_free
+//#  undef je_mallctl
+//#  undef je_mallctlbymib
+//#  undef je_mallctlnametomib
+//#  undef je_malloc
+//#  undef je_malloc_conf
+//#  undef je_malloc_message
+//#  undef je_malloc_stats_print
+//#  undef je_malloc_usable_size
+//#  undef je_mallocx
+//#  undef je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
+//#  undef je_nallocx
+//#  undef je_posix_memalign
+//#  undef je_rallocx
+//#  undef je_realloc
+//#  undef je_sallocx
+//#  undef je_sdallocx
+//#  undef je_xallocx
+//#  undef je_valloc
+//#endif
 
 #ifdef __cplusplus
 }
