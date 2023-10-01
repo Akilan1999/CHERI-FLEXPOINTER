@@ -26,6 +26,7 @@
 
 #ifndef STDDEFINES_H_
 #define STDDEFINES_H_
+#define JEMALLOC_C_
 
 #include <assert.h>
 #include <stdlib.h>
