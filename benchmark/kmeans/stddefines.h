@@ -115,7 +115,7 @@ static inline void get_time (struct timeval *t)
 #endif
 }
 
-static inline void *Malloc(size_t size) {
+static inline void *malloc(size_t size) {
     dprintf("Custom");
 }
 
