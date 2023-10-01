@@ -28,6 +28,10 @@
 #define STDDEFINES_H_
 #define JEMALLOC_C_
 #define JEMALLOC_EXPORT
+#define JEMALLOC_NO_DEMANGLE
+#define JEMALLOC_MANGLE
+#define JEMALLOC_ALLOCATOR
+#define JEMALLOC_RESTRICT_RETURN
 
 #include <assert.h>
 #include <stdlib.h>

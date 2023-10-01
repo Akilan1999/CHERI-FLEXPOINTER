@@ -58,30 +58,30 @@ extern "C" {
  * --with-jemalloc-prefix.  With default settings the je_ prefix is stripped by
  * these macro definitions.
  */
-//#ifndef JEMALLOC_NO_RENAME
-//#  define je_aligned_alloc aligned_alloc
-//#  define je_calloc calloc
-//#  define je_dallocx dallocx
-//#  define je_free free
-//#  define je_mallctl mallctl
-//#  define je_mallctlbymib mallctlbymib
-//#  define je_mallctlnametomib mallctlnametomib
-//#  define je_malloc malloc
-//#  define je_malloc_conf malloc_conf
-//#  define je_malloc_message malloc_message
-//#  define je_malloc_stats_print malloc_stats_print
-//#  define je_malloc_usable_size malloc_usable_size
-//#  define je_mallocx mallocx
-//#  define je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756 smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
-//#  define je_nallocx nallocx
-//#  define je_posix_memalign posix_memalign
-//#  define je_rallocx rallocx
-//#  define je_realloc realloc
-//#  define je_sallocx sallocx
-//#  define je_sdallocx sdallocx
-//#  define je_xallocx xallocx
-//#  define je_valloc valloc
-//#endif
+#ifndef JEMALLOC_NO_RENAME
+#  define je_aligned_alloc aligned_alloc
+#  define je_calloc calloc
+#  define je_dallocx dallocx
+#  define je_free free
+#  define je_mallctl mallctl
+#  define je_mallctlbymib mallctlbymib
+#  define je_mallctlnametomib mallctlnametomib
+#  define je_malloc malloc
+#  define je_malloc_conf malloc_conf
+#  define je_malloc_message malloc_message
+#  define je_malloc_stats_print malloc_stats_print
+#  define je_malloc_usable_size malloc_usable_size
+#  define je_mallocx mallocx
+#  define je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756 smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
+#  define je_nallocx nallocx
+#  define je_posix_memalign posix_memalign
+#  define je_rallocx rallocx
+#  define je_realloc realloc
+#  define je_sallocx sallocx
+#  define je_sdallocx sdallocx
+#  define je_xallocx xallocx
+#  define je_valloc valloc
+#endif
 
 #include "jemalloc_FreeBSD.h"
 
@@ -214,6 +214,7 @@ extern "C" {
 #  define JEMALLOC_RESTRICT_RETURN
 #  define JEMALLOC_ALLOCATOR
 #endif
+
 /*
  * The je_ prefix on the following public symbol declarations is an artifact
  * of namespace management, and should be omitted in application code unless
@@ -366,7 +367,7 @@ struct extent_hooks_s {
  * name mangling that matches the API prefixing that happened as a result of
  * --with-mangling and/or --with-jemalloc-prefix configuration settings.
  */
-//#ifdef JEMALLOC_MANGLE
+#ifdef JEMALLOC_MANGLE
 #  ifndef JEMALLOC_NO_DEMANGLE
 #    define JEMALLOC_NO_DEMANGLE
 #  endif
@@ -377,7 +378,7 @@ struct extent_hooks_s {
 #  define mallctl je_mallctl
 #  define mallctlbymib je_mallctlbymib
 #  define mallctlnametomib je_mallctlnametomib
-#  define new_malloc je_malloc
+#  define malloc je_malloc
 #  define malloc_conf je_malloc_conf
 #  define malloc_message je_malloc_message
 #  define malloc_stats_print je_malloc_stats_print
@@ -392,7 +393,7 @@ struct extent_hooks_s {
 #  define sdallocx je_sdallocx
 #  define xallocx je_xallocx
 #  define valloc je_valloc
-//#endif
+#endif
 
 /*
  * The je_* macros can be used as stable alternative names for the
