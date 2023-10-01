@@ -269,7 +269,7 @@ int main(int argc, char **argv)
 
    // PROF_START();
    
-   points = (int **)malloc(sizeof(int *) * num_points);
+   points = (int **)MALLOC(sizeof(int *) * num_points);
    for (i=0; i<num_points; i++) 
    {
       points[i] = (int *)malloc(sizeof(int) * dim);
