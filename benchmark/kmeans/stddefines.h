@@ -49,6 +49,7 @@
 
 static inline void *MALLOC(size_t size)
 {
+    printf("here")
    void * temp = je_malloc(size);
    assert(temp);
    return temp;
