@@ -39,7 +39,6 @@
 #include "stddefines.h"
 
 #include "coz.h"
-#include "../../jemalloc/include/jemalloc/jemalloc.h"
 
 // #include "prof.h"
 
@@ -50,8 +49,6 @@
 
 #define false 0
 #define true 1
-
-#define malloc(x) MALLOC(x)
 
 int num_points; // number of vectors
 int dim;       // Dimension of each vector
@@ -269,23 +266,23 @@ int main(int argc, char **argv)
 
    // PROF_START();
    
-   points = (int **)MALLOC(sizeof(int *) * num_points);
+   points = (int **)malloc(sizeof(int *) * num_points);
    for (i=0; i<num_points; i++) 
    {
-      points[i] = (int *)MALLOC(sizeof(int) * dim);
+      points[i] = (int *)malloc(sizeof(int) * dim);
    }
    dprintf("Generating points\n");
    generate_points(points, num_points);
    
-   means = (int **)MALLOC(sizeof(int *) * num_means);
+   means = (int **)malloc(sizeof(int *) * num_means);
    for (i=0; i<num_means; i++) 
    {
-      means[i] = (int *)MALLOC(sizeof(int) * dim);
+      means[i] = (int *)malloc(sizeof(int) * dim);
    }
    dprintf("Generating means\n");
    generate_points(means, num_means);
  
-   clusters = (int *)MALLOC(sizeof(int) * num_points);
+   clusters = (int *)malloc(sizeof(int) * num_points);
    memset(clusters, -1, sizeof(int) * num_points);
    
    
@@ -293,7 +290,7 @@ int main(int argc, char **argv)
    pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
    CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
       
-   CHECK_ERROR( (pid = (pthread_t *)MALLOC(sizeof(pthread_t) * num_procs)) == NULL);
+   CHECK_ERROR( (pid = (pthread_t *)malloc(sizeof(pthread_t) * num_procs)) == NULL);
    
    modified = true; 
    
@@ -312,7 +309,7 @@ int main(int argc, char **argv)
       num_threads = 0;
       
       while (curr_point < num_points) {
-         CHECK_ERROR((arg = (thread_arg *)MALLOC(sizeof(thread_arg))) == NULL);
+         CHECK_ERROR((arg = (thread_arg *)malloc(sizeof(thread_arg))) == NULL);
          arg->start_idx = curr_point;
          arg->num_pts = num_per_thread;
          if (excess > 0) {
@@ -334,7 +331,7 @@ int main(int argc, char **argv)
       curr_point = 0;
       num_threads = 0;
       while (curr_point < num_means) {
-         CHECK_ERROR((arg = (thread_arg *)MALLOC(sizeof(thread_arg))) == NULL);
+         CHECK_ERROR((arg = (thread_arg *)malloc(sizeof(thread_arg))) == NULL);
          arg->start_idx = curr_point;
          arg->sum = (int *)malloc(dim * sizeof(int));
          arg->num_pts = num_per_thread;
