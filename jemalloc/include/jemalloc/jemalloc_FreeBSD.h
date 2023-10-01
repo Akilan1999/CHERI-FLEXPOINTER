@@ -122,67 +122,67 @@ extern int __isthreaded;
 #define	isthreaded		((bool)__isthreaded)
 
 /* Mangle. */
-#undef je_malloc
-#undef je_calloc
-#undef je_posix_memalign
-#undef je_aligned_alloc
-#undef je_realloc
-#undef je_free
-#undef je_malloc_usable_size
-#undef je_mallocx
-#undef je_rallocx
-#undef je_xallocx
-#undef je_sallocx
-#undef je_dallocx
-#undef je_sdallocx
-#undef je_nallocx
-#undef je_mallctl
-#undef je_mallctlnametomib
-#undef je_mallctlbymib
-#undef je_malloc_stats_print
-#undef je_allocm
-#undef je_rallocm
-#undef je_sallocm
-#undef je_dallocm
-#undef je_nallocm
-#define	je_malloc		__malloc
-#define	je_calloc		__calloc
-#define	je_posix_memalign	__posix_memalign
-#define	je_aligned_alloc	__aligned_alloc
-#define	je_realloc		__realloc
-#define	je_free			__free
-#define	je_malloc_usable_size	__malloc_usable_size
-#define	je_mallocx		__mallocx
-#define	je_rallocx		__rallocx
-#define	je_xallocx		__xallocx
-#define	je_sallocx		__sallocx
-#define	je_dallocx		__dallocx
-#define	je_sdallocx		__sdallocx
-#define	je_nallocx		__nallocx
-#define	je_mallctl		__mallctl
-#define	je_mallctlnametomib	__mallctlnametomib
-#define	je_mallctlbymib		__mallctlbymib
-#define	je_malloc_stats_print	__malloc_stats_print
-#define	je_allocm		__allocm
-#define	je_rallocm		__rallocm
-#define	je_sallocm		__sallocm
-#define	je_dallocm		__dallocm
-#define	je_nallocm		__nallocm
-#define	open			_open
-#define	read			_read
-#define	write			_write
-#define	close			_close
-#define	pthread_join		_pthread_join
-#define	pthread_once		_pthread_once
-#define	pthread_self		_pthread_self
-#define	pthread_equal		_pthread_equal
-#define	pthread_mutex_lock	_pthread_mutex_lock
-#define	pthread_mutex_trylock	_pthread_mutex_trylock
-#define	pthread_mutex_unlock	_pthread_mutex_unlock
-#define	pthread_cond_init	_pthread_cond_init
-#define	pthread_cond_wait	_pthread_cond_wait
-#define	pthread_cond_timedwait	_pthread_cond_timedwait
-#define	pthread_cond_signal	_pthread_cond_signal
+//#undef je_malloc
+//#undef je_calloc
+//#undef je_posix_memalign
+//#undef je_aligned_alloc
+//#undef je_realloc
+//#undef je_free
+//#undef je_malloc_usable_size
+//#undef je_mallocx
+//#undef je_rallocx
+//#undef je_xallocx
+//#undef je_sallocx
+//#undef je_dallocx
+//#undef je_sdallocx
+//#undef je_nallocx
+//#undef je_mallctl
+//#undef je_mallctlnametomib
+//#undef je_mallctlbymib
+//#undef je_malloc_stats_print
+//#undef je_allocm
+//#undef je_rallocm
+//#undef je_sallocm
+//#undef je_dallocm
+//#undef je_nallocm
+//#define	je_malloc		__malloc
+//#define	je_calloc		__calloc
+//#define	je_posix_memalign	__posix_memalign
+//#define	je_aligned_alloc	__aligned_alloc
+//#define	je_realloc		__realloc
+//#define	je_free			__free
+//#define	je_malloc_usable_size	__malloc_usable_size
+//#define	je_mallocx		__mallocx
+//#define	je_rallocx		__rallocx
+//#define	je_xallocx		__xallocx
+//#define	je_sallocx		__sallocx
+//#define	je_dallocx		__dallocx
+//#define	je_sdallocx		__sdallocx
+//#define	je_nallocx		__nallocx
+//#define	je_mallctl		__mallctl
+//#define	je_mallctlnametomib	__mallctlnametomib
+//#define	je_mallctlbymib		__mallctlbymib
+//#define	je_malloc_stats_print	__malloc_stats_print
+//#define	je_allocm		__allocm
+//#define	je_rallocm		__rallocm
+//#define	je_sallocm		__sallocm
+//#define	je_dallocm		__dallocm
+//#define	je_nallocm		__nallocm
+//#define	open			_open
+//#define	read			_read
+//#define	write			_write
+//#define	close			_close
+//#define	pthread_join		_pthread_join
+//#define	pthread_once		_pthread_once
+//#define	pthread_self		_pthread_self
+//#define	pthread_equal		_pthread_equal
+//#define	pthread_mutex_lock	_pthread_mutex_lock
+//#define	pthread_mutex_trylock	_pthread_mutex_trylock
+//#define	pthread_mutex_unlock	_pthread_mutex_unlock
+//#define	pthread_cond_init	_pthread_cond_init
+//#define	pthread_cond_wait	_pthread_cond_wait
+//#define	pthread_cond_timedwait	_pthread_cond_timedwait
+//#define	pthread_cond_signal	_pthread_cond_signal
 
 #ifdef JEMALLOC_C_
 /*
