@@ -59,28 +59,28 @@ extern "C" {
  * these macro definitions.
  */
 //#ifndef JEMALLOC_NO_RENAME
-#  define je_aligned_alloc aligned_alloc
-#  define je_calloc calloc
-#  define je_dallocx dallocx
-#  define je_free free
-#  define je_mallctl mallctl
-#  define je_mallctlbymib mallctlbymib
-#  define je_mallctlnametomib mallctlnametomib
-#  define je_malloc_new je_malloc
-#  define je_malloc_conf malloc_conf
-#  define je_malloc_message malloc_message
-#  define je_malloc_stats_print malloc_stats_print
-#  define je_malloc_usable_size malloc_usable_size
-#  define je_mallocx mallocx
-#  define je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756 smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
-#  define je_nallocx nallocx
-#  define je_posix_memalign posix_memalign
-#  define je_rallocx rallocx
-#  define je_realloc realloc
-#  define je_sallocx sallocx
-#  define je_sdallocx sdallocx
-#  define je_xallocx xallocx
-#  define je_valloc valloc
+//#  define je_aligned_alloc aligned_alloc
+//#  define je_calloc calloc
+//#  define je_dallocx dallocx
+//#  define je_free free
+//#  define je_mallctl mallctl
+//#  define je_mallctlbymib mallctlbymib
+//#  define je_mallctlnametomib mallctlnametomib
+//#  define je_malloc_new je_malloc
+//#  define je_malloc_conf malloc_conf
+//#  define je_malloc_message malloc_message
+//#  define je_malloc_stats_print malloc_stats_print
+//#  define je_malloc_usable_size malloc_usable_size
+//#  define je_mallocx mallocx
+//#  define je_smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756 smallocx_ea6b3e973b477b8061e0076bb257dbd7f3faa756
+//#  define je_nallocx nallocx
+//#  define je_posix_memalign posix_memalign
+//#  define je_rallocx rallocx
+//#  define je_realloc realloc
+//#  define je_sallocx sallocx
+//#  define je_sdallocx sdallocx
+//#  define je_xallocx xallocx
+//#  define je_valloc valloc
 //#endif
 
 #include "jemalloc_FreeBSD.h"
@@ -215,10 +215,6 @@ extern "C" {
 #  define JEMALLOC_ALLOCATOR
 #endif
 
-# define JEMALLOC_EXPORT
-# define JEMALLOC_ALLOCATOR
-# define JEMALLOC_RESTRICT_RETURN
-
 /*
  * The je_ prefix on the following public symbol declarations is an artifact
  * of namespace management, and should be omitted in application code unless
@@ -228,7 +224,8 @@ extern JEMALLOC_EXPORT const char	*je_malloc_conf;
 extern JEMALLOC_EXPORT void		(*je_malloc_message)(void *cbopaque,
     const char *s);
 
-extern int je_malloc(size_t size)
+JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
+    void JEMALLOC_NOTHROW	*je_malloc(size_t size)
     JEMALLOC_CXX_THROW JEMALLOC_ATTR(malloc) JEMALLOC_ALLOC_SIZE(1);
 JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
     void JEMALLOC_NOTHROW	*je_calloc(size_t num, size_t size)
