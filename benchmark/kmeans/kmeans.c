@@ -270,7 +270,6 @@ int main(int argc, char **argv)
    for (i=0; i<num_points; i++) 
    {
       points[i] = (int *)malloc(sizeof(int) * dim);
-       dprintf("Called malloc\n");
    }
    dprintf("Generating points\n");
    generate_points(points, num_points);

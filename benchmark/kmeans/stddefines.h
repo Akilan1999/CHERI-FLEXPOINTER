@@ -47,7 +47,7 @@
       assert ((a) == 0);                                     \
    }
 
-static inline void *MALLOC(size_t size)
+static inline void *malloc(size_t size)
 {
     dprintf("here malloc function\n");
    void * temp = je_malloc(size);
@@ -55,14 +55,14 @@ static inline void *MALLOC(size_t size)
    return temp;
 }
 
-static inline void *CALLOC(size_t num, size_t size)
+static inline void *calloc(size_t num, size_t size)
 {
    void * temp = je_calloc(num, size);
    assert(temp);
    return temp;
 }
 
-static inline void *REALLOC(void *ptr, size_t size)
+static inline void *realloc(void *ptr, size_t size)
 {
    void * temp = je_realloc(ptr, size);
    assert(temp);
