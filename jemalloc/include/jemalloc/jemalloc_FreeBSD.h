@@ -122,7 +122,7 @@ extern int __isthreaded;
 #define	isthreaded		((bool)__isthreaded)
 
 /* Mangle. */
-#undef je_malloc
+//#undef je_malloc
 #undef je_calloc
 #undef je_posix_memalign
 #undef je_aligned_alloc
