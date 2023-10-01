@@ -391,6 +391,7 @@
 #define tsd_tcache_data_init JEMALLOC_N(tsd_tcache_data_init)
 #define tsd_tcache_enabled_data_init JEMALLOC_N(tsd_tcache_enabled_data_init)
 #define test_hooks_arena_new_hook JEMALLOC_N(test_hooks_arena_new_hook)
+#define je_test_hooks_arena_new_hook JEMALLOC_N(test_hooks_arena_new_hook)
 #define test_hooks_libc_hook JEMALLOC_N(test_hooks_libc_hook)
 #define malloc_tsd_boot0 JEMALLOC_N(malloc_tsd_boot0)
 #define malloc_tsd_boot1 JEMALLOC_N(malloc_tsd_boot1)
