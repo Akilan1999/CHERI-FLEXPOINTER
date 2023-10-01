@@ -1,8 +1,8 @@
 #ifndef JEMALLOC_INTERNAL_DECLS_H
 #define JEMALLOC_INTERNAL_DECLS_H
 
-#include "libc_private.h"
-#include "namespace.h"
+//#include "libc_private.h"
+//#include "namespace.h"
 
 #include <math.h>
 #ifdef _WIN32
