@@ -2362,9 +2362,9 @@ malloc_default(size_t size) {
  * fastpath supports ticker and profiling, both of which will also
  * tail-call to the slowpath if they fire.
  */
-JEMALLOC_EXPORT
-void JEMALLOC_NOTHROW *
-JEMALLOC_ATTR(malloc) JEMALLOC_ALLOC_SIZE(1)
+//JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
+//void JEMALLOC_NOTHROW *
+//JEMALLOC_ATTR(malloc) JEMALLOC_ALLOC_SIZE(1)
 je_malloc(size_t size) {
 	bool zero_size;
 	LOG("core.malloc.entry", "size: %zu", size);
