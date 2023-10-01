@@ -66,7 +66,7 @@ extern "C" {
 #  define je_mallctl mallctl
 #  define je_mallctlbymib mallctlbymib
 #  define je_mallctlnametomib mallctlnametomib
-#  define je_malloc new_malloc
+//#  define je_malloc malloc
 #  define je_malloc_conf malloc_conf
 #  define je_malloc_message malloc_message
 #  define je_malloc_stats_print malloc_stats_print
@@ -224,7 +224,7 @@ extern JEMALLOC_EXPORT const char	*je_malloc_conf;
 extern JEMALLOC_EXPORT void		(*je_malloc_message)(void *cbopaque,
     const char *s);
 
-JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
+//JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
     void JEMALLOC_NOTHROW	*je_malloc(size_t size)
     JEMALLOC_CXX_THROW JEMALLOC_ATTR(malloc) JEMALLOC_ALLOC_SIZE(1);
 JEMALLOC_EXPORT JEMALLOC_ALLOCATOR JEMALLOC_RESTRICT_RETURN
