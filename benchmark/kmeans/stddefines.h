@@ -48,7 +48,7 @@
    }
 
 static inline void *MALLOC(size_t size)
-{z
+{
    void * temp = malloc(size);
    assert(temp);
    return temp;
@@ -63,7 +63,7 @@ static inline void *CALLOC(size_t num, size_t size)
 
 static inline void *REALLOC(void *ptr, size_t size)
 {
-   void * temp = calloc(ptr, size);
+   void * temp = realloc(ptr, size);
    assert(temp);
    return temp;
 }
