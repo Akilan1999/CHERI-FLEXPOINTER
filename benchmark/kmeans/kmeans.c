@@ -51,7 +51,7 @@
 #define false 0
 #define true 1
 
-//#define malloc(x) je_malloc(x)
+#define malloc(x) new_malloc(x)
 
 int num_points; // number of vectors
 int dim;       // Dimension of each vector

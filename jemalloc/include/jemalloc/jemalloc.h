@@ -378,7 +378,7 @@ struct extent_hooks_s {
 #  define mallctl je_mallctl
 #  define mallctlbymib je_mallctlbymib
 #  define mallctlnametomib je_mallctlnametomib
-#  define malloc je_malloc
+#  define new_malloc je_malloc
 #  define malloc_conf je_malloc_conf
 #  define malloc_message je_malloc_message
 #  define malloc_stats_print je_malloc_stats_print
