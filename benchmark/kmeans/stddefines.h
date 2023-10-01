@@ -23,13 +23,9 @@
 * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+#ifndef STDDEFINES_H_
 #define STDDEFINES_H_
-#define JEMALLOC_EXPORT
-#define JEMALLOC_NO_DEMANGLE
-#define JEMALLOC_MANGLE
-#define JEMALLOC_C_
-#define JEMALLOC_ALLOCATOR
-#define JEMALLOC_RESTRICT_RETURN
 
 #include <assert.h>
 #include <stdlib.h>
@@ -52,23 +48,22 @@
    }
 
 static inline void *MALLOC(size_t size)
-{
-    dprintf("here malloc function\n");
-   void * temp = je_malloc(size);
+{z
+   void * temp = malloc(size);
    assert(temp);
    return temp;
 }
 
 static inline void *CALLOC(size_t num, size_t size)
 {
-   void * temp = je_calloc(num, size);
+   void * temp = calloc(num, size);
    assert(temp);
    return temp;
 }
 
 static inline void *REALLOC(void *ptr, size_t size)
 {
-   void * temp = je_realloc(ptr, size);
+   void * temp = calloc(ptr, size);
    assert(temp);
    return temp;
 }
@@ -117,4 +112,4 @@ static inline void get_time (struct timeval *t)
 #endif
 }
 
-//#endif // STDDEFINES_H_
+#endif // STDDEFINES_H_
