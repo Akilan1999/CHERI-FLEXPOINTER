@@ -367,7 +367,7 @@ struct extent_hooks_s {
  * name mangling that matches the API prefixing that happened as a result of
  * --with-mangling and/or --with-jemalloc-prefix configuration settings.
  */
-#ifdef JEMALLOC_MANGLE
+//#ifdef JEMALLOC_MANGLE
 #  ifndef JEMALLOC_NO_DEMANGLE
 #    define JEMALLOC_NO_DEMANGLE
 #  endif
@@ -393,7 +393,7 @@ struct extent_hooks_s {
 #  define sdallocx je_sdallocx
 #  define xallocx je_xallocx
 #  define valloc je_valloc
-#endif
+//#endif
 
 /*
  * The je_* macros can be used as stable alternative names for the
