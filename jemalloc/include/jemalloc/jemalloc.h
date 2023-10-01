@@ -58,7 +58,6 @@ extern "C" {
  * --with-jemalloc-prefix.  With default settings the je_ prefix is stripped by
  * these macro definitions.
  */
-#ifndef JEMALLOC_NO_RENAME
 #  define je_aligned_alloc aligned_alloc
 #  define je_calloc calloc
 #  define je_dallocx dallocx
@@ -81,7 +80,6 @@ extern "C" {
 #  define je_sdallocx sdallocx
 #  define je_xallocx xallocx
 #  define je_valloc valloc
-#endif
 
 #include "jemalloc_FreeBSD.h"
 
