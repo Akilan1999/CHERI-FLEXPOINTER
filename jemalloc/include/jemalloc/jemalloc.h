@@ -215,6 +215,10 @@ extern "C" {
 #  define JEMALLOC_ALLOCATOR
 #endif
 
+# define JEMALLOC_EXPORT
+# define JEMALLOC_ALLOCATOR
+# define JEMALLOC_RESTRICT_RETURN
+
 /*
  * The je_ prefix on the following public symbol declarations is an artifact
  * of namespace management, and should be omitted in application code unless
