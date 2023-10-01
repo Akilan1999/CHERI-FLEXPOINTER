@@ -49,7 +49,7 @@
 
 static inline void *MALLOC(size_t size)
 {
-   printf("here malloc function\n");
+    dprintf("here malloc function\n");
    void * temp = je_malloc(size);
    assert(temp);
    return temp;
