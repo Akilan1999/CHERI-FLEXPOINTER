@@ -389,11 +389,13 @@ pages_huge_impl(void *addr, size_t size, bool aligned) {
 
 bool
 pages_huge(void *addr, size_t size) {
+    printf("huge")
 	return pages_huge_impl(addr, size, true);
 }
 
 static bool
 pages_huge_unaligned(void *addr, size_t size) {
+    printf("huge unaligned")
 	return pages_huge_impl(addr, size, false);
 }
 
