@@ -267,18 +267,18 @@ int main(int argc, char **argv)
 
    // PROF_START();
    
-   points = (int **)je_malloc(sizeof(int *) * num_points);
+   points = (int **)new_je_malloc(sizeof(int *) * num_points);
    for (i=0; i<num_points; i++) 
    {
-      points[i] = (int *)je_malloc(sizeof(int) * dim);
+      points[i] = (int *)new_je_malloc(sizeof(int) * dim);
    }
    dprintf("Generating points\n");
    generate_points(points, num_points);
    
-   means = (int **)je_malloc(sizeof(int *) * num_means);
+   means = (int **)new_je_malloc(sizeof(int *) * num_means);
    for (i=0; i<num_means; i++) 
    {
-      means[i] = (int *)je_malloc(sizeof(int) * dim);
+      means[i] = (int *)new_je_malloc(sizeof(int) * dim);
    }
    dprintf("Generating means\n");
    generate_points(means, num_means);
@@ -291,7 +291,7 @@ int main(int argc, char **argv)
    pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
    CHECK_ERROR((num_procs = sysconf(_SC_NPROCESSORS_ONLN)) <= 0);
       
-   CHECK_ERROR( (pid = (pthread_t *)je_malloc(sizeof(pthread_t) * num_procs)) == NULL);
+   CHECK_ERROR( (pid = (pthread_t *)new_je_malloc(sizeof(pthread_t) * num_procs)) == NULL);
    
    modified = true; 
    
@@ -310,7 +310,7 @@ int main(int argc, char **argv)
       num_threads = 0;
       
       while (curr_point < num_points) {
-         CHECK_ERROR((arg = (thread_arg *)je_malloc(sizeof(thread_arg))) == NULL);
+         CHECK_ERROR((arg = (thread_arg *)new_je_malloc(sizeof(thread_arg))) == NULL);
          arg->start_idx = curr_point;
          arg->num_pts = num_per_thread;
          if (excess > 0) {
@@ -332,9 +332,9 @@ int main(int argc, char **argv)
       curr_point = 0;
       num_threads = 0;
       while (curr_point < num_means) {
-         CHECK_ERROR((arg = (thread_arg *)je_malloc(sizeof(thread_arg))) == NULL);
+         CHECK_ERROR((arg = (thread_arg *)new_je_malloc(sizeof(thread_arg))) == NULL);
          arg->start_idx = curr_point;
-         arg->sum = (int *)je_malloc(dim * sizeof(int));
+         arg->sum = (int *)new_je_malloc(dim * sizeof(int));
          arg->num_pts = num_per_thread;
          if (excess > 0) {
             arg->num_pts++;
