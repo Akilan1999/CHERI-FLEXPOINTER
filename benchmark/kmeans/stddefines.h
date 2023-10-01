@@ -115,8 +115,4 @@ static inline void get_time (struct timeval *t)
 #endif
 }
 
-static inline void *malloc(size_t size) {
-    dprintf("Custom");
-}
-
 //#endif // STDDEFINES_H_
