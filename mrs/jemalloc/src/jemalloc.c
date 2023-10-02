@@ -2077,7 +2077,7 @@ je_malloc(size_t size) {
 
 	LOG("core.malloc.entry", "size: %zu", size);
 
-    printf("Reached here!")
+    printf("Reached here!");
 
 #ifndef JEMALLOC_DEBUG
 	assert(false && "assertions should only be enabled if JEMALLOC_DEBUG is set");
