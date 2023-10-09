@@ -2369,7 +2369,7 @@ je_malloc(size_t size) {
 	bool zero_size;
 	LOG("core.malloc.entry", "size: %zu", size);
 
-    printf("inside malloc");
+    fprintf("test:","inside malloc");
 
 	if (tsd_get_allocates() && unlikely(!malloc_initialized())) {
 		return malloc_default(size);

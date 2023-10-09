@@ -3,16 +3,14 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="CHERI_FLEXPOINTER" targetName="CHERI_FLEXPOINTER" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -21,7 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b914b676-6c53-4c66-a7bf-189ce99cf1b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/benchmark/kmeans/stddefines.h" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark/kmeans/stddefines.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jemalloc/src/jemalloc.c" beforeDir="false" afterPath="$PROJECT_DIR$/jemalloc/src/jemalloc.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +68,6 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CHERI_FLEXPOINTER" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CHERI_FLEXPOINTER" TARGET_NAME="CHERI_FLEXPOINTER" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CHERI_FLEXPOINTER" RUN_TARGET_NAME="CHERI_FLEXPOINTER">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,10 +79,18 @@
       <updated>1695649972079</updated>
       <workItem from="1695649975194" duration="668000" />
       <workItem from="1696156683492" duration="13463000" />
+      <workItem from="1696197954338" duration="10101000" />
+      <workItem from="1696405983702" duration="1423000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
   </component>
 </project>
