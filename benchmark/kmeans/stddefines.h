@@ -32,7 +32,7 @@
 #include <sys/time.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "../../jemalloc/include/jemalloc/jemalloc.h"
+//#include "../../jemalloc/include/jemalloc/jemalloc.h"
 
 //#define TIMING
 
