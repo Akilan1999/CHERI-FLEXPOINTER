@@ -14,7 +14,6 @@ static void malloc_exit() {
 }
 
 void *malloc(size_t sz) {
-    fprintf(stderr, "heap used %lu\n", heap - heap_start);
   if (!heap) heap = heap_start = mmap(NULL, HEAP_SIZE,
     PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANON,-1,0);
   sz = __builtin_align_up(sz, _Alignof(max_align_t));

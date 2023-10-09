@@ -19,8 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b914b676-6c53-4c66-a7bf-189ce99cf1b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jemalloc/src/jemalloc.c" beforeDir="false" afterPath="$PROJECT_DIR$/jemalloc/src/jemalloc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cheri_malloc_blog/malloc2.c" beforeDir="false" afterPath="$PROJECT_DIR$/cheri_malloc_blog/malloc2.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +62,9 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -81,6 +80,7 @@
       <workItem from="1696156683492" duration="13463000" />
       <workItem from="1696197954338" duration="10101000" />
       <workItem from="1696405983702" duration="1423000" />
+      <workItem from="1696855538485" duration="1169000" />
     </task>
     <servers />
   </component>
