@@ -1,0 +1,4 @@
+/* transitions */
+property u01 is ltl s0 and (s0 until s1)
+property u12 is ltl s1 and (s1 until s2)
+property u20 is ltl s2 and (s2 until s0)
