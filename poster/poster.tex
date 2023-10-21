@@ -50,7 +50,7 @@
 \usepackage{comment}
 
 % Default, Rays, Basic, Simple, Envelope, Wave, Board, Autumn, Desert
-% 
+%
 % good: Default, Basic, Simple
 \usetheme{Basic}
 
@@ -96,11 +96,12 @@
       \begin{tikzfigure}
         % \includegraphics[width=0.4\textwidth]{images/abstraction-poster.jpg}
       \end{tikzfigure}
-      Unikernels are an interesting approach to improve performance by using a slimmed down kernel 
-      for a specific task. The following paper benchmarks the parallel performance of unikernels,
-i.e in a cloud based scenario. The results will be compared against the
-same application running on a docker container and a monolithic OS as
-well
+      The CHERI architecture is designed to provide security guranetees, This has had performance implications such as more L1 TLB misses on
+purecap mode rather than running an application as a 64 bit program. The following expirement proposes on adding range TLB which is
+stored on the page table to store TLB translation entries of large memory objects (This would inturn lookup TLB entries in the range table
+rather than looking up the L1 TLB entry). During this process the range ID would be added to the pointer which allows looking up the TLB
+entries at an earlier stage during the pipeline. The FAT pointer structure of CHERI allows to encode custom bits of meta-data which in this
+case can be used to store the ID of the range TLB entry.
 
 
 
@@ -114,12 +115,13 @@ well
     \begin{minipage}[t]{0.8\linewidth}
       \textbf{\textit{Research Questions:}}
       \begin{itemize}
-        \item (RQ1) Can unikernels be specialised for parallel programs?
-        % \item (RQ2) Would Unikernels running parallel programs out-perform cloud based environment 
+        \item (RQ1) Is there an optimization that explicitily uses FAT pointers to reduce the number of TLB misses to reduce the CPU STALL Time ?
+        \item (RQ2) Can the number of L1 DTLB misses be minised by offloading translation lookups to the newly
+        introduced range TLB ?
         % monolithic OS or containers in terms of wall-clock runtimes, CPU
         % profiling and memory profiling?
       % \item \textit{parallelising actors can increase throughput}
-      \end{itemize} 
+      \end{itemize}
 
     \end{minipage}%
     \hspace{0.2cm}
@@ -132,13 +134,13 @@ well
 
     \vspace{-0.5cm}
   }
-  
+
   \block{Expirement Proposal}{
 
     \begin{minipage}[t]{0.4\linewidth}
       \vspace{-0.9cm}
       \begin{tikzfigure}{}
-        %  \includegraphics[width=2.53\textwidth]{Mandelbrot.png}
+        \includegraphics[width=2.53\textwidth]{Draft-expirment.png}
       \end{tikzfigure}
     \end{minipage}
 
@@ -146,7 +148,7 @@ well
 
     % The following section describes the strategies used to measure distributed map-reduce applications on unikernels.
     % The metrics and scenarios measured would help towards the short-term goal of understanding the benefits of unikernels with
-    % distributed map reduce. 
+    % distributed map reduce.
     \hspace{0.5cm}
     \begin{minipage}[t]{0.8\linewidth}
 
@@ -211,16 +213,16 @@ well
  }
 
     \NameBlock{transformation}
-    \block{Future Work}{
+    \block{References}{
       \hspace{0.4cm}
 
-     \begin{itemize}
-       \item Building a parallel benchmark suite for Unikernels.
-       \item Analysing the metrics provided by the Go compiler such as Heap usage, Number OS threads created by run time etc…
-       \item Benchmarking other Unikernel implementation using the benchmark suite (1) 
-     \end{itemize}
+    %  \begin{itemize}
+    %    \item Building a parallel benchmark suite for Unikernels.
+    %    \item Analysing the metrics provided by the Go compiler such as Heap usage, Number OS threads created by run time etc…
+    %    \item Benchmarking other Unikernel implementation using the benchmark suite (1)
+    %  \end{itemize}
 
- 
+
 
    }
 
@@ -269,7 +271,7 @@ well
 %      \end{tikzfigure}
 %    \end{minipage}
 %    \hspace{0.8cm}
-   
+
 %    \vspace{0.8cm}
 %    \begin{minipage}[t]{0.4\linewidth}
 %     % \vspace{-0.9cm}
@@ -300,9 +302,9 @@ well
 
 %    \vspace{-2.5cm}
 %  }
-  
+
     % \NameBlock{model-checking}
-    
+
   % \block{Conclusion}{
   %   \vspace{0.3cm}
   %   The empirical evidence gained from
@@ -327,9 +329,9 @@ well
   \column{0.5}
 
 
-    
+
   \column{0.5}
-  
+
   \end{columns}
 
 \end{document}
