@@ -30,7 +30,7 @@
 \usepackage{listings}
 
 
-\title{FAT-Pointer based range TLB}
+\title{FAT-Pointer based on range TLB}
 % \author{}
 \date{\today}
 % \institute{Heriot-Watt University UK \and Université de Toulouse France,
@@ -136,81 +136,140 @@ case can be used to store the ID of the range TLB entry.
   }
 
   \block{Expirement Proposal}{
-
+    \vspace{0.7cm}
     \begin{minipage}[t]{0.4\linewidth}
       \vspace{-0.9cm}
       \begin{tikzfigure}{}
         \includegraphics[width=2.53\textwidth]{Draft-expirment.png}
       \end{tikzfigure}
     \end{minipage}
+    
+    \vspace{0.5cm}
+    The above figure provides an higher overview of the expirement setup.
+    The expirement is divided into: 
+    \begin{itemize}
+        \item \textit{A set of Microbenchmarks which are designed
+        to create pressure on the L1 TLB to create more L1 misses.}
+        \item \textit{Modified Malloc to call the new syscall mmap\_range for large memory objects.}
+        \item \textit{Testing different memory object sizes to use range TLB.}
+    \end{itemize}
 
-    \vspace{0.6cm}
+
+    % \vspace{0.5cm}
+    % \textbf{\textit{RTLB prototype location}}
+
+    % \vspace{0.5cm}
+    % \textbf{\textit{Memory object threashold}}
+
+
+    % \vspace{0.6cm}
 
     % The following section describes the strategies used to measure distributed map-reduce applications on unikernels.
     % The metrics and scenarios measured would help towards the short-term goal of understanding the benefits of unikernels with
     % distributed map reduce.
-    \hspace{0.5cm}
-    \begin{minipage}[t]{0.8\linewidth}
+%     \hspace{0.5cm}
+%     \begin{minipage}[t]{0.8\linewidth}
 
-      % \begin{itemize}
-      % % \item \textbf{\textit{Benchmark application}}
-      % %   \begin{itemize}
-      % %   \item \textit{Mandelbrot}: The Mandelbrot Go implementation was used to
-      % %   benchmark parallelised applications on Uni-kernels. The implementation uses
-      % %   Go routines to spawn multiple threads. The parts parallelised of the Mandelbrot
-      % %   implementation was the render part ,particularly the Mandelbrot iteration and
-      % %   Linear interpolation.
-      % %   \end{itemize}
-      % % \item \textit{parallelising actors can increase throughput}
-      % \end{itemize}
+%       % \begin{itemize}
+%       % % \item \textbf{\textit{Benchmark application}}
+%       % %   \begin{itemize}
+%       % %   \item \textit{Mandelbrot}: The Mandelbrot Go implementation was used to
+%       % %   benchmark parallelised applications on Uni-kernels. The implementation uses
+%       % %   Go routines to spawn multiple threads. The parts parallelised of the Mandelbrot
+%       % %   implementation was the render part ,particularly the Mandelbrot iteration and
+%       % %   Linear interpolation.
+%       % %   \end{itemize}
+%       % % \item \textit{parallelising actors can increase throughput}
+%       % \end{itemize}
 
-      % \begin{itemize}
-      %   \item \textbf{\textit{Comparators}}
-      %     \begin{itemize}
-      %     \item \textit{Unikernel}
-      %     \item \textit{Monolithic OS}
-      %     \item \textit{Docker Container}
-      %     \end{itemize}
-      %   % \item \textit{parallelising actors can increase throughput}
-      %   \end{itemize}
+%       % \begin{itemize}
+%       %   \item \textbf{\textit{Comparators}}
+%       %     \begin{itemize}
+%       %     \item \textit{Unikernel}
+%       %     \item \textit{Monolithic OS}
+%       %     \item \textit{Docker Container}
+%       %     \end{itemize}
+%       %   % \item \textit{parallelising actors can increase throughput}
+%       %   \end{itemize}
 
-        % \begin{itemize}
-        %   \item \textbf{\textit{Benchmark Metrics}}
-        %     \begin{itemize}
-        %     \item \textit{Boot-up time}
-        %     \item \textit{Wall clock run times}
-        %     \item \textit{Parallel Speed ups}
-        %     \item \textit{Parallel efficiency}
-        %     \end{itemize}
-        %   % \item \textit{parallelising actors can increase throughput}
-        %   \end{itemize}
+%         % \begin{itemize}
+%         %   \item \textbf{\textit{Benchmark Metrics}}
+%         %     \begin{itemize}
+%         %     \item \textit{Boot-up time}
+%         %     \item \textit{Wall clock run times}
+%         %     \item \textit{Parallel Speed ups}
+%         %     \item \textit{Parallel efficiency}
+%         %     \end{itemize}
+%         %   % \item \textit{parallelising actors can increase throughput}
+%         %   \end{itemize}
 
-    \end{minipage}%
-    \hspace{0.2cm}
+%     \end{minipage}%
+%     \hspace{0.2cm}
 
-    \vspace{0.1cm}
+%     \vspace{0.1cm}
 
-    \begin{tikzfigure}
-      % \includegraphics[width=0.4\textwidth]{images/parallel-layers-poster.png}
-    \end{tikzfigure}
+%     \begin{tikzfigure}
+%       % \includegraphics[width=0.4\textwidth]{images/parallel-layers-poster.png}
+%     \end{tikzfigure}
 
-    \vspace{-0.5cm}
-  }
+%     \vspace{-0.5cm}
+}
+
+\column{0.5}
 
   \NameBlock{transformation}
-  \block{Exploiting CHERI pointers}{
+  \block{Range TLB}{
+    \vspace{0.7cm}
     \hspace{0.4cm}
-    % Bootup-times
+
     \begin{minipage}[t]{0.4\linewidth}
       \vspace{-0.9cm}
       \begin{tikzfigure}{}
-        %  \includegraphics[width=2.47\textwidth]{Bootup-times.png}
+        \includegraphics[width=2.47\textwidth]{RangeTranlations.drawio.png}
       \end{tikzfigure}
     \end{minipage}
 
+    \vspace{0.7cm}
+    \hspace{0.4cm}
 
+    In the current expirement adopts the range translation concept from
+    FlexPointer which was inturn adopted from RMM. A range consists 
+    of contigous virtual and phyiscal pages. Addresses share a 
+    common Delta (phyiscal address - virtual address). To assume 
+    physical contiguity of a particular range (We are proposing 
+    to use eager paging strategy as proposed from FlexPointer).
 
+    \begin{minipage}[t]{0.4\linewidth}
+      \vspace{-0.9cm}
+      \begin{tikzfigure}{}
+        \includegraphics[width=2.47\textwidth]{RangeTLB.drawio.png}
+      \end{tikzfigure}
+    \end{minipage}
+    \vspace{0.5cm}
+
+    Range TLB is organised as a fully associative cache, As per the
+    conventional the page table the lower 12 bits is used record
+    attributes (eg: R/W: Read/Write). Du refers if the current range
+    entry is a dummy one or not (This is used to indentify the next
+    immediate space for a range entry). 
+    
+    Since the Range ID does not participate in the address generation.
  }
+
+%   \NameBlock{transformation}
+%   \block{Exploiting CHERI pointers}{
+%     \hspace{0.4cm}
+%     % Bootup-times
+%     \begin{minipage}[t]{0.4\linewidth}
+%       \vspace{-0.9cm}
+%       \begin{tikzfigure}{}
+%         %  \includegraphics[width=2.47\textwidth]{Bootup-times.png}
+%       \end{tikzfigure}
+%     \end{minipage}
+
+
+
+ %}
 
     \NameBlock{transformation}
     \block{References}{
@@ -225,8 +284,6 @@ case can be used to store the ID of the range TLB entry.
 
 
    }
-
-  \column{0.5}
 
 
   % \NameBlock{results}

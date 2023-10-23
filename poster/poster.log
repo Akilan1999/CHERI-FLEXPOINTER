@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  19 OCT 2023 18:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  23 OCT 2023 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1222,17 +1222,38 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 <Draft-expirment.png, id=29, 1327.96124pt x 954.56625pt>
 File: Draft-expirment.png Graphic file (type png)
 <use Draft-expirment.png>
-Package pdftex.def Info: Draft-expirment.png  used on input line 198.
+Package pdftex.def Info: Draft-expirment.png  used on input line 216.
 (pdftex.def)             Requested size: 1099.9207pt x 790.6876pt.
 
-Overfull \hbox (665.16922pt too wide) in paragraph at lines 198--198
+Overfull \hbox (665.16922pt too wide) in paragraph at lines 216--216
+ [] 
+ []
+
+<RangeTranlations.drawio.png, id=31, 543.02875pt x 141.52875pt>
+File: RangeTranlations.drawio.png Graphic file (type png)
+<use RangeTranlations.drawio.png>
+Package pdftex.def Info: RangeTranlations.drawio.png  used on input line 255.
+(pdftex.def)             Requested size: 1068.89676pt x 278.5973pt.
+
+Overfull \hbox (636.14525pt too wide) in paragraph at lines 255--255
+ [] 
+ []
+
+<RangeTLB.drawio.png, id=32, 472.76625pt x 231.86626pt>
+File: RangeTLB.drawio.png Graphic file (type png)
+<use RangeTLB.drawio.png>
+Package pdftex.def Info: RangeTLB.drawio.png  used on input line 255.
+(pdftex.def)             Requested size: 1068.89676pt x 524.2522pt.
+
+Overfull \hbox (636.14525pt too wide) in paragraph at lines 255--255
  [] 
  []
 
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Draft
--expirment.png>] (./poster.aux)
+-expirment.png> <./RangeTranlations.drawio.png> <./RangeTLB.drawio.png>]
+(./poster.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1241,23 +1262,24 @@ Package logreq Info: Writing requests to 'poster.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29333 strings out of 478268
- 621340 string characters out of 5846347
- 1311254 words of memory out of 5000000
- 47018 multiletter control sequences out of 15000+600000
- 503639 words of font info for 89 fonts, out of 8000000 for 9000
+ 29352 strings out of 478268
+ 621765 string characters out of 5846347
+ 1314260 words of memory out of 5000000
+ 47031 multiletter control sequences out of 15000+600000
+ 506474 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,10n,131p,1847b,2057s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,10n,131p,1847b,2063s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2986.pfb>
-Output written on poster.pdf (1 page, 136260 bytes).
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2986.pfb>
+Output written on poster.pdf (1 page, 164763 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
