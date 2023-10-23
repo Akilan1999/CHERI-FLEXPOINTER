@@ -1,4 +1,4 @@
-\documentclass[25pt, a0paper, portrait]{tikzposter}
+\documentclass[18pt, a1paper, portrait]{tikzposter}
 \usetikzlibrary{fit,arrows,tikzmark,shadows,calc,automata}
 \newcommand\NameBlock[1]{\node[fit=(blockbody)(blocktitle),inner sep=5pt] (#1) {};}
 \usepackage[utf8]{inputenc}
@@ -30,7 +30,7 @@
 \usepackage{listings}
 
 
-\title{FAT-Pointer based on range TLB}
+\title{FAT-Pointer based range TLB}
 % \author{}
 \date{\today}
 % \institute{Heriot-Watt University UK \and Université de Toulouse France,
@@ -108,9 +108,9 @@ case can be used to store the ID of the range TLB entry.
     \vspace{0.5cm}
   }
 
-  \block{Research Questions and Goals}{
+  \block{Research Questions}{
 
-    \hspace{0.5cm}
+    % \hspace{0.5cm}
 
     \begin{minipage}[t]{0.8\linewidth}
       \textbf{\textit{Research Questions:}}
@@ -140,18 +140,18 @@ case can be used to store the ID of the range TLB entry.
     \begin{minipage}[t]{0.4\linewidth}
       \vspace{-0.9cm}
       \begin{tikzfigure}{}
-        \includegraphics[width=2.53\textwidth]{Draft-expirment.png}
+        \includegraphics[width=2.53\textwidth]{Expirement.drawio.png}
       \end{tikzfigure}
     \end{minipage}
     
     \vspace{0.5cm}
-    The above figure provides an higher overview of the expirement setup.
-    The expirement is divided into: 
+    % The above figure provides an higher overview of the expirement setup.
+    % The expirement is divided into: 
     \begin{itemize}
         \item \textit{A set of Microbenchmarks which are designed
         to create pressure on the L1 TLB to create more L1 misses.}
         \item \textit{Modified Malloc to call the new syscall mmap\_range for large memory objects.}
-        \item \textit{Testing different memory object sizes to use range TLB.}
+        \item \textit{Testing different memory object sizes to use the range TLB.}
     \end{itemize}
 
 
@@ -232,8 +232,8 @@ case can be used to store the ID of the range TLB entry.
     \vspace{0.7cm}
     \hspace{0.4cm}
 
-    In the current expirement adopts the range translation concept from
-    FlexPointer which was inturn adopted from RMM. A range consists 
+    The current expirement adopts the range translation concept from
+    FlexPointer[1] which was inturn adopted from RMM[2]. A range consists 
     of contigous virtual and phyiscal pages. Addresses share a 
     common Delta (phyiscal address - virtual address). To assume 
     physical contiguity of a particular range (We are proposing 
@@ -246,14 +246,27 @@ case can be used to store the ID of the range TLB entry.
       \end{tikzfigure}
     \end{minipage}
     \vspace{0.5cm}
+    \vspace{0.7cm}
 
     Range TLB is organised as a fully associative cache, As per the
     conventional the page table the lower 12 bits is used record
     attributes (eg: R/W: Read/Write). Du refers if the current range
     entry is a dummy one or not (This is used to indentify the next
     immediate space for a range entry). 
+
+    \begin{minipage}[t]{0.4\linewidth}
+      \vspace{-0.9cm}
+      \begin{tikzfigure}{}
+        \includegraphics[width=2.47\textwidth]{Hardwareoverview.drawio.png}
+      \end{tikzfigure}
+    \end{minipage}
+    \vspace{0.5cm}
+    \vspace{0.7cm}
     
-    Since the Range ID does not participate in the address generation.
+    Since the Range ID does not participate in the address generation. Using 
+    the ID provided the search for the delta value can occur on parallel to 
+    the address generation. Due to this the range TLB is shifted to a 
+    earlier stage.
  }
 
 %   \NameBlock{transformation}
@@ -271,19 +284,19 @@ case can be used to store the ID of the range TLB entry.
 
  %}
 
-    \NameBlock{transformation}
-    \block{References}{
-      \hspace{0.4cm}
+  %   \NameBlock{transformation}
+  %   \block{References}{
+  %     \hspace{0.4cm}
 
-    %  \begin{itemize}
-    %    \item Building a parallel benchmark suite for Unikernels.
-    %    \item Analysing the metrics provided by the Go compiler such as Heap usage, Number OS threads created by run time etc…
-    %    \item Benchmarking other Unikernel implementation using the benchmark suite (1)
-    %  \end{itemize}
+  %   %  \begin{itemize}
+  %   %    \item Building a parallel benchmark suite for Unikernels.
+  %   %    \item Analysing the metrics provided by the Go compiler such as Heap usage, Number OS threads created by run time etc…
+  %   %    \item Benchmarking other Unikernel implementation using the benchmark suite (1)
+  %   %  \end{itemize}
 
 
 
-   }
+  %  }
 
 
   % \NameBlock{results}
