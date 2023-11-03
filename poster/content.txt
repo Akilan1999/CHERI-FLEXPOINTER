@@ -1,0 +1,21 @@
+Abstract:
+The CHERI hardware architecture is designed to provide security guarantees,
+This has had performance implications such as more L1 TLB misses on pure cap mode rather than running an application as a 64 bit program. The following experiment proposes on adding range TLB which is
+stored on the page table to store TLB translation entries of large memory objects. During this process the range ID would be added to the pointer which allows looking up the TLB
+entries at an earlier stage during the address generation stage of the pipeline.
+
+Research Questions:
+• (RQ1) It is possible to use the unused meta-data field in FAT-Pointers to reduce the number of TLB misses to reduce the CPU Stall time ?
+• (RQ2) Can the number of L1 DTLB misses be minimised by offloading translation lookups to the newly introduced range TLB ?
+
+Experiment Proposal:
+• A set of Microbenchmarks which are designed to create pressure on the L1 TLB to create more L1 misses.
+•Modified Malloc to call the new syscall mmap range for large memory objects.
+•Testing different memory object sizes to use the range TLB.
+
+Range TLB:
+Para 1
+The current experiment adopts the range translation concept from FlexPointer[1] which was in-turn adopted from RMM[2]. A range consists of contiguous virtual and physical pages. Ad- dresses share a common Delta. To assume physical contiguity of a particular range we are proposing to use eager paging strategy as proposed from FlexPointer[1].
+
+Para 2
+Range TLB is organised as a fully associative cache, As per the conventional the page table the lower 12 bits is used record attributes (eg: R/W: Read/Write).

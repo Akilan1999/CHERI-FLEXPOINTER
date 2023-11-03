@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" modified="2023-10-31T09:14:05.124Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15" etag="MOV2yfMVwPbAHE4C1NHR" version="22.0.8" type="device">
+  <diagram name="Page-1" id="McNYjQjwSvaLzqG4gVjq">
+    <mxGraphModel dx="1264" dy="998" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="F4gldFT95kyvLo6slutU-1" value="C program (Pure Cap Binary)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="240" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-2" value="Modified Malloc shared object file&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="230" y="110" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-3" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.564;entryY=-0.056;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="F4gldFT95kyvLo6slutU-2" target="F4gldFT95kyvLo6slutU-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="310" as="sourcePoint" />
+            <mxPoint x="310" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-4" value="loaded via LD to overwrite the existing implementation&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="80" y="140" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.668;exitY=0.988;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="F4gldFT95kyvLo6slutU-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="310" as="sourcePoint" />
+            <mxPoint x="450" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-6" value="Links to the Modified MMAP call" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="450" y="220" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-7" value="The Range TLB implementation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="320" width="236" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="70" width="170" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-11" value="Modified MMAP tested on different memory object sizes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="625" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-39" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="160" width="150" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-41" value="24 kb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-42" value="34 kb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="190" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-44" value="48 kb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-45" value="64 kb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-46" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.012;entryY=0.339;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="F4gldFT95kyvLo6slutU-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="230" as="sourcePoint" />
+            <mxPoint x="590" y="150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-48" value="......." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="650" y="250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-49" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.364;exitY=1.011;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="F4gldFT95kyvLo6slutU-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="270" as="sourcePoint" />
+            <mxPoint x="130" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-50" value="Micro Benchmarks&amp;nbsp;&lt;br&gt;(The deciding factor would be C&amp;nbsp;&lt;br&gt;programs that aggressively use Malloc)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="400" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-53" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="100" as="sourcePoint" />
+            <mxPoint x="450" y="40" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="370" y="40" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F4gldFT95kyvLo6slutU-55" value="Different Cherified memory allocators. &amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="10" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="pXU2l4itcDNmfNoYy7Vu-1" value="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="230" y="200" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pXU2l4itcDNmfNoYy7Vu-2" value="2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="260" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pXU2l4itcDNmfNoYy7Vu-7" value="3" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="540" y="270" width="40" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
