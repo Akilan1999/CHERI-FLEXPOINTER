@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  31 OCT 2023 09:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  3 NOV 2023 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1108,7 +1108,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 Excluding comment 'comment')
 \@quotelevel=\count457
 \@quotereset=\count458
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 77
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 79
 .
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/ae/t1aer.fd
@@ -1121,20 +1121,20 @@ LaTeX Warning: Unused global option(s):
 (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1212,87 +1212,69 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'poster.bbl' not found.
 
 No file poster.bbl.
-Package biblatex Info: Reference section=0 on input line 77.
-Package biblatex Info: Reference segment=0 on input line 77.
+Package biblatex Info: Reference section=0 on input line 79.
+Package biblatex Info: Reference segment=0 on input line 79.
 \c@lstlisting=\count465
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no = in font nullfont!
 Missing character: There is no 1 in font nullfont!
+
+LaTeX Warning: Citation '1' on page 1 undefined on input line 113.
+
+
+LaTeX Warning: Citation '2' on page 1 undefined on input line 113.
+
 LaTeX Font Info:    Font shape `T1/aer/b/it' in size <29.86> not available
-(Font)              Font shape `T1/aer/bx/it' tried instead on input line 138.
+(Font)              Font shape `T1/aer/bx/it' tried instead on input line 140.
 LaTeX Font Info:    Trying to load font information for TS1+aer on input line 1
-38.
-LaTeX Font Info:    No file TS1aer.fd. on input line 138.
+40.
+LaTeX Font Info:    No file TS1aer.fd. on input line 140.
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 138.
+(Font)              for symbol `textbullet' on input line 140.
 
-<Expirement-new.png, id=29, 723.70375pt x 492.84125pt>
-File: Expirement-new.png Graphic file (type png)
-<use Expirement-new.png>
-Package pdftex.def Info: Expirement-new.png  used on input line 218.
-(pdftex.def)             Requested size: 744.31805pt x 506.88765pt.
 
-Overfull \hbox (450.12105pt too wide) in paragraph at lines 218--218
- [] 
- []
+LaTeX Warning: Citation '3' on page 1 undefined on input line 222.
 
-<RangeTranlations.drawio.png, id=31, 543.02875pt x 141.52875pt>
-File: RangeTranlations.drawio.png Graphic file (type png)
-<use RangeTranlations.drawio.png>
-Package pdftex.def Info: RangeTranlations.drawio.png  used on input line 270.
-(pdftex.def)             Requested size: 721.72704pt x 188.11209pt.
 
-Overfull \hbox (429.53pt too wide) in paragraph at lines 270--270
- [] 
- []
+LaTeX Warning: Citation '2' on page 1 undefined on input line 222.
 
-<RangeTLB.drawio.png, id=32, 472.76625pt x 231.86626pt>
-File: RangeTLB.drawio.png Graphic file (type png)
-<use RangeTLB.drawio.png>
-Package pdftex.def Info: RangeTLB.drawio.png  used on input line 270.
-(pdftex.def)             Requested size: 721.72704pt x 353.97583pt.
 
-Overfull \hbox (429.53pt too wide) in paragraph at lines 270--270
- [] 
- []
+LaTeX Warning: Citation '3' on page 1 undefined on input line 222.
 
-<Hardwareoverview.drawio.png, id=33, 723.70375pt x 434.62375pt>
-File: Hardwareoverview.drawio.png Graphic file (type png)
-<use Hardwareoverview.drawio.png>
-Package pdftex.def Info: Hardwareoverview.drawio.png  used on input line 270.
-(pdftex.def)             Requested size: 721.72704pt x 433.44221pt.
-
-Overfull \hbox (429.53pt too wide) in paragraph at lines 270--270
- [] 
- []
-
-<Repo-url.png, id=34, 1026.83624pt x 1026.83624pt>
+<Repo-url.png, id=29, 1026.83624pt x 1026.83624pt>
 File: Repo-url.png Graphic file (type png)
 <use Repo-url.png>
-Package pdftex.def Info: Repo-url.png  used on input line 284.
-(pdftex.def)             Requested size: 292.19704pt x 292.19699pt.
+Package pdftex.def Info: Repo-url.png  used on input line 248.
+(pdftex.def)             Requested size: 175.31999pt x 175.31192pt.
 [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Expir
-ement-new.png> <./RangeTranlations.drawio.png> <./RangeTLB.drawio.png> <./Hardw
-areoverview.drawio.png> <./Repo-url.png>] (./poster.aux)
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Repo-
+url.png>] (./poster.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                poster
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'poster.run.xml'.
 \openout1 = `poster.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29364 strings out of 478268
- 622041 string characters out of 5846347
- 1315215 words of memory out of 5000000
- 47041 multiletter control sequences out of 15000+600000
- 506474 words of font info for 93 fonts, out of 8000000 for 9000
+ 29529 strings out of 478268
+ 625053 string characters out of 5846347
+ 1314293 words of memory out of 5000000
+ 47205 multiletter control sequences out of 15000+600000
+ 509574 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,10n,131p,1847b,2067s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,10n,131p,1847b,2905s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
@@ -1300,10 +1282,10 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2986.pfb>
-Output written on poster.pdf (1 page, 163245 bytes).
+Output written on poster.pdf (1 page, 103817 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
