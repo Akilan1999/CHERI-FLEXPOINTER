@@ -161,59 +161,6 @@
     to extract the lower and upper bounds which inturns allows us to encode the offset to the 
     Pointer to map to the Physical page number. We hope to reproduce the FlexPointer results of 
     reducing L1 tlb misses and page walks.
-
-
-    % The current expirement adopts the range translation concept from
-    % FlexPointer[1] which was inturn adopted from RMM[2]. A range consists 
-    % of contigous virtual and phyiscal pages. Addresses share a 
-    % common Delta. To assume 
-    % physical contiguity of a particular range we are proposing 
-    % to use eager paging strategy as proposed from FlexPointer[1].
-
-%     How about a "Our Idea" box, with an argumentation sequence (written by you as a paragraph) could be:
-
-% Range translation is the process of , e.g. RMM [cite].
-
-% Recent work on FlexPointer [cite] extended RMM .
-
-% In the absence of fat pointers, their Range TLB was its own data structure in memory.
-
-% We use fat pointers to simplify the implementation of Range TLB by using .
-
-% We believe this simplified will <state very clearly and succinctly why you think step 4 will result in better performance than FlexPointer.
-
-% alternatively, if you think it's not about beating FlexPointer but instead making CHERI faster in purecap mode, then...
-
-% We hope to reproduce the FlexPointer results of reducing L1 misses and page walks, to remove recently observed for performance degredation -- the cost of hardware-level security.
-
-    % The current expirement adopts the range translation concept from
-    % FlexPointer[1] which was inturn adopted from RMM[2]. A range consists 
-    % of contigous virtual and phyiscal pages. Addresses share a 
-    % common Delta. To assume 
-    % physical contiguity of a particular range we are proposing 
-    % to use eager paging strategy as proposed from FlexPointer[1].
-
-    % \begin{minipage}[t]{0.4\linewidth}
-    %   \vspace{-0.9cm}
-    %   \begin{tikzfigure}{}
-    %     \includegraphics[width=2.47\textwidth]{RangeTLB.drawio.png}
-    %   \end{tikzfigure}
-    % \end{minipage}
-    % \vspace{0.5cm}
-    % \vspace{0.7cm}
-
-    % Range TLB is organised as a fully associative cache, As per the
-    % conventional the page table the lower 12 bits is used record
-    % attributes (eg: R/W: Read/Write). 
-
-    % \begin{minipage}[t]{0.4\linewidth}
-    %   \vspace{-0.9cm}
-    %   \begin{tikzfigure}{}
-    %     \includegraphics[width=2.47\textwidth]{Hardwareoverview.drawio.png}
-    %   \end{tikzfigure}
-    % \end{minipage}
-    \vspace{0.5cm}
-    \vspace{0.7cm}
     
     % Since the Range ID does not participate in the address generation. Using 
     % the ID provided the search for the delta value can occur on parallel to 
