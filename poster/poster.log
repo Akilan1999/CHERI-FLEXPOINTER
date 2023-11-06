@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  3 NOV 2023 12:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  6 NOV 2023 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1224,34 +1224,50 @@ LaTeX Warning: Citation '1' on page 1 undefined on input line 113.
 
 LaTeX Warning: Citation '2' on page 1 undefined on input line 113.
 
+<MainOverview.png, id=29, 791.95876pt x 1316.92pt>
+File: MainOverview.png Graphic file (type png)
+<use MainOverview.png>
+Package pdftex.def Info: MainOverview.png  used on input line 133.
+(pdftex.def)             Requested size: 735.49251pt x 1223.03502pt.
+
+Overfull \hbox (441.2955pt too wide) in paragraph at lines 133--133
+ [] 
+ []
+
 LaTeX Font Info:    Font shape `T1/aer/b/it' in size <29.86> not available
-(Font)              Font shape `T1/aer/bx/it' tried instead on input line 140.
+(Font)              Font shape `T1/aer/bx/it' tried instead on input line 162.
 LaTeX Font Info:    Trying to load font information for TS1+aer on input line 1
-40.
-LaTeX Font Info:    No file TS1aer.fd. on input line 140.
+62.
+LaTeX Font Info:    No file TS1aer.fd. on input line 162.
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 140.
+(Font)              for symbol `textbullet' on input line 162.
 
 
-LaTeX Warning: Citation '3' on page 1 undefined on input line 167.
+LaTeX Warning: Citation '3' on page 1 undefined on input line 189.
 
 
-LaTeX Warning: Citation '2' on page 1 undefined on input line 167.
+LaTeX Warning: Citation '2' on page 1 undefined on input line 189.
 
 
-LaTeX Warning: Citation '3' on page 1 undefined on input line 167.
+LaTeX Warning: Citation '3' on page 1 undefined on input line 189.
 
-<Repo-url.png, id=29, 1026.83624pt x 1026.83624pt>
+
+Underfull \hbox (badness 5064) in paragraph at lines 218--218
+[]\T1/aer/m/n/17.28 Selvacoumar, A. CHERI-FLEXPOINTER. \T1/aer/m/it/17.28 GitHu
+b\T1/aer/m/n/17.28 ., https://github.com/Akilan1999/CHERI-
+ []
+
+<Repo-url.png, id=31, 1026.83624pt x 1026.83624pt>
 File: Repo-url.png Graphic file (type png)
 <use Repo-url.png>
-Package pdftex.def Info: Repo-url.png  used on input line 196.
+Package pdftex.def Info: Repo-url.png  used on input line 218.
 (pdftex.def)             Requested size: 175.31999pt x 175.31192pt.
 [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Repo-
-url.png>] (./poster.aux)
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./MainO
+verview.png> <./Repo-url.png>] (./poster.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1268,11 +1284,11 @@ Package logreq Info: Writing requests to 'poster.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29529 strings out of 478268
- 625053 string characters out of 5846347
- 1314290 words of memory out of 5000000
- 47205 multiletter control sequences out of 15000+600000
- 509574 words of font info for 99 fonts, out of 8000000 for 9000
+ 29541 strings out of 478268
+ 625166 string characters out of 5846347
+ 1314299 words of memory out of 5000000
+ 47209 multiletter control sequences out of 15000+600000
+ 514818 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,10n,131p,1847b,2905s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
@@ -1282,10 +1298,10 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2986.pfb>
-Output written on poster.pdf (1 page, 103744 bytes).
+Output written on poster.pdf (1 page, 162411 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 71 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -32,7 +32,7 @@
 \bibliography{references}
 
 
-\title{FAT-Pointer based range TLB}
+\title{FAT-Pointer based range addresses}
 % \author{}
 \date{\today}
 % \institute{Heriot-Watt University UK \and Université de Toulouse France,
@@ -112,61 +112,81 @@
     \vspace{0.5cm}
   }
 
-  \block{Research Questions}{
-
-    % \hspace{0.5cm}
-
-    \begin{minipage}[t]{1\linewidth}
-      \textbf{\textit{Research Questions:}}
-      \begin{itemize}
-        \item (RQ1) Can L1 misses and page-walks be reduced for memory intensive CHERI workloads?
-        \item (RQ2) Is it possible to implement a simple Range TLB scheme with 8 bits using region of a fat pointer?
-        \item (RQ3) Can fat pointer based address translation lower the runtime overheads of hardware-level security in capability hardware like CHERI?
-        % monolithic OS or containers in terms of wall-clock runtimes, CPU
-        % profiling and memory profiling?
-      % \item \textit{parallelising actors can increase throughput}
-      \end{itemize}
-
-    \end{minipage}%
-    % \hspace{0.2cm}
-
-    % \vspace{0.1cm}
-
-    % \begin{tikzfigure}
-    %   % \includegraphics[width=0.4\textwidth]{images/parallel-layers-poster.png}
-    % \end{tikzfigure}
-
-    % \vspace{-0.5cm}
-  }
-
-  \NameBlock{transformation}
-  \block{Our Approach}{
-    % \vspace{0.7cm}
-    % \hspace{0.4cm}
-
-    % \begin{minipage}[t]{0.4\linewidth}
-    %   \vspace{-0.9cm}
-    %   \begin{tikzfigure}{}
-    %     \includegraphics[width=2.47\textwidth]{RangeTranlations.drawio.png}
-    %   \end{tikzfigure}
-    % \end{minipage}
-
-    Range translation is the process of mapping between contigous virtual pages mapped 
-    to contigous phyiscal pages \cite{3}. Recent work on FlexPointer\cite{2} extended RMM\cite{3}
-    by encoding RangeIDs to the remaining 16 bits on a 64-bit virtual address.
-    In the absence of fat pointers, their Range TLB was its own data structure in memory.
-    We use fat pointers to simplify the implementation of Range TLB by using the bounds metadata
-    to extract the lower and upper bounds which inturns allows us to encode the offset to the 
-    Pointer to map to the Physical page number. We hope to reproduce the FlexPointer results of 
-    reducing L1 tlb misses and page walks.
+  \block{Architecture}{
+    \vspace{0.7cm}
+    \begin{minipage}[t]{0.4\linewidth}
+      \vspace{-0.9cm}
+      \begin{tikzfigure}{}
+        \includegraphics[width=2.5\textwidth]{MainOverview.png}
+      \end{tikzfigure}
+    \end{minipage}
     
-    % Since the Range ID does not participate in the address generation. Using 
-    % the ID provided the search for the delta value can occur on parallel to 
-    % the address generation. Due to this the range TLB is shifted to a 
-    % earlier stage.
- }
+    \vspace{0.5cm}
+    % The above figure provides an higher overview of the expirement setup.
+    % The expirement is divided into: 
+    % \begin{itemize}
+        % \item \textit{A set of Microbenchmarks which are designed
+        % to create pressure on the L1 TLB to create more L1 misses.}
+        % \item \textit{Modified Malloc to call the new syscall mmap\_range for large memory objects.}
+        % \item \textit{Testing different memory object sizes to use the range TLB.}
+    % \end{itemize}
+}
 
 \column{0.5}
+
+\block{Research Questions}{
+
+% \hspace{0.5cm}
+
+\begin{minipage}[t]{1\linewidth}
+  \textbf{\textit{Research Questions:}}
+  \begin{itemize}
+    \item (RQ1) Can L1 misses and page-walks be reduced for memory intensive CHERI workloads?
+    \item (RQ2) Is it possible to implement a simple Range TLB scheme with 8 bits using region of a fat pointer or ARM TBI?
+    \item (RQ3) Can fat pointer based address translation lower the runtime overheads of hardware-level security in capability hardware like CHERI?
+    % monolithic OS or containers in terms of wall-clock runtimes, CPU 
+    % profiling and memory profiling?
+  % \item \textit{parallelising actors can increase throughput}
+  \end{itemize}
+
+\end{minipage}%
+% \hspace{0.2cm}
+
+% \vspace{0.1cm}
+
+% \begin{tikzfigure}
+%   % \includegraphics[width=0.4\textwidth]{images/parallel-layers-poster.png}
+% \end{tikzfigure}
+
+% \vspace{-0.5cm}
+}
+
+\NameBlock{transformation}
+\block{Our Approach}{
+  % \vspace{0.7cm}
+  % \hspace{0.4cm}
+
+  % \begin{minipage}[t]{0.4\linewidth}
+  %   \vspace{-0.9cm}
+  %   \begin{tikzfigure}{}
+  %     \includegraphics[width=2.47\textwidth]{RangeTranlations.drawio.png}
+  %   \end{tikzfigure}
+  % \end{minipage}
+
+  Range translation is the process of mapping between contigous virtual pages mapped 
+  to contigous phyiscal pages \cite{3}. Recent work on FlexPointer\cite{2} extended RMM\cite{3}
+  by encoding RangeIDs to the remaining 16 bits on a 64-bit virtual address.
+  In the absence of fat pointers, their Range TLB was its own data structure in memory.
+  We use fat pointers to simplify the implementation of Range TLB by using the bounds metadata
+  to extract the lower and upper bounds which inturns allows us to encode the offset to the 
+  Pointer to map to the Physical page number. We hope to reproduce the FlexPointer results of 
+  reducing L1 tlb misses and page walks.
+  
+  % Since the Range ID does not participate in the address generation. Using 
+  % the ID provided the search for the delta value can occur on parallel to 
+  % the address generation. Due to this the range TLB is shifted to a 
+  % earlier stage.
+}
 
   \NameBlock{transformation}
   \block{References}{
@@ -175,8 +195,10 @@
       % profiling and memory profiling?
     % \column{1}
 
-    \begin{thebibliography}{9}
-      \bibitem{1}Bramley, J., Jacob, D., Lascu, A., Singer, J. \& Tratt, L. Picking a CHERI Allocator: Security and Performance Considerations. {\em Proceedings Of The 2023 ACM SIGPLAN International Symposium On Memory Management}. (2023,6), https://doi.org/10.1145%252F3591195.3595278
+    \begin{thebibliography}{1}
+    \footnotesize
+
+    \bibitem{1}Selvacoumar, A. CHERI-FLEXPOINTER. {\em GitHub}., https://github.com/Akilan1999/CHERI-FLEXPOINTER/blob/master/README.md
       \bibitem{2}Chen, D., Tong, D., Yang, C., Yi, J. \& Cheng, X. FlexPointer: Fast Address Translation Based on Range TLB and Tagged Pointers. {\em ACM Trans. Archit. Code Optim.}. \textbf{20} (2023,3), https://doi.org/10.1145/3579854
       \bibitem{3}Karakostas, V., Gandhi, J., Ayar, F., Cristal, A., Hill, M., McKinley, K., Nemirovsky, M., Swift, M. \& Ünsal, O. Redundant Memory Mappings for Fast Access to Large Memories. {\em SIGARCH Comput. Archit. News}. \textbf{43}, 66-78 (2015,6), https://doi.org/10.1145/2872887.2749471
       \end{thebibliography}
@@ -311,25 +333,7 @@
 
 \column{1}
 
-  \block{Architecture}{
-    \vspace{0.7cm}
-    \begin{minipage}[t]{0.4\linewidth}
-      \vspace{-0.9cm}
-      % \begin{tikzfigure}{}
-      %   \includegraphics[width=2.53\textwidth]{Expirement-new.png}
-      % \end{tikzfigure}
-    \end{minipage}
-    
-    \vspace{0.5cm}
-    % The above figure provides an higher overview of the expirement setup.
-    % The expirement is divided into: 
-    % \begin{itemize}
-        % \item \textit{A set of Microbenchmarks which are designed
-        % to create pressure on the L1 TLB to create more L1 misses.}
-        % \item \textit{Modified Malloc to call the new syscall mmap\_range for large memory objects.}
-        % \item \textit{Testing different memory object sizes to use the range TLB.}
-    % \end{itemize}
-}
+
 
   \end{columns}
 
