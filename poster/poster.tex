@@ -100,7 +100,7 @@
       \end{tikzfigure}
       Capability-based addressing in the CHERI architecture is designed to improve hardware-level system security. These security guarantees 
       can degrade runtime performance due to increased L1 TLB misses \cite{1}. Our aim is to achieve capability-based security 
-      at zero performance cost. We will use fat pointers to simplify and implement a recently proposed range TLB scheme \cite{2}, 
+      at reduced performance cost. We will use fat pointers to simplify and implement a recently proposed range TLB scheme \cite{2}, 
       with the goal of reducing L1 TLB misses and page-walks for memory-intensive CHERI workloads.
 % The FAT pointer structure of CHERI allows to encode custom bits of meta-data which in this
 % case can be used to store the ID of the range TLB entry.

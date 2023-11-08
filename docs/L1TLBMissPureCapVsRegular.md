@@ -1,6 +1,4 @@
-# Technical report reviewable content.
-
-
+## Measuring CHERI current TLB performance
 Before this experiment could begin benchmarks where can to improve that
 running with CHERI with PureCap creates more TLB cache pressure than
 running CHERI without PureCap (i.e 64 bit mode). The program ran was
@@ -65,6 +63,3 @@ or operation available to
 dispatch for the PE from the frontend.
 ![STALL
 FRONTEND](https://github.com/Akilan1999/PhD-Research/assets/31743758/6077895d-fb88-497a-863f-9e987ef1837a)
-
-
-
