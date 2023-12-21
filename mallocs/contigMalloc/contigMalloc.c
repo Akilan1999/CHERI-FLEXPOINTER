@@ -2,6 +2,8 @@
  * Copyright(c) 2010-2014 Intel Corporation
  */
 
+// source: https://github.com/DPDK/dpdk/blob/main/kernel/freebsd/contigmem/contigmem.c#L145
+
 #include <sys/cdefs.h>
 
 #include <sys/param.h>
