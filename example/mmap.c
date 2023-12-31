@@ -83,7 +83,7 @@ void readExampleChange()
 	size_t mmapLen = 15;
 	off_t offset = 0; // offset to seek to.
 	char *ptr = (char*) mmap(NULL, mmapLen,
-	                         PROT_READ|PROT_WRITE, MAP_PRIVATE| LINUX_MADV_HUGEPAGE,
+	                         PROT_READ|PROT_WRITE, MAP_PRIVATE,
 	                         fd, offset);
 	if(ptr == MAP_FAILED)
 	{
