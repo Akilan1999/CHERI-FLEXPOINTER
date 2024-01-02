@@ -16,7 +16,7 @@ int main(void) {
         void *mem_ro, *mem_rw;
 
         // Create a memfd
-        memfd = memfd_create("something", MFD_HUGETLB);
+        memfd = memfd_create("something", MFD_HUGE_1MB);
         if (memfd == -1) {
                 perror("memfd_create failed");
                 return 1;
