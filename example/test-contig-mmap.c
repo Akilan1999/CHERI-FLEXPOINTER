@@ -42,7 +42,7 @@ int main(void) {
         }
 
         // Map the fd as read only and private
-        mem_ro = mmap(NULL, 0x1000, PROT_READ, MAP_PRIVATE|MAP_HUGETLB, memfd, 0);
+        mem_ro = mmap(NULL, 0x1000, PROT_READ, MAP_PRIVATE, memfd, 0);
         if (mem_ro == MAP_FAILED) {
                 perror("mmap failed");
                 return 1;
