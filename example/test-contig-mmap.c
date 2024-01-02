@@ -10,6 +10,10 @@
 #include <sys/mman.h>
 #include <sys/wait.h>
 
+#ifndef MAP_HUGETLB
+#define MAP_HUGETLB 0x40
+#endif
+
 
 int main(void) {
         int memfd;
