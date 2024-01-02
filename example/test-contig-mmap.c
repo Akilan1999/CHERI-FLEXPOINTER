@@ -18,7 +18,7 @@ int main(void) {
         // Create a memfd
         memfd = memfd_create("something", MFD_HUGETLB);
         if (memfd == -1) {
-                perror("memfd_create failed");
+                // perror("memfd_create failed");
                 return 1;
         }
 
