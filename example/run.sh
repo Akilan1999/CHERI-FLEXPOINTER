@@ -1,1 +1,1 @@
-cc -g -O2 -Wall -o test mmap.c
+cc -g -O2 -Wall -o test test-contig-mmap.c
