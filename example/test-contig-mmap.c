@@ -10,18 +10,18 @@
 #include <sys/mman.h>
 #include <sys/wait.h>
 
-#ifndef MAP_HUGETLB
-#define MAP_HUGETLB 0x40
-#endif
+// #ifndef MAP_HUGETLB
+// #define MAP_HUGETLB 0x40
+// #endif
 
 /* Only ia64 requires this */
-#ifdef __ia64__
-#define ADDR (void *)(0x8000000000000000UL)
-#define FLAGS (MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB | MAP_FIXED)
-#else
-#define ADDR (void *)(0x0UL)
-#define FLAGS (MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB)
-#endif
+// #ifdef __ia64__
+// #define ADDR (void *)(0x8000000000000000UL)
+// #define FLAGS (MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB | MAP_FIXED)
+// #else
+// #define ADDR (void *)(0x0UL)
+// #define FLAGS (MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB)
+// #endif
 
 
 int main(void) {
