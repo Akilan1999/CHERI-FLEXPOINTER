@@ -1,0 +1,1 @@
+cc -g -O2 -Wall -o test mmap.c
