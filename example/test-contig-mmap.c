@@ -15,7 +15,7 @@ int main(void) {
         int memfd;
         void *mem_ro, *mem_rw;
 
-        print(MFD_HUGETLB)
+        print(MFD_HUGETLB);
 
         // Create a memfd
         memfd = memfd_create("something", MFD_HUGETLB);
