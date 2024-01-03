@@ -137,7 +137,7 @@ memfd_create_test(const char *name, unsigned int flags)
 	// 	shmflags |= SHM_LARGEPAGE;
 	// else
 	// 	shmflags |= SHM_GROW_ON_WRITE;
-    shmflags |= SHM_LARGEPAGE
+    shmflags |= SHM_LARGEPAGE;
 	fd = __sys_shm_open2(SHM_ANON, oflags, 0, shmflags, memfd_name);
 	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
 	return (fd);
