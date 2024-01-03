@@ -48,7 +48,7 @@ int main(void) {
          printf("Here");
 
         // Create a memfd
-        memfd = memfd_create_test("something", MFD_HUGETLB);
+        memfd = memfd_create_test("something", 0);
         if (memfd == -1) {
                 perror("memfd_create failed");
                 return 1;
