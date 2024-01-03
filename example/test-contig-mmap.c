@@ -45,7 +45,7 @@ int main(void) {
         int memfd;
         void *mem_ro, *mem_rw; 
 
-         printf("Here");
+         printf("Here\n");
 
         // Create a memfd
         memfd = memfd_create_test("something", 0);
@@ -97,7 +97,7 @@ int main(void) {
 int
 memfd_create_test(const char *name, unsigned int flags)
 {
-    printf("Test");
+    printf("Test\n");
 	char memfd_name[NAME_MAX + 1];
 	size_t namelen, *pgs, pgsize;
 	struct shm_largepage_conf slc;
