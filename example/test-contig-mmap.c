@@ -46,7 +46,7 @@ int main(void) {
         void *mem_ro, *mem_rw; 
 
         // Create a memfd
-        memfd = memfd_create_test("something", 0);
+        memfd = memfd_create_test("something", MFD_HUGETLB);
         if (memfd == -1) {
                 perror("memfd_create failed");
                 return 1;
