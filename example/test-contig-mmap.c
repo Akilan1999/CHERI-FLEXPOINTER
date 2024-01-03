@@ -51,7 +51,7 @@ int main(void) {
 
         // Create a memfd
         memfd = memfd_create_test("something", 0);
-         printf(" here %u \n",memfd);
+         printf("%u \n",memfd);
         if (memfd == -1) {
                 perror("memfd_create_test failed");
                 return 1;
