@@ -54,6 +54,8 @@ int main(void) {
                 return 1;
         }
 
+        printf("After memfd\n");
+
         printf("%u",memfd);
 
         // Give the file a size, otherwise reading/writing will fail
