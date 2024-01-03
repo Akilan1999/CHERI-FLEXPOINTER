@@ -23,6 +23,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#include "libc_private.h"
+
 // #ifndef MAP_HUGETLB
 // #define MAP_HUGETLB 0x40
 // #endif
@@ -35,6 +37,8 @@
 // #define ADDR (void *)(0x0UL)
 // #define FLAGS (MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB)
 // #endif
+
+#define	MEMFD_NAME_PREFIX	"memfd:"
 
 
 int main(void) {
