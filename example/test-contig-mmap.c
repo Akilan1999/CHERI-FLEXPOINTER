@@ -45,6 +45,8 @@ int main(void) {
         int memfd;
         void *mem_ro, *mem_rw; 
 
+         printf("Here");
+
         // Create a memfd
         memfd = memfd_create_test("something", MFD_HUGETLB);
         if (memfd == -1) {
