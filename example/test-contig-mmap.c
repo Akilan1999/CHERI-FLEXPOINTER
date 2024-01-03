@@ -61,7 +61,7 @@ int main(void) {
         // Give the file a size, otherwise reading/writing will fail
         if (ftruncate(memfd, 0x1000) == -1) {
                 perror("ftruncate failed");
-                return 1;
+                return 1;  
         }
 
         // Map the fd as read only and private
