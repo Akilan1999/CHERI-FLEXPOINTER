@@ -60,13 +60,13 @@ int main(void) {
         printf("After memfd\n");
 
         // Give the file a size, otherwise reading/writing will fail
-        // if (ftruncate(memfd, 0x1000) == -1) {
-        //         perror("ftruncate failed");
-        //         return 1; 
-        // }
+        if (ftruncate(memfd, 0x1000) == -1) {
+                perror("ftruncate failed");
+                return 1; 
+        }
 
         // Map the fd as read only and private
-        mem_ro = mmap(NULL, 0x1000, PROT_READ, MAP_PRIVATE, 0, 0);
+        mem_ro = mmap(NULL, 0x1000, PROT_READ, MAP_PRIVATE, memfd, 0);
         if (mem_ro == MAP_FAILED) {
                 perror("mmap failed");
                 return 1;
@@ -74,7 +74,7 @@ int main(void) {
 
         // Map the fd as read/write and shared (shared is needed if we want
         // write operations to be propagated to the other mappings)
-        mem_rw = mmap(NULL, 0x1000, PROT_READ|PROT_WRITE, MAP_SHARED, 0, 0);
+        mem_rw = mmap(NULL, 0x1000, PROT_READ|PROT_WRITE, MAP_SHARED, memfd, 0);
         if (mem_rw == MAP_FAILED) {
                 perror("mmap failed");
                 return 1;
@@ -142,7 +142,7 @@ memfd_create_test(const char *name, unsigned int flags)
 	// 	shmflags |= SHM_LARGEPAGE;
 	// else
 	// 	shmflags |= SHM_GROW_ON_WRITE;
-    shmflags |= SHM_LARGEPAGE;
+    // shmflags |= SHM_LARGEPAGE;
 	fd = __sys_shm_open2(SHM_ANON, oflags, 0, shmflags, memfd_name);
 	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
      printf("%d \n", fd);
