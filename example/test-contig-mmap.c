@@ -60,13 +60,13 @@ int main(void) {
         printf("After memfd\n");
 
         // Give the file a size, otherwise reading/writing will fail
-        // if (ftruncate(memfd, 0x1000) == -1) {
-        //         perror("ftruncate failed");
-        //         return 1; 
-        // }
+        if (ftruncate(memfd, 0x1000) == -1) {
+                perror("ftruncate failed");
+                return 1; 
+        }
 
         // Map the fd as read only and private
-        mem_ro = mmap(NULL, 0, PROT_READ, MAP_PRIVATE, memfd, 0);
+        mem_ro = mmap(NULL, 0x1000, PROT_READ, MAP_PRIVATE, 0, 0);
         if (mem_ro == MAP_FAILED) {
                 perror("mmap failed");
                 return 1;
@@ -74,21 +74,21 @@ int main(void) {
 
         // Map the fd as read/write and shared (shared is needed if we want
         // write operations to be propagated to the other mappings)
-        // mem_rw = mmap(NULL, 0x1000, PROT_READ|PROT_WRITE, MAP_SHARED, memfd, 0);
-        // if (mem_rw == MAP_FAILED) {
-        //         perror("mmap failed");
-        //         return 1;
-        // }
+        mem_rw = mmap(NULL, 0x1000, PROT_READ|PROT_WRITE, MAP_SHARED, 0, 0);
+        if (mem_rw == MAP_FAILED) {
+                perror("mmap failed");
+                return 1;
+        }
 
-        // printf("ro mapping @ %p\n", mem_ro);
-        // printf("rw mapping @ %p\n", mem_rw);
+        printf("ro mapping @ %p\n", mem_ro);
+        printf("rw mapping @ %p\n", mem_rw);
 
-        // // This write can now be read from both mem_ro and mem_rw
-        // *(char *)mem_rw = 123;
+        // This write can now be read from both mem_ro and mem_rw
+        *(char *)mem_rw = 123;
 
-        // // Test reading
-        // printf("read from ro mapping: %d\n", *(char *)mem_ro);
-        // printf("read from rw mapping: %d\n", *(char *)mem_rw);
+        // Test reading
+        printf("read from ro mapping: %d\n", *(char *)mem_ro);
+        printf("read from rw mapping: %d\n", *(char *)mem_rw);
 
         return 0;
 }
