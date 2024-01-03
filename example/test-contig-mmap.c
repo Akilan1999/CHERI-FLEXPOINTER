@@ -131,45 +131,46 @@ memfd_create_test(const char *name, unsigned int flags)
 	shmflags = 0;
 	if ((flags & MFD_CLOEXEC) != 0)
 		oflags |= O_CLOEXEC;
-	if ((flags & MFD_ALLOW_SEALING) != 0)
-		shmflags |= SHM_ALLOW_SEALING;
-	if ((flags & MFD_HUGETLB) != 0)
-		shmflags |= SHM_LARGEPAGE;
-	else
-		shmflags |= SHM_GROW_ON_WRITE;
+	// if ((flags & MFD_ALLOW_SEALING) != 0)
+	// 	shmflags |= SHM_ALLOW_SEALING;
+	// if ((flags & MFD_HUGETLB) != 0)
+	// 	shmflags |= SHM_LARGEPAGE;
+	// else
+	// 	shmflags |= SHM_GROW_ON_WRITE;
+    shmflags |= SHM_LARGEPAGE
 	fd = __sys_shm_open2(SHM_ANON, oflags, 0, shmflags, memfd_name);
-	if (fd == -1 || (flags & MFD_HUGETLB) == 0)
-		return (fd);
-
-	pgs = NULL;
-	npgs = getpagesizes(NULL, 0);
-	if (npgs == -1)
-		goto clean;
-	pgs = calloc(npgs, sizeof(size_t));
-	if (pgs == NULL)
-		goto clean;
-	error = getpagesizes(pgs, npgs);
-	if (error == -1)
-		goto clean;
-	pgsize = (size_t)1 << ((flags & MFD_HUGE_MASK) >> MFD_HUGE_SHIFT);
-	for (pgidx = 0; pgidx < npgs; pgidx++) {
-		if (pgsize == pgs[pgidx])
-			break;
-	}
-	if (pgidx == npgs) {
-		errno = EOPNOTSUPP;
-		goto clean;
-	}
-	free(pgs);
-	pgs = NULL;
-
-	memset(&slc, 0, sizeof(slc));
-	slc.psind = pgidx;
-	slc.alloc_policy = SHM_LARGEPAGE_ALLOC_DEFAULT;
-	error = ioctl(fd, FIOSSHMLPGCNF, &slc);
-	if (error == -1)
-		goto clean;
+	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
 	return (fd);
+
+	// pgs = NULL;
+	// npgs = getpagesizes(NULL, 0);
+	// if (npgs == -1)
+	// 	goto clean;
+	// pgs = calloc(npgs, sizeof(size_t));
+	// if (pgs == NULL)
+	// 	goto clean;
+	// error = getpagesizes(pgs, npgs);
+	// if (error == -1)
+	// 	goto clean;
+	// pgsize = (size_t)1 << ((flags & MFD_HUGE_MASK) >> MFD_HUGE_SHIFT);
+	// for (pgidx = 0; pgidx < npgs; pgidx++) {
+	// 	if (pgsize == pgs[pgidx])
+	// 		break;
+	// }
+	// if (pgidx == npgs) {
+	// 	errno = EOPNOTSUPP;
+	// 	goto clean;
+	// }
+	// free(pgs);
+	// pgs = NULL;
+
+	// memset(&slc, 0, sizeof(slc));
+	// slc.psind = pgidx;
+	// slc.alloc_policy = SHM_LARGEPAGE_ALLOC_DEFAULT;
+	// error = ioctl(fd, FIOSSHMLPGCNF, &slc);
+	// if (error == -1)
+	// 	goto clean;
+	// return (fd);
 
 clean:
 	saved_errno = errno;
