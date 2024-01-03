@@ -40,6 +40,8 @@
 
 #define	MEMFD_NAME_PREFIX	"memfd:"
 
+int	memfd_create(const char *, unsigned int);
+
 
 int main(void) {
         int memfd;
@@ -49,7 +51,7 @@ int main(void) {
 
         // Create a memfd
         memfd = memfd_create_test("something", 0);
-         printf("%u",memfd);
+         printf(" here %u \n",memfd);
         if (memfd == -1) {
                 perror("memfd_create_test failed");
                 return 1;
