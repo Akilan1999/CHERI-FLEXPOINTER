@@ -127,7 +127,7 @@ memfd_create_test(const char *name, unsigned int flags)
 		return (-1);
 	}
 
-    printf("%u",MFD_HUGETLB);
+    printf("%u \n",MFD_HUGETLB);
 
 	/* We've already validated that we're sufficiently sized. */
 	snprintf(memfd_name, NAME_MAX + 1, "%s%s", MEMFD_NAME_PREFIX, name);
@@ -144,6 +144,7 @@ memfd_create_test(const char *name, unsigned int flags)
     shmflags |= SHM_LARGEPAGE;
 	fd = __sys_shm_open2(SHM_ANON, oflags, 0, shmflags, memfd_name);
 	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
+    printf("%u \n",fd);
 	return (fd);
 
 	// pgs = NULL;
