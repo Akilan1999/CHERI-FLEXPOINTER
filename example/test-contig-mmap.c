@@ -54,6 +54,8 @@ int main(void) {
                 return 1;
         }
 
+        printf("%u",memfd);
+
         // Give the file a size, otherwise reading/writing will fail
         if (ftruncate(memfd, 0x1000) == -1) {
                 perror("ftruncate failed");
