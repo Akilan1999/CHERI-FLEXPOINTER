@@ -145,7 +145,7 @@ memfd_create_test(const char *name, unsigned int flags)
     shmflags |= SHM_LARGEPAGE;
 	fd = __sys_shm_open2(SHM_ANON, oflags, 0, shmflags, memfd_name);
 	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
-    printf("%u \n",fd);
+     printf("%d \n",memfd);
 
 	// pgs = NULL;
 	// npgs = getpagesizes(NULL, 0);
