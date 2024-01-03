@@ -59,10 +59,10 @@ int main(void) {
         printf("%u",memfd);
 
         // Give the file a size, otherwise reading/writing will fail
-        if (ftruncate(memfd, 0x1000) == -1) {
-                perror("ftruncate failed");
-                return 1;
-        }
+        // if (ftruncate(memfd, 0x1000) == -1) {
+        //         perror("ftruncate failed");
+        //         return 1;
+        // }
 
         // Map the fd as read only and private
         mem_ro = mmap(NULL, 0x1000, PROT_READ, MAP_PRIVATE, memfd, 0);
@@ -145,7 +145,6 @@ memfd_create_test(const char *name, unsigned int flags)
 	fd = __sys_shm_open2(SHM_ANON, oflags, 0, shmflags, memfd_name);
 	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
     printf("%u \n",fd);
-	return (fd);
 
 	// pgs = NULL;
 	// npgs = getpagesizes(NULL, 0);
