@@ -95,6 +95,7 @@ int main(void) {
 int
 memfd_create_test(const char *name, unsigned int flags)
 {
+    printf("Test"):
 	char memfd_name[NAME_MAX + 1];
 	size_t namelen, *pgs, pgsize;
 	struct shm_largepage_conf slc;
