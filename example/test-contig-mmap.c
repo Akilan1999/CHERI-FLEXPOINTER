@@ -147,7 +147,7 @@ memfd_create_test(const char *name, unsigned int flags)
 	// if (fd == -1 || (flags & MFD_HUGETLB) == 0)
      printf("%d \n", fd);
 
-     return fd
+     return fd;
 
 	// pgs = NULL;
 	// npgs = getpagesizes(NULL, 0);
