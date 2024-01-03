@@ -49,14 +49,13 @@ int main(void) {
 
         // Create a memfd
         memfd = memfd_create_test("something", 0);
+         printf("%u",memfd);
         if (memfd == -1) {
                 perror("memfd_create_test failed");
                 return 1;
         }
 
         printf("After memfd\n");
-
-        printf("%u",memfd);
 
         // Give the file a size, otherwise reading/writing will fail
         if (ftruncate(memfd, 0x1000) == -1) {
