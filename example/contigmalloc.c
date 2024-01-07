@@ -16,20 +16,19 @@
 
 #include <machine/bus.h>
 
-#include <vm/vm.h>
-#include <vm/pmap.h>
-#include <vm/vm_param.h>
-#include <vm/vm_object.h>
-#include <vm/vm_page.h>
-#include <vm/vm_pager.h>
-#include <vm/vm_phys.h>
-
+// #include <vm/vm.h>
+// #include <vm/pmap.h>
+// #include <vm/vm_param.h>
+// #include <vm/vm_object.h>
+// #include <vm/vm_page.h>
+// #include <vm/vm_pager.h>
+// #include <vm/vm_phys.h>
 
 
 
 #define RTE_CONTIGMEM_DEFAULT_BUF_SIZE (512*1024*1024)
 static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
-#define	BUS_SPACE_MAXADDR	0xFFFFFFFF
+// #define	BUS_SPACE_MAXADDR	0xFFFFFFFF
 MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 
 // Writing a sample contig malloc 
