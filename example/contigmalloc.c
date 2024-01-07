@@ -2,6 +2,13 @@
 #include	<sys/malloc.h>
 
 
-void *p;
-       p = contigmalloc(8192, M_DEVBUF,	M_ZERO,	0, (1L << 22),
-       32 *	1024, 1024 * 1024);
+static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
+
+// Writing a sample contig malloc 
+// function to see if it can 
+// allocate contigous memory
+int main(void) {
+    void *addr;
+    addr = contigmalloc(contigmem_buffer_size, M_CONTIGMEM, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
+}
+
