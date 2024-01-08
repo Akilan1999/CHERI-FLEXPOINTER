@@ -14,7 +14,7 @@
 #include <sys/vmmeter.h>
 #include <sys/eventhandler.h>
 
-#include <dev/zlib/zcalloc.h>
+#include "smmu.h"
 
 // #include <machine/bus.h>
 
@@ -36,7 +36,7 @@
 static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
 #define	BUS_SPACE_MAXADDR	0xFFFFFFFF
 // MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
-MALLOC_DEFINE(M_ZLIB, "M_ZLIB", "M_ZLIB");
+MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
 // MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 
 // Writing a sample contig malloc 
