@@ -28,6 +28,10 @@ __FBSDID("$FreeBSD$");
 // #include <vm/vm_phys.h>
 
 
+*contigmalloc(unsigned long size, struct malloc_type *type, int flags,
+	    vm_paddr_t low, vm_paddr_t high, unsigned long alignment,
+	    vm_paddr_t boundary) __malloc_like __result_use_check
+	    __alloc_size(1) __alloc_align(6);
 
 #define RTE_CONTIGMEM_DEFAULT_BUF_SIZE (512*1024*1024)
 static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
