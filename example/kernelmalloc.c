@@ -94,9 +94,9 @@
 // #include <vm/redzone.h>
 // #endif
 
-// #if defined(INVARIANTS) && defined(__i386__)
-// #include <machine/cpu.h>
-// #endif
+#if defined(INVARIANTS) && defined(__i386__)
+#include <machine/cpu.h>
+#endif
 
 // #ifdef KDTRACE_HOOKS
 // #include <sys/dtrace_bsd.h>
