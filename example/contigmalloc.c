@@ -26,15 +26,10 @@
 // #include <vm/vm_pager.h>
 // #include <vm/vm_phys.h>
 
+extern struct malloc_type type[1]
 
 struct malloc_type M_LUKE[1] = 
-      { { NULL, M_MAGIC, "Luke Memory", NULL } };
-SYSINIT(M_LUKE_init, 
-          SI_SUB_KMEM, SI_ORDER_SECOND, 
-          malloc_init, M_LUKE );
-SYSUNINIT(M_LUKE_uninit, 
-          SI_SUB_KMEM, SI_ORDER_ANY, 
-          malloc_uninit, type); 
+      { { NULL, M_MAGIC, "Luke Memory", NULL } }; 
 
 
 MALLOC_DEFINE( M_LUKE, "Luke Memory", 
