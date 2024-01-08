@@ -39,6 +39,6 @@ MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 // allocate contigous memory
 int main(void) {
     void *addr;
-    addr = contigmalloc(contigmem_buffer_size, M_CONTIGMEM, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
+    addr = contigmalloc(contigmem_buffer_size, M_DEVBUF, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
 }
 
