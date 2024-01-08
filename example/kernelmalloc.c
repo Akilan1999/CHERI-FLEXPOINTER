@@ -87,46 +87,46 @@
 // #include <vm/uma_int.h>
 // #include <vm/uma_dbg.h>
 
-#ifdef DEBUG_MEMGUARD
-#include <vm/memguard.h>
-#endif
-#ifdef DEBUG_REDZONE
-#include <vm/redzone.h>
-#endif
+// #ifdef DEBUG_MEMGUARD
+// #include <vm/memguard.h>
+// #endif
+// #ifdef DEBUG_REDZONE
+// #include <vm/redzone.h>
+// #endif
 
-#if defined(INVARIANTS) && defined(__i386__)
-#include <machine/cpu.h>
-#endif
+// #if defined(INVARIANTS) && defined(__i386__)
+// #include <machine/cpu.h>
+// #endif
 
-#ifdef KDTRACE_HOOKS
-#include <sys/dtrace_bsd.h>
+// #ifdef KDTRACE_HOOKS
+// #include <sys/dtrace_bsd.h>
 
-bool	__read_frequently			dtrace_malloc_enabled;
-dtrace_malloc_probe_func_t __read_mostly	dtrace_malloc_probe;
-#endif
+// bool	__read_frequently			dtrace_malloc_enabled;
+// dtrace_malloc_probe_func_t __read_mostly	dtrace_malloc_probe;
+// #endif
 
-#if defined(INVARIANTS) || defined(MALLOC_MAKE_FAILURES) ||		\
-    defined(DEBUG_MEMGUARD) || defined(DEBUG_REDZONE)
-#define	MALLOC_DEBUG	1
-#endif
+// #if defined(INVARIANTS) || defined(MALLOC_MAKE_FAILURES) ||		\
+//     defined(DEBUG_MEMGUARD) || defined(DEBUG_REDZONE)
+// #define	MALLOC_DEBUG	1
+// #endif
 
-#if defined(KASAN) || defined(DEBUG_REDZONE)
-#define	DEBUG_REDZONE_ARG_DEF	, unsigned long osize
-#define	DEBUG_REDZONE_ARG	, osize
-#else
-#define	DEBUG_REDZONE_ARG_DEF
-#define	DEBUG_REDZONE_ARG
-#endif
+// #if defined(KASAN) || defined(DEBUG_REDZONE)
+// #define	DEBUG_REDZONE_ARG_DEF	, unsigned long osize
+// #define	DEBUG_REDZONE_ARG	, osize
+// #else
+// #define	DEBUG_REDZONE_ARG_DEF
+// #define	DEBUG_REDZONE_ARG
+// #endif
 
-/*
- * When realloc() is called, if the new size is sufficiently smaller than
- * the old size, realloc() will allocate a new, smaller block to avoid
- * wasting memory. 'Sufficiently smaller' is defined as: newsize <=
- * oldsize / 2^n, where REALLOC_FRACTION defines the value of 'n'.
- */
-#ifndef REALLOC_FRACTION
-#define	REALLOC_FRACTION	1	/* new block if <= half the size */
-#endif
+// /*
+//  * When realloc() is called, if the new size is sufficiently smaller than
+//  * the old size, realloc() will allocate a new, smaller block to avoid
+//  * wasting memory. 'Sufficiently smaller' is defined as: newsize <=
+//  * oldsize / 2^n, where REALLOC_FRACTION defines the value of 'n'.
+//  */
+// #ifndef REALLOC_FRACTION
+// #define	REALLOC_FRACTION	1	/* new block if <= half the size */
+// #endif
 
 /*
  * Centrally define some common malloc types.
