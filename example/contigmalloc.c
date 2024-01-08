@@ -31,6 +31,8 @@
 #include	<sys/types.h>
 #include	<sys/malloc.h>
 
+#define _KERNEL
+
 // extern struct malloc_type type[1]
 
 // struct malloc_type M_LUKE[1] = 
@@ -47,18 +49,18 @@
 	    vm_paddr_t boundary) __malloc_like __result_use_check
 	    __alloc_size(1) __alloc_align(6);
 
-#define	MALLOC_DEFINE(type, shortdesc, longdesc)			\
-	struct malloc_type type[1] = {					\
-		{							\
-			.ks_next = NULL,				\
-			.ks_version = M_VERSION,			\
-			.ks_shortdesc = shortdesc,			\
-		}							\
-	};								\
-	SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,	\
-	    type);							\
-	SYSUNINIT(type##_uninit, SI_SUB_KMEM, SI_ORDER_ANY,		\
-	    malloc_uninit, type)
+// #define	MALLOC_DEFINE(type, shortdesc, longdesc)			        \
+// 	struct malloc_type type[1] = {					        \
+// 		{							\
+// 			.ks_next = NULL,				\
+// 			.ks_version = M_VERSION,			\
+// 			.ks_shortdesc = shortdesc,			\
+// 		}							\
+// 	};								\
+// 	SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,	\
+// 	    type);							\
+// 	SYSUNINIT(type##_uninit, SI_SUB_KMEM, SI_ORDER_ANY,		\
+// 	    malloc_uninit, type)
 
 // MALLOC_DEFINE(M_MYDRIVER, "devbuf", "buffers used by my driver");
 
