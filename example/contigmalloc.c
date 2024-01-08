@@ -14,7 +14,7 @@
 #include <sys/vmmeter.h>
 #include <sys/eventhandler.h>
 
-#include "smmu.h"
+// #include "smmu.h"
 
 // #include <machine/bus.h>
 
