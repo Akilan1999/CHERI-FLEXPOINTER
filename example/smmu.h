@@ -33,7 +33,7 @@
 #ifndef	_ARM64_IOMMU_SMMUVAR_H_
 #define	_ARM64_IOMMU_SMMUVAR_H_
 
-#include <arm64/iommu/iommu_pmap.h>
+// #include <arm64/iommu/iommu_pmap.h>
 
 #define	SMMU_DEVSTR		"ARM System Memory Management Unit"
 #define	SMMU_LOCK(_sc)		mtx_lock(&(_sc)->sc_mtx)
