@@ -29,7 +29,7 @@
 extern struct malloc_type type[1]
 
 struct malloc_type M_LUKE[1] = 
-      { { NULL, M_MAGIC, "Luke Memory", NULL } }; 
+      { { NULL, "", "Luke Memory", NULL } }; 
 
 
 MALLOC_DEFINE( M_LUKE, "Luke Memory", 
