@@ -46,8 +46,8 @@
  */
 
 #include <sys/cdefs.h>
-#include "opt_ddb.h"
-#include "opt_vm.h"
+// #include "opt_ddb.h"
+// #include "opt_vm.h"
 
 #include <sys/param.h>
 #include <sys/systm.h>
