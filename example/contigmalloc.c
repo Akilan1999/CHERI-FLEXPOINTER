@@ -14,6 +14,8 @@
 #include <sys/vmmeter.h>
 #include <sys/eventhandler.h>
 
+#include <sys/types.h>
+
 // #include "smmu.h"
 
 // #include <machine/bus.h>
@@ -26,14 +28,14 @@
 // #include <vm/vm_pager.h>
 // #include <vm/vm_phys.h>
 
-extern struct malloc_type type[1]
+// extern struct malloc_type type[1]
 
-struct malloc_type M_LUKE[1] = 
-      { { NULL, "", "Luke Memory", NULL } }; 
+// struct malloc_type M_LUKE[1] = 
+//       { { NULL, "", "Luke Memory", NULL } }; 
 
 
-MALLOC_DEFINE( M_LUKE, "Luke Memory", 
-               "Memory for the Luke subsystem" );
+// MALLOC_DEFINE( M_LUKE, "Luke Memory", 
+//                "Memory for the Luke subsystem" );
 
 
 
@@ -54,6 +56,6 @@ static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
 // allocate contigous memory
 int main(void) {
     void *addr;
-    addr = contigmalloc(contigmem_buffer_size, M_LUKE, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
+    addr = contigmalloc(contigmem_buffer_size, M_DEVBUF, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
 }
 
