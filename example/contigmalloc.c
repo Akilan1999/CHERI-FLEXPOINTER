@@ -32,7 +32,7 @@ __FBSDID("$FreeBSD$");
 #define RTE_CONTIGMEM_DEFAULT_BUF_SIZE (512*1024*1024)
 static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
 #define	BUS_SPACE_MAXADDR	0xFFFFFFFF
-MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
+// MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 
 // Writing a sample contig malloc 
 // function to see if it can 
