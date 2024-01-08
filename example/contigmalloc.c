@@ -1,13 +1,9 @@
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD$");
-
 #include <sys/param.h>
 #include <sys/bio.h>
 #include <sys/bus.h>
 #include <sys/conf.h>
 #include <sys/kernel.h>
 #include <sys/malloc.h>
-#include <sys/mallocvar.h>
 #include <sys/module.h>
 #include <sys/proc.h>
 #include <sys/lock.h>
@@ -17,7 +13,6 @@ __FBSDID("$FreeBSD$");
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
 #include <sys/eventhandler.h>
-
 
 // #include <machine/bus.h>
 
