@@ -72,20 +72,20 @@
 
 #include <cheri/cheric.h>
 
-// #include <vm/vm.h>
-// #include <vm/pmap.h>
-// #include <vm/vm_domainset.h>
-// #include <vm/vm_pageout.h>
-// #include <vm/vm_param.h>
-// #include <vm/vm_kern.h>
-// #include <vm/vm_extern.h>
-// #include <vm/vm_map.h>
-// #include <vm/vm_page.h>
-// #include <vm/vm_phys.h>
-// #include <vm/vm_pagequeue.h>
-// #include <vm/uma.h>
-// #include <vm/uma_int.h>
-// #include <vm/uma_dbg.h>
+#include <vm/vm.h>
+#include <vm/pmap.h>
+#include <vm/vm_domainset.h>
+#include <vm/vm_pageout.h>
+#include <vm/vm_param.h>
+#include <vm/vm_kern.h>
+#include <vm/vm_extern.h>
+#include <vm/vm_map.h>
+#include <vm/vm_page.h>
+#include <vm/vm_phys.h>
+#include <vm/vm_pagequeue.h>
+#include <vm/uma.h>
+#include <vm/uma_int.h>
+#include <vm/uma_dbg.h>
 
 // #ifdef DEBUG_MEMGUARD
 // #include <vm/memguard.h>
