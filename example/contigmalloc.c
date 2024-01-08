@@ -47,6 +47,8 @@
 	    vm_paddr_t boundary) __malloc_like __result_use_check
 	    __alloc_size(1) __alloc_align(6);
 
+MALLOC_DEFINE(M_MYDRIVER, "mydriver", "buffers used by my driver");
+
 // #define RTE_CONTIGMEM_DEFAULT_BUF_SIZE (512*1024*1024)
 // static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
 // #define	BUS_SPACE_MAXADDR	0xFFFFFFFF
@@ -59,7 +61,7 @@
 // allocate contigous memory
 int main(void) {
     void *addr;
-    addr = contigmalloc(8192, M_DEVBUF,	M_ZERO,	0, (1L << 22),
+    addr = contigmalloc(8192, M_MYDRIVER,	M_ZERO,	0, (1L << 22),
 	   32 *	1024, 1024 * 1024);
 }
 
