@@ -1,9 +1,9 @@
 // #include <sys/param.h>
 // #include <sys/bio.h>
-#include <sys/bus.h>
+// #include <sys/bus.h>
 // #include <sys/conf.h>
-#include <sys/kernel.h>
-#include <sys/malloc.h>
+// #include <sys/kernel.h>
+// #include <sys/malloc.h>
 // #include <sys/module.h>
 // #include <sys/proc.h>
 // #include <sys/lock.h>
@@ -14,7 +14,7 @@
 // #include <sys/vmmeter.h>
 // #include <sys/eventhandler.h>
 
-#include <sys/types.h>
+// #include <sys/types.h>
 
 // #include "smmu.h"
 
@@ -27,6 +27,9 @@
 // #include <vm/vm_page.h>
 // #include <vm/vm_pager.h>
 // #include <vm/vm_phys.h>
+
+#include	<sys/types.h>
+#include	<sys/malloc.h>
 
 // extern struct malloc_type type[1]
 
@@ -44,9 +47,9 @@
 	    vm_paddr_t boundary) __malloc_like __result_use_check
 	    __alloc_size(1) __alloc_align(6);
 
-#define RTE_CONTIGMEM_DEFAULT_BUF_SIZE (512*1024*1024)
-static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
-#define	BUS_SPACE_MAXADDR	0xFFFFFFFF
+// #define RTE_CONTIGMEM_DEFAULT_BUF_SIZE (512*1024*1024)
+// static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
+// #define	BUS_SPACE_MAXADDR	0xFFFFFFFF
 // MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
 // MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
 // MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
@@ -56,6 +59,7 @@ static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
 // allocate contigous memory
 int main(void) {
     void *addr;
-    addr = contigmalloc(contigmem_buffer_size, M_DEVBUF, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
+    addr = contigmalloc(8192, M_DEVBUF,	M_ZERO,	0, (1L << 22),
+	   32 *	1024, 1024 * 1024);
 }
 
