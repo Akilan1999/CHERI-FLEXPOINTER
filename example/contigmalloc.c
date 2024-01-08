@@ -27,6 +27,21 @@
 // #include <vm/vm_phys.h>
 
 
+struct malloc_type M_LUKE[1] = 
+      { { NULL, M_MAGIC, "Luke Memory", NULL } };
+SYSINIT(M_LUKE_init, 
+          SI_SUB_KMEM, SI_ORDER_SECOND, 
+          malloc_init, M_LUKE );
+SYSUNINIT(M_LUKE_uninit, 
+          SI_SUB_KMEM, SI_ORDER_ANY, 
+          malloc_uninit, type); 
+
+
+MALLOC_DEFINE( M_LUKE, "Luke Memory", 
+               "Memory for the Luke subsystem" );
+
+
+
 *contigmalloc(unsigned long size, struct malloc_type *type, int flags,
 	    vm_paddr_t low, vm_paddr_t high, unsigned long alignment,
 	    vm_paddr_t boundary) __malloc_like __result_use_check
@@ -36,7 +51,7 @@
 static int64_t     contigmem_buffer_size = RTE_CONTIGMEM_DEFAULT_BUF_SIZE;
 #define	BUS_SPACE_MAXADDR	0xFFFFFFFF
 // MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
-MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
+// MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
 // MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 
 // Writing a sample contig malloc 
@@ -44,6 +59,6 @@ MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
 // allocate contigous memory
 int main(void) {
     void *addr;
-    addr = contigmalloc(contigmem_buffer_size, M_ZLIB, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
+    addr = contigmalloc(contigmem_buffer_size, M_LUKE, M_ZERO,0, BUS_SPACE_MAXADDR, contigmem_buffer_size, 0);
 }
 
