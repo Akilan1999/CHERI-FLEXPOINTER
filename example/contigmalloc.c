@@ -28,7 +28,7 @@
 // #include <vm/vm_pager.h>
 // #include <vm/vm_phys.h>
 
-// #define _KERNEL
+#define _KERNEL
 
 #include	<sys/types.h>
 #include	<sys/malloc.h>
