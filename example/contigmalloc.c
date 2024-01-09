@@ -100,26 +100,26 @@ int main(void) {
 
         for (i = 0; i < probes; i++) {
 
-                t1 = rdtsc();
+              //   t1 = rdtsc();
                 ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
                                    pageSize, 0);
-                t2 = rdtsc();
+              //   t2 = rdtsc();
 
-                avg_malloc += t2 - t1;
+              //   avg_malloc += t2 - t1;
 
-                printf("contigmalloc cycles: %llu\n", t2-t1);
+              //   printf("contigmalloc cycles: %llu\n", t2-t1);
 
                 if (ptr == NULL)
                         return;
 
-                t1 = rdtsc();
+              //   t1 = rdtsc();
                 contigfree(ptr, size, M_FOO);
-                t2 = rdtsc();
-                avg_free += t2 - t1;
-                printf("contigfree cycles: %llu\n\n", t2-t1);
-                uprintf("Loop complete\n");
+              //   t2 = rdtsc();
+              //   avg_free += t2 - t1;
+              //   printf("contigfree cycles: %llu\n\n", t2-t1);
+              //   uprintf("Loop complete\n");
         }
 
-        printf("contigmalloc %llu contigfree %llu\n", avg_malloc / probes, avg_free / probes);  
+       //  printf("contigmalloc %llu contigfree %llu\n", avg_malloc / probes, avg_free / probes);  
 }
 

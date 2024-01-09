@@ -1,87 +1,207 @@
-/malloc.h:193:9: warning: incompatible redeclaration of library function 'free' [-Wincompatible-library-redeclaration]
-void    free(void *addr, struct malloc_type *type);
-        ^
-./malloc.h:193:9: note: 'free' is a builtin with type 'void (void *)'
-./malloc.h:195:10: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
-void    *malloc(size_t size, struct malloc_type *type, int flags) __malloc_like
-         ^
-./malloc.h:195:10: note: 'malloc' is a builtin with type 'void *(unsigned long)'
-./malloc.h:271:10: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
-void    *realloc(void *addr, size_t size, struct malloc_type *type, int flags)
-         ^
-./malloc.h:271:10: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
-./malloc.h:292:17: warning: implicit declaration of function 'PTR2CAP' is invalid in C99 [-Wimplicit-function-declaration]
-        return (PTR2CAP(malloc(size, type, flags)));
-                ^
-./malloc.h:292:25: warning: implicit declaration of function 'CHERI_REPRESENTABLE_LENGTH' is invalid in C99 [-Wimplicit-function-declaration]
-        return (PTR2CAP(malloc(size, type, flags)));
-                        ^
-./malloc.h:235:24: note: expanded from macro 'malloc'
-        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
-                       ^
-./malloc.h:292:25: warning: call to function 'CHERI_REPRESENTABLE_LENGTH' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
-        return (PTR2CAP(malloc(size, type, flags)));
-                        ^~~~~~~~~~~~~~~~~~~~~~~~~
-./malloc.h:235:24: note: expanded from macro 'malloc'
-        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
-                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
-./malloc.h:292:25: note: candidate function declaration needs parameter types
-./malloc.h:235:24: note: expanded from macro 'malloc'
-        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
-                       ^
-./malloc.h:292:25: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
-./malloc.h:235:24: note: expanded from macro 'malloc'
-        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
-                       ^
-./malloc.h:292:25: warning: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned long)' [-Wimplicit-function-declaration]
-        return (PTR2CAP(malloc(size, type, flags)));
-                        ^
-./malloc.h:241:25: note: expanded from macro 'malloc'
-                        memset(_malloc_item, 0, _size);                 \
-                        ^
-./malloc.h:292:25: note: include the header <string.h> or explicitly provide a declaration for 'memset'
-./malloc.h:241:25: note: expanded from macro 'malloc'
-                        memset(_malloc_item, 0, _size);                 \
-                        ^
-./malloc.h:292:17: warning: call to function 'PTR2CAP' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
-        return (PTR2CAP(malloc(size, type, flags)));
-                ^~~~~~~
-./malloc.h:292:17: note: candidate function declaration needs parameter types
-./malloc.h:292:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
-./malloc.h:292:16: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'void *' [-Wint-conversion]
-        return (PTR2CAP(malloc(size, type, flags)));
-               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./malloc.h:302:15: error: unknown type name 'bool'
-static inline bool
-              ^
-./malloc.h:347:2: error: #endif without #if
-#endif /* !_SYS_MALLOC_H_ */
- ^
-contigmalloc.c:70:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+contigmalloc.c:83:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
 MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
 ^
-./malloc.h:157:9: note: expanded from macro 'MALLOC_DEFINE'
+contigmalloc.c:75:2: note: expanded from macro 'MALLOC_DEFINE'
         SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,  \
         ^
-contigmalloc.c:70:1: error: a parameter list without types is only allowed in a function definition
-./malloc.h:157:17: note: expanded from macro 'MALLOC_DEFINE'
+contigmalloc.c:83:1: error: a parameter list without types is only allowed in a function definition
+contigmalloc.c:75:10: note: expanded from macro 'MALLOC_DEFINE'
         SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,  \
                 ^
 <scratch space>:28:1: note: expanded from here
 M_DEVBUF_init
 ^
-contigmalloc.c:70:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
-./malloc.h:159:9: note: expanded from macro 'MALLOC_DEFINE'
+contigmalloc.c:83:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+contigmalloc.c:77:2: note: expanded from macro 'MALLOC_DEFINE'
         SYSUNINIT(type##_uninit, SI_SUB_KMEM, SI_ORDER_ANY,             \
         ^
-contigmalloc.c:70:1: error: a parameter list without types is only allowed in a function definition
-./malloc.h:159:19: note: expanded from macro 'MALLOC_DEFINE'
+contigmalloc.c:83:1: error: a parameter list without types is only allowed in a function definition
+contigmalloc.c:77:12: note: expanded from macro 'MALLOC_DEFINE'
         SYSUNINIT(type##_uninit, SI_SUB_KMEM, SI_ORDER_ANY,             \
                   ^
 <scratch space>:29:1: note: expanded from here
 M_DEVBUF_uninit
 ^
-contigmalloc.c:78:11: warning: variable 'addr' set but not used [-Wunused-but-set-variable]
+contigmalloc.c:92:12: warning: implicit declaration of function 'contigmalloc' is invalid in C99 [-Wimplicit-function-declaration]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^
+contigmalloc.c:92:12: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^~~~~~~~~~~~
+contigmalloc.c:92:12: note: candidate function declaration needs parameter types
+contigmalloc.c:92:12: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:92:10: warning: incompatible integer to pointer conversion assigning to 'void *' from 'int' [-Wint-conversion]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contigmalloc.c:91:11: warning: variable 'addr' set but not used [-Wunused-but-set-variable]
     void *addr;
           ^
-12 warnings and 4 errors generated.
+6 warnings and 2 errors generated.
+root@cheribsd-morello-purecap:~/CHERI-FLEXPOINTER/example # sh run.sh
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0
+Unpacking objects: 100% (4/4), 344 bytes | 2.00 KiB/s, done.
+From https://github.com/Akilan1999/CHERI-FLEXPOINTER
+ * branch            master     -> FETCH_HEAD
+   96223b1..71e6840  master     -> origin/master
+Updating 96223b1..71e6840
+Fast-forward
+ example/contigmalloc.c | 1 +
+ 1 file changed, 1 insertion(+)
+contigmalloc.c:84:1: error: use of undeclared identifier 'malloc_init'
+MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
+^
+contigmalloc.c:76:52: note: expanded from macro 'MALLOC_DEFINE'
+        SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,  \
+                                                          ^
+contigmalloc.c:84:1: error: use of undeclared identifier 'malloc_uninit'
+contigmalloc.c:79:6: note: expanded from macro 'MALLOC_DEFINE'
+            malloc_uninit, type)
+            ^
+contigmalloc.c:93:12: warning: implicit declaration of function 'contigmalloc' is invalid in C99 [-Wimplicit-function-declaration]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^
+contigmalloc.c:93:12: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^~~~~~~~~~~~
+contigmalloc.c:93:12: note: candidate function declaration needs parameter types
+contigmalloc.c:93:12: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:93:10: warning: incompatible integer to pointer conversion assigning to 'void *' from 'int' [-Wint-conversion]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+         ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+contigmalloc.c:92:11: warning: variable 'addr' set but not used [-Wunused-but-set-variable]
+    void *addr;
+          ^
+4 warnings and 2 errors generated.
+root@cheribsd-morello-purecap:~/CHERI-FLEXPOINTER/example # sh run.sh
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0
+Unpacking objects: 100% (4/4), 344 bytes | 7.00 KiB/s, done.
+From https://github.com/Akilan1999/CHERI-FLEXPOINTER
+ * branch            master     -> FETCH_HEAD
+   71e6840..b82a40b  master     -> origin/master
+Updating 71e6840..b82a40b
+Fast-forward
+ example/contigmalloc.c | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
+contigmalloc.c:84:25: error: expected identifier
+MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
+                        ^
+contigmalloc.c:84:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
+^
+contigmalloc.c:93:12: warning: implicit declaration of function 'contigmalloc' is invalid in C99 [-Wimplicit-function-declaration]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^
+contigmalloc.c:93:12: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^~~~~~~~~~~~
+contigmalloc.c:93:12: note: candidate function declaration needs parameter types
+contigmalloc.c:93:12: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:93:31: error: use of undeclared identifier 'M_DEVBUF'
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+                              ^
+contigmalloc.c:93:12: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^~~~~~~~~~~~
+contigmalloc.c:93:12: note: candidate function declaration needs parameter types
+contigmalloc.c:93:12: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+4 warnings and 2 errors generated.
+root@cheribsd-morello-purecap:~/CHERI-FLEXPOINTER/example # sh run.sh
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0
+Unpacking objects: 100% (4/4), 326 bytes | 0 bytes/s, done.
+From https://github.com/Akilan1999/CHERI-FLEXPOINTER
+ * branch            master     -> FETCH_HEAD
+   b82a40b..1d468d0  master     -> origin/master
+Updating b82a40b..1d468d0
+Fast-forward
+ example/contigmalloc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+contigmalloc.c:93:12: warning: implicit declaration of function 'contigmalloc' is invalid in C99 [-Wimplicit-function-declaration]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^
+contigmalloc.c:93:12: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^~~~~~~~~~~~
+contigmalloc.c:93:12: note: candidate function declaration needs parameter types
+contigmalloc.c:93:12: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:93:31: error: use of undeclared identifier 'M_DEVBUF'
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+                              ^
+contigmalloc.c:93:12: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+    addr = contigmalloc(8192, M_DEVBUF, M_ZERO, 0, (1L << 22),
+           ^~~~~~~~~~~~
+contigmalloc.c:93:12: note: candidate function declaration needs parameter types
+contigmalloc.c:93:12: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+3 warnings and 1 error generated.
+root@cheribsd-morello-purecap:~/CHERI-FLEXPOINTER/example # sh run.sh
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0
+Unpacking objects: 100% (4/4), 690 bytes | 13.00 KiB/s, done.
+From https://github.com/Akilan1999/CHERI-FLEXPOINTER
+ * branch            master     -> FETCH_HEAD
+   1d468d0..fd8b207  master     -> origin/master
+Updating 1d468d0..fd8b207
+Fast-forward
+ example/contigmalloc.c | 35 +++++++++++++++++++++++++++++++---
+ 1 file changed, 32 insertions(+), 3 deletions(-)
+contigmalloc.c:103:22: warning: implicit declaration of function 'rdtsc' is invalid in C99 [-Wimplicit-function-declaration]
+                t1 = rdtsc();
+                     ^
+contigmalloc.c:104:23: warning: implicit declaration of function 'contigmalloc' is invalid in C99 [-Wimplicit-function-declaration]
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                      ^
+contigmalloc.c:104:23: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                      ^~~~~~~~~~~~
+contigmalloc.c:104:23: note: candidate function declaration needs parameter types
+contigmalloc.c:104:23: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:104:42: error: use of undeclared identifier 'M_FOO'
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                                         ^
+contigmalloc.c:104:23: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                      ^~~~~~~~~~~~
+contigmalloc.c:104:23: note: candidate function declaration needs parameter types
+contigmalloc.c:104:23: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:110:17: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+                printf("contigmalloc cycles: %llu\n", t2-t1);
+                ^
+contigmalloc.c:110:17: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+contigmalloc.c:113:25: error: non-void function 'main' should return a value [-Wreturn-type]
+                        return;
+                        ^
+contigmalloc.c:116:17: warning: implicit declaration of function 'contigfree' is invalid in C99 [-Wimplicit-function-declaration]
+                contigfree(ptr, size, M_FOO);
+                ^
+contigmalloc.c:116:17: warning: call to function 'contigfree' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                contigfree(ptr, size, M_FOO);
+                ^~~~~~~~~~
+contigmalloc.c:116:17: note: candidate function declaration needs parameter types
+contigmalloc.c:116:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:116:39: error: use of undeclared identifier 'M_FOO'
+                contigfree(ptr, size, M_FOO);
+                                      ^
+contigmalloc.c:116:17: warning: call to function 'contigfree' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                contigfree(ptr, size, M_FOO);
+                ^~~~~~~~~~
+contigmalloc.c:116:17: note: candidate function declaration needs parameter types
+contigmalloc.c:116:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:120:17: warning: implicit declaration of function 'uprintf' is invalid in C99 [-Wimplicit-function-declaration]
+                uprintf("Loop complete\n");
+                ^
+contigmalloc.c:120:17: warning: call to function 'uprintf' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                uprintf("Loop complete\n");
+                ^~~~~~~
+contigmalloc.c:120:17: note: candidate function declaration needs parameter types
+contigmalloc.c:120:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+10 warnings and 3 errors generated.
