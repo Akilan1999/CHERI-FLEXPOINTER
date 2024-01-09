@@ -30,7 +30,7 @@
 
 #define _KERNEL
 
-#include	<sys/types.h>
+#include	"types.h"
 #include	"malloc.h"
 
 // extern struct malloc_type type[1]
