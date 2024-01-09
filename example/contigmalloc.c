@@ -89,8 +89,37 @@
 // function to see if it can 
 // allocate contigous memory
 int main(void) {
-    void *addr;
-    addr = contigmalloc(8192, M_DEVBUF,	M_ZERO,	0, (1L << 22),
-	   32 *	1024, 1024 * 1024);    
+    const int pageSize = 4096;
+        unsigned long size;
+        void *ptr = NULL;
+        unsigned long long t1, t2;
+        int i = 0;
+        unsigned long long avg_malloc = 0, avg_free = 0;
+        int probes = 40;
+        size = 2 * 1024 * 1024;
+
+        for (i = 0; i < probes; i++) {
+
+                t1 = rdtsc();
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                                   pageSize, 0);
+                t2 = rdtsc();
+
+                avg_malloc += t2 - t1;
+
+                printf("contigmalloc cycles: %llu\n", t2-t1);
+
+                if (ptr == NULL)
+                        return;
+
+                t1 = rdtsc();
+                contigfree(ptr, size, M_FOO);
+                t2 = rdtsc();
+                avg_free += t2 - t1;
+                printf("contigfree cycles: %llu\n\n", t2-t1);
+                uprintf("Loop complete\n");
+        }
+
+        printf("contigmalloc %llu contigfree %llu\n", avg_malloc / probes, avg_free / probes);  
 }
 
