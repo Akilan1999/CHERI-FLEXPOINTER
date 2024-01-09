@@ -28,8 +28,8 @@
 // #include <vm/vm_pager.h>
 // #include <vm/vm_phys.h>
 
-// #define _KERNEL
-__FBSDID("$FreeBSD$");
+#define _KERNEL
+// __FBSDID("$FreeBSD$");
 
 #include	<sys/types.h>
 #include	<sys/malloc.h>
