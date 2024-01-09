@@ -110,7 +110,7 @@ int main(void) {
               //   printf("contigmalloc cycles: %llu\n", t2-t1);
 
                 if (ptr == NULL)
-                        return;
+                        break;
 
               //   t1 = rdtsc();
                 contigfree(ptr, size, M_FOO);
