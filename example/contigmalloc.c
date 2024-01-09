@@ -85,6 +85,9 @@
 // MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
 // MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 
+MALLOC_DECLARE(M_FOO);
+MALLOC_DEFINE(M_FOO, "mfoo", "foo mem");
+
 // Writing a sample contig malloc 
 // function to see if it can 
 // allocate contigous memory
