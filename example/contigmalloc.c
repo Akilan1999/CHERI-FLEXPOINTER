@@ -31,7 +31,7 @@
 #define _KERNEL
 
 #include	<sys/types.h>
-#include	<sys/malloc.h>
+#include	"malloc.h"
 
 // extern struct malloc_type type[1]
 
@@ -44,10 +44,10 @@
 
 
 
-*contigmalloc(unsigned long size, struct malloc_type *type, int flags,
-	    vm_paddr_t low, vm_paddr_t high, unsigned long alignment,
-	    vm_paddr_t boundary) __malloc_like __result_use_check
-	    __alloc_size(1) __alloc_align(6);
+// *contigmalloc(unsigned long size, struct malloc_type *type, int flags,
+// 	    vm_paddr_t low, vm_paddr_t high, unsigned long alignment,
+// 	    vm_paddr_t boundary) __malloc_like __result_use_check
+// 	    __alloc_size(1) __alloc_align(6);
 
 // #define	MALLOC_DEFINE(type, shortdesc, longdesc)			        \
 // 	struct malloc_type type[1] = {					        \
