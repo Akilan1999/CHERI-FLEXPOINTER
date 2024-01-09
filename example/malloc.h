@@ -39,9 +39,9 @@
 
 #ifndef _STANDALONE
 #include <sys/param.h>
-#ifdef _KERNEL
-#include <sys/systm.h>
-#endif
+// #ifdef _KERNEL
+// #include <sys/systm.h>
+// #endif
 #include <sys/queue.h>
 #include <sys/_lock.h>
 #include <sys/_mutex.h>
