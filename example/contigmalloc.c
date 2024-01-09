@@ -28,9 +28,9 @@
 // #include <vm/vm_pager.h>
 // #include <vm/vm_phys.h>
 
-#define _KERNEL
+// #define _KERNEL
 
-#include	"types.h"
+#include	<sys/types.h>
 #include	"malloc.h"
 
 // extern struct malloc_type type[1]

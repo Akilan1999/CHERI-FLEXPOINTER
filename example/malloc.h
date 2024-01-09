@@ -39,9 +39,9 @@
 
 #ifndef _STANDALONE
 #include <sys/param.h>
-// #ifdef _KERNEL
-// #include <sys/systm.h>
-// #endif
+#ifdef _KERNEL
+#include <sys/systm.h>
+#endif
 #include <sys/queue.h>
 #include <sys/_lock.h>
 #include <sys/_mutex.h>
@@ -146,7 +146,6 @@ struct malloc_type_header {
         char                            mth_name[MALLOC_MAX_NAME];
 };
 
-#ifdef _KERNEL
 #define MALLOC_DEFINE(type, shortdesc, longdesc)                        \
         struct malloc_type type[1] = {                                  \
                 {                                                       \

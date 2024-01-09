@@ -1,0 +1,209 @@
+/malloc.h:194:9: warning: incompatible redeclaration of library function 'free' [-Wincompatible-library-redeclaration]
+void    free(void *addr, struct malloc_type *type);
+        ^
+./malloc.h:194:9: note: 'free' is a builtin with type 'void (void *)'
+./malloc.h:196:10: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+void    *malloc(size_t size, struct malloc_type *type, int flags) __malloc_like
+         ^
+./malloc.h:196:10: note: 'malloc' is a builtin with type 'void *(unsigned long)'
+./malloc.h:272:10: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+void    *realloc(void *addr, size_t size, struct malloc_type *type, int flags)
+         ^
+./malloc.h:272:10: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
+./malloc.h:293:17: warning: implicit declaration of function 'KASSERT' is invalid in C99 [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                ^
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^
+In file included from contigmalloc.c:34:
+./malloc.h:293:25: warning: implicit declaration of function 'CHERI_REPRESENTABLE_LENGTH' is invalid in C99 [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: call to function 'CHERI_REPRESENTABLE_LENGTH' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:430:23: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+                             ^
+./malloc.h:293:25: note: candidate function declaration needs parameter types
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned long)' [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^
+./malloc.h:242:25: note: expanded from macro 'malloc'
+                        memset(_malloc_item, 0, _size);                 \
+                        ^
+./malloc.h:293:25: note: include the header <string.h> or explicitly provide a declaration for 'memset'
+./malloc.h:242:25: note: expanded from macro 'malloc'
+                        memset(_malloc_item, 0, _size);                 \
+                        ^
+./malloc.h:293:25: warning: implicit declaration of function 'CHERI_REPRESENTABLE_LENGTH' is invalid in C99 [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: call to function 'CHERI_REPRESENTABLE_LENGTH' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:431:19: note: expanded from macro 'PTR2CAP'
+            (ptraddr_t)((p)) >= VM_MAXUSER_ADDRESS,             \
+                         ^
+./malloc.h:293:25: note: candidate function declaration needs parameter types
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: implicit declaration of function 'CHERI_REPRESENTABLE_LENGTH' is invalid in C99 [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: call to function 'CHERI_REPRESENTABLE_LENGTH' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:432:39: note: expanded from macro 'PTR2CAP'
+            ("PTR2CAP on user address: %p", (p)));              \
+                                             ^
+./malloc.h:293:25: note: candidate function declaration needs parameter types
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:17: warning: call to function 'KASSERT' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^~~~~~~
+./malloc.h:293:17: note: candidate function declaration needs parameter types
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^
+./malloc.h:293:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^
+In file included from contigmalloc.c:34:
+./malloc.h:293:17: error: use of undeclared identifier 'VM_MAXUSER_ADDRESS'
+        return (PTR2CAP(malloc(size, type, flags)));
+                ^
+/usr/include/sys/param.h:431:26: note: expanded from macro 'PTR2CAP'
+            (ptraddr_t)((p)) >= VM_MAXUSER_ADDRESS,             \
+                                ^
+In file included from contigmalloc.c:34:
+./malloc.h:293:17: warning: call to function 'KASSERT' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^~~~~~~
+./malloc.h:293:17: note: candidate function declaration needs parameter types
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^
+./malloc.h:293:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+/usr/include/sys/param.h:430:2: note: expanded from macro 'PTR2CAP'
+        KASSERT((ptraddr_t)((p)) == 0 ||                        \
+        ^
+In file included from contigmalloc.c:34:
+./malloc.h:293:25: warning: implicit declaration of function 'CHERI_REPRESENTABLE_LENGTH' is invalid in C99 [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: call to function 'CHERI_REPRESENTABLE_LENGTH' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:433:31: note: expanded from macro 'PTR2CAP'
+        (__cheri_tocap __typeof__((*(p))) * __capability)(p);   \
+                                     ^
+./malloc.h:293:25: note: candidate function declaration needs parameter types
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: implicit declaration of function 'CHERI_REPRESENTABLE_LENGTH' is invalid in C99 [-Wimplicit-function-declaration]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: warning: call to function 'CHERI_REPRESENTABLE_LENGTH' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+        return (PTR2CAP(malloc(size, type, flags)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/param.h:433:52: note: expanded from macro 'PTR2CAP'
+        (__cheri_tocap __typeof__((*(p))) * __capability)(p);   \
+                                                          ^
+./malloc.h:293:25: note: candidate function declaration needs parameter types
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+./malloc.h:293:25: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+./malloc.h:236:24: note: expanded from macro 'malloc'
+        size_t _size = CHERI_REPRESENTABLE_LENGTH(size);                \
+                       ^
+contigmalloc.c:70:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+MALLOC_DEFINE(M_DEVBUF, "devbuf", "device driver memory");
+^
+./malloc.h:158:9: note: expanded from macro 'MALLOC_DEFINE'
+        SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,  \
+        ^
+contigmalloc.c:70:1: error: a parameter list without types is only allowed in a function definition
+./malloc.h:158:17: note: expanded from macro 'MALLOC_DEFINE'
+        SYSINIT(type##_init, SI_SUB_KMEM, SI_ORDER_THIRD, malloc_init,  \
+                ^
+<scratch space>:35:1: note: expanded from here
+M_DEVBUF_init
+^
+contigmalloc.c:70:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+./malloc.h:160:9: note: expanded from macro 'MALLOC_DEFINE'
+        SYSUNINIT(type##_uninit, SI_SUB_KMEM, SI_ORDER_ANY,             \
+        ^
+contigmalloc.c:70:1: error: a parameter list without types is only allowed in a function definition
+./malloc.h:160:19: note: expanded from macro 'MALLOC_DEFINE'
+        SYSUNINIT(type##_uninit, SI_SUB_KMEM, SI_ORDER_ANY,             \
+                  ^
+<scratch space>:36:1: note: expanded from here
+M_DEVBUF_uninit
+^
+contigmalloc.c:78:11: warning: variable 'addr' set but not used [-Wunused-but-set-variable]
+    void *addr;
+          ^
+20 warnings and 3 errors generated.
