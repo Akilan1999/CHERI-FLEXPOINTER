@@ -32,7 +32,7 @@
 
 #include	<sys/types.h>
 #include	<sys/malloc.h>
-#include      <sys/kernel.h>
+// #include      <sys/kernel.h>
 
 // extern struct malloc_type type[1]
 
