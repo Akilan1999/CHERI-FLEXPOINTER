@@ -85,8 +85,6 @@
 // MALLOC_DEFINE(M_SMMU, "SMMU", SMMU_DEVSTR);
 // MALLOC_DEFINE(M_CONTIGMEM, "contigmem", "contigmem(4) allocations");
 
-MALLOC_DECLARE(M_FOO);
-MALLOC_DEFINE(M_FOO, "mfoo", "foo mem");
 
 // Writing a sample contig malloc 
 // function to see if it can 
@@ -104,7 +102,7 @@ int main(void) {
         for (i = 0; i < probes; i++) {
 
               //   t1 = rdtsc();
-                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                ptr = contigmalloc(size, M_DEVBUF, M_NOWAIT, 0, ~0,
                                    pageSize, 0);
               //   t2 = rdtsc();
 
@@ -116,7 +114,7 @@ int main(void) {
                         break;
 
               //   t1 = rdtsc();
-                contigfree(ptr, size, M_FOO);
+                contigfree(ptr, size, M_DEVBUF);
               //   t2 = rdtsc();
               //   avg_free += t2 - t1;
               //   printf("contigfree cycles: %llu\n\n", t2-t1);
