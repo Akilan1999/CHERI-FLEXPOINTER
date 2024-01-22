@@ -1,0 +1,64 @@
+curl 'https://api.karaz.app/v2/Users/insights' \
+-X POST \
+-H 'User-Agent: Dev%20Karaz/1 CFNetwork/1485 Darwin/23.1.0' \
+-H 'Connection: keep-alive' \
+-H 'Accept: */*' \
+-H 'Accept-Language: en-US,en;q=0.9' \
+-H 'Authorization: Bearer umerjabbar' \
+-H 'Content-Type: application/json' \
+--data-raw '{"date":"16-12-2023","user_id":591}' 
+
+
+{
+        "type": "mysql",
+        "name": "karaz",
+        "user": "karaz",
+        "password": "%BWf(kE=D7fYUr^}",
+        "host": "localhost"
+}
+
+curl 'http://13.39.102.45:8090/v2/Users/insights' \
+-X POST \
+-H 'User-Agent: Dev%20Karaz/1 CFNetwork/1485 Darwin/23.1.0' \
+-H 'Connection: keep-alive' \
+-H 'Accept: */*' \
+-H 'Accept-Language: en-US,en;q=0.9' \
+-H 'Authorization: Bearer umerjabbar' \
+-H 'Content-Type: application/json' \
+--data-raw '{"date":"20-01-2024","user_id":2289}'
+
+
+curl 'https://api.karaz.app/invoker/doinvoke?io=true&on=DoMeasureInsert' \
+-X POST \
+-H 'User-Agent: Karaz/2 CFNetwork/1490.0.4 Darwin/23.2.0' \
+-H 'Connection: keep-alive' \
+-H 'baggage: sentry-environment=Production,sentry-public_key=5bc8a2edf211411b8fc3c58d44b5ed82,sentry-release=ios.apps.Karaz%4023.5.0%2B2,sentry-trace_id=9f467928c47d43bb9de866a4058992c5,sentry-transaction=InsightsVC' \
+-H 'Accept: */*' \
+-H 'Accept-Language: en-US,en;q=0.9' \
+-H 'Authorization: Bearer umerjabbar' \
+-H 'Content-Type: application/json' \
+--data-raw '{"LCN":"iOS","L":"1","FSDR":{"StDS":"11-01-2024 07:27 PM","ExDS":"26-01-2024 04:06 AM","SI":"3MH00LW10WH"},"AT":"1RwcgcapmnHeGgG61zVSYIjdrOlBb4j-sPAehOwySwhu0v9NxyJ6LebjPKslLuLcdTUjes-10__cAaabwLcxE5TUN8ZKIJ_-dB3gBsNJOJT6TqA2z8ZDPD4u5jsA","R":{"MTI":1,"V":"71.0","GSI":6,"MDTS":"20-01-2024 03:32 PM","T":4},"Rs":[{"V":"70","MDTS":"20-01-2024 07:47 AM","MTI":1,"T":0,"GSI":6},{"MDTS":"20-01-2024 08:02 AM","MTI":1,"V":"66","T":0,"GSI":6},{"GSI":6,"MTI":1,"V":"71","MDTS":"20-01-2024 08:17 AM","T":0},{"MTI":1,"V":"74","T":0,"GSI":6,"MDTS":"20-01-2024 08:32 AM"},{"GSI":6,"T":0,"V":"70","MDTS":"20-01-2024 08:47 AM","MTI":1},{"MDTS":"20-01-2024 09:02 AM","MTI":1,"T":0,"V":"72","GSI":6},{"T":0,"MDTS":"20-01-2024 09:17 AM","MTI":1,"GSI":6,"V":"72"},{"MDTS":"20-01-2024 09:32 AM","V":"71","T":0,"GSI":6,"MTI":1},{"T":0,"MDTS":"20-01-2024 09:47 AM","GSI":6,"V":"71","MTI":1},{"MTI":1,"GSI":6,"V":"70","T":0,"MDTS":"20-01-2024 10:02 AM"},{"GSI":6,"T":0,"MDTS":"20-01-2024 10:17 AM","MTI":1,"V":"62"},{"GSI":6,"MTI":1,"MDTS":"20-01-2024 10:32 AM","V":"65","T":0},{"V":"61","GSI":6,"MDTS":"20-01-2024 10:47 AM","MTI":1,"T":0},{"MDTS":"20-01-2024 11:02 AM","V":"62","MTI":1,"T":0,"GSI":6},{"V":"68","T":0,"GSI":6,"MDTS":"20-01-2024 11:17 AM","MTI":1},{"V":"64","MTI":1,"T":0,"GSI":6,"MDTS":"20-01-2024 11:32 AM"},{"MDTS":"20-01-2024 11:47 AM","GSI":6,"T":0,"MTI":1,"V":"65"},{"V":"70","GSI":6,"MDTS":"20-01-2024 12:02 PM","T":0,"MTI":1},{"MDTS":"20-01-2024 12:17 PM","MTI":1,"V":"72","GSI":6,"T":0},{"MDTS":"20-01-2024 12:32 PM","T":0,"GSI":6,"MTI":1,"V":"72"},{"MTI":1,"GSI":6,"T":0,"MDTS":"20-01-2024 12:47 PM","V":"76"},{"V":"70","T":0,"GSI":6,"MTI":1,"MDTS":"20-01-2024 01:02 PM"},{"T":0,"V":"73","GSI":6,"MTI":1,"MDTS":"20-01-2024 01:17 PM"},{"MTI":1,"V":"80","T":0,"GSI":6,"MDTS":"20-01-2024 01:32 PM"},{"V":"80","T":0,"GSI":6,"MDTS":"20-01-2024 01:47 PM","MTI":1},{"MDTS":"20-01-2024 02:02 PM","V":"78","MTI":1,"GSI":6,"T":0},{"MTI":1,"MDTS":"20-01-2024 02:17 PM","T":0,"GSI":6,"V":"75"},{"MDTS":"20-01-2024 02:32 PM","V":"75","T":0,"MTI":1,"GSI":6},{"V":"82","T":0,"GSI":6,"MDTS":"20-01-2024 02:47 PM","MTI":1},{"V":"71","MDTS":"20-01-2024 03:02 PM","MTI":1,"T":0,"GSI":6},{"GSI":6,"V":"81","MTI":1,"T":0,"MDTS":"20-01-2024 03:17 PM"},{"V":"81","MDTS":"20-01-2024 03:18 PM","MTI":1,"GSI":6,"T":0},{"MTI":1,"MDTS":"20-01-2024 03:19 PM","GSI":6,"T":0,"V":"81"},{"V":"80","T":0,"MDTS":"20-01-2024 03:20 PM","GSI":6,"MTI":1},{"T":0,"GSI":6,"V":"78","MTI":1,"MDTS":"20-01-2024 03:21 PM"},{"MTI":1,"T":0,"MDTS":"20-01-2024 03:22 PM","GSI":6,"V":"76"},{"T":0,"MDTS":"20-01-2024 03:23 PM","MTI":1,"V":"76","GSI":6},{"MDTS":"20-01-2024 03:24 PM","V":"76","GSI":6,"T":0,"MTI":1},{"GSI":6,"MDTS":"20-01-2024 03:25 PM","MTI":1,"V":"76","T":0},{"MDTS":"20-01-2024 03:26 PM","MTI":1,"T":0,"V":"75","GSI":6},{"T":0,"MTI":1,"V":"74","GSI":6,"MDTS":"20-01-2024 03:27 PM"},{"MDTS":"20-01-2024 03:28 PM","T":0,"V":"73","MTI":1,"GSI":6},{"MTI":1,"V":"72","MDTS":"20-01-2024 03:29 PM","T":0,"GSI":6},{"GSI":6,"T":0,"MDTS":"20-01-2024 03:30 PM","MTI":1,"V":"72"},{"GSI":6,"MTI":1,"T":0,"V":"72","MDTS":"20-01-2024 03:31 PM"}],"I":"188.53.192.192","ip":"188.53.192.192"}'
+
+
+curl 'http://13.39.102.45:8090/invoker/doinvoke?io=true&on=DoMeasureInsert' \
+-X POST \
+-H 'User-Agent: Karaz/2 CFNetwork/1490.0.4 Darwin/23.2.0' \
+-H 'Connection: keep-alive' \
+-H 'baggage: sentry-environment=Production,sentry-public_key=5bc8a2edf211411b8fc3c58d44b5ed82,sentry-release=ios.apps.Karaz%4023.5.0%2B2,sentry-trace_id=9f467928c47d43bb9de866a4058992c5,sentry-transaction=InsightsVC' \
+-H 'Accept: */*' \
+-H 'Accept-Language: en-US,en;q=0.9' \
+-H 'Authorization: Bearer umerjabbar' \
+-H 'Content-Type: application/json' \
+--data-raw '{"LCN":"iOS","L":"1","FSDR":{"StDS":"11-01-2024 07:27 PM","ExDS":"26-01-2024 04:06 AM","SI":"3MH00LW10WH"},"AT":"1RwcgcapmnHeGgG61zVSYIjdrOlBb4j-sPAehOwySwhu0v9NxyJ6LebjPKslLuLcdTUjes-10__cAaabwLcxE5TUN8ZKIJ_-dB3gBsNJOJT6TqA2z8ZDPD4u5jsA","R":{"MTI":1,"V":"71.0","GSI":6,"MDTS":"20-01-2024 03:32 PM","T":4},"Rs":[{"V":"70","MDTS":"20-01-2024 07:47 AM","MTI":1,"T":0,"GSI":6},{"MDTS":"20-01-2024 08:02 AM","MTI":1,"V":"66","T":0,"GSI":6},{"GSI":6,"MTI":1,"V":"71","MDTS":"20-01-2024 08:17 AM","T":0},{"MTI":1,"V":"74","T":0,"GSI":6,"MDTS":"20-01-2024 08:32 AM"},{"GSI":6,"T":0,"V":"70","MDTS":"20-01-2024 08:47 AM","MTI":1},{"MDTS":"20-01-2024 09:02 AM","MTI":1,"T":0,"V":"72","GSI":6},{"T":0,"MDTS":"20-01-2024 09:17 AM","MTI":1,"GSI":6,"V":"72"},{"MDTS":"20-01-2024 09:32 AM","V":"71","T":0,"GSI":6,"MTI":1},{"T":0,"MDTS":"20-01-2024 09:47 AM","GSI":6,"V":"71","MTI":1},{"MTI":1,"GSI":6,"V":"70","T":0,"MDTS":"20-01-2024 10:02 AM"},{"GSI":6,"T":0,"MDTS":"20-01-2024 10:17 AM","MTI":1,"V":"62"},{"GSI":6,"MTI":1,"MDTS":"20-01-2024 10:32 AM","V":"65","T":0},{"V":"61","GSI":6,"MDTS":"20-01-2024 10:47 AM","MTI":1,"T":0},{"MDTS":"20-01-2024 11:02 AM","V":"62","MTI":1,"T":0,"GSI":6},{"V":"68","T":0,"GSI":6,"MDTS":"20-01-2024 11:17 AM","MTI":1},{"V":"64","MTI":1,"T":0,"GSI":6,"MDTS":"20-01-2024 11:32 AM"},{"MDTS":"20-01-2024 11:47 AM","GSI":6,"T":0,"MTI":1,"V":"65"},{"V":"70","GSI":6,"MDTS":"20-01-2024 12:02 PM","T":0,"MTI":1},{"MDTS":"20-01-2024 12:17 PM","MTI":1,"V":"72","GSI":6,"T":0},{"MDTS":"20-01-2024 12:32 PM","T":0,"GSI":6,"MTI":1,"V":"72"},{"MTI":1,"GSI":6,"T":0,"MDTS":"20-01-2024 12:47 PM","V":"76"},{"V":"70","T":0,"GSI":6,"MTI":1,"MDTS":"20-01-2024 01:02 PM"},{"T":0,"V":"73","GSI":6,"MTI":1,"MDTS":"20-01-2024 01:17 PM"},{"MTI":1,"V":"80","T":0,"GSI":6,"MDTS":"20-01-2024 01:32 PM"},{"V":"80","T":0,"GSI":6,"MDTS":"20-01-2024 01:47 PM","MTI":1},{"MDTS":"20-01-2024 02:02 PM","V":"78","MTI":1,"GSI":6,"T":0},{"MTI":1,"MDTS":"20-01-2024 02:17 PM","T":0,"GSI":6,"V":"75"},{"MDTS":"20-01-2024 02:32 PM","V":"75","T":0,"MTI":1,"GSI":6},{"V":"82","T":0,"GSI":6,"MDTS":"20-01-2024 02:47 PM","MTI":1},{"V":"71","MDTS":"20-01-2024 03:02 PM","MTI":1,"T":0,"GSI":6},{"GSI":6,"V":"81","MTI":1,"T":0,"MDTS":"20-01-2024 03:17 PM"},{"V":"81","MDTS":"20-01-2024 03:18 PM","MTI":1,"GSI":6,"T":0},{"MTI":1,"MDTS":"20-01-2024 03:19 PM","GSI":6,"T":0,"V":"81"},{"V":"80","T":0,"MDTS":"20-01-2024 03:20 PM","GSI":6,"MTI":1},{"T":0,"GSI":6,"V":"78","MTI":1,"MDTS":"20-01-2024 03:21 PM"},{"MTI":1,"T":0,"MDTS":"20-01-2024 03:22 PM","GSI":6,"V":"76"},{"T":0,"MDTS":"20-01-2024 03:23 PM","MTI":1,"V":"76","GSI":6},{"MDTS":"20-01-2024 03:24 PM","V":"76","GSI":6,"T":0,"MTI":1},{"GSI":6,"MDTS":"20-01-2024 03:25 PM","MTI":1,"V":"76","T":0},{"MDTS":"20-01-2024 03:26 PM","MTI":1,"T":0,"V":"75","GSI":6},{"T":0,"MTI":1,"V":"74","GSI":6,"MDTS":"20-01-2024 03:27 PM"},{"MDTS":"20-01-2024 03:28 PM","T":0,"V":"73","MTI":1,"GSI":6},{"MTI":1,"V":"72","MDTS":"20-01-2024 03:29 PM","T":0,"GSI":6},{"GSI":6,"T":0,"MDTS":"20-01-2024 03:30 PM","MTI":1,"V":"72"},{"GSI":6,"MTI":1,"T":0,"V":"72","MDTS":"20-01-2024 03:31 PM"}],"I":"188.53.192.192","ip":"188.53.192.192"}'
+
+
+curl 'https://api.karaz.app/v2/UserCommunity/read' \
+-X POST \
+-H 'User-Agent: Karaz/2 CFNetwork/1490.0.4 Darwin/23.2.0' \
+-H 'Connection: keep-alive' \
+-H 'baggage: sentry-environment=Production,sentry-public_key=5bc8a2edf211411b8fc3c58d44b5ed82,sentry-release=ios.apps.Karaz%4023.5.0%2B2,sentry-trace_id=991dd605454d4e35adf5771f8a1e7b7a,sentry-transaction=TabBarViewController' \
+-H 'Accept: */*' \
+-H 'Accept-Language: en-US,en;q=0.9' \
+-H 'Authorization: Bearer umerjabbar' \
+-H 'sentry-trace: 991dd605454d4e35adf5771f8a1e7b7a-2ff3c72b1d52451a-0' \
+-H 'Content-Type: application/json' 
