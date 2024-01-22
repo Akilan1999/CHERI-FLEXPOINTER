@@ -1,0 +1,11 @@
+actor Amplifier () In, Volume ==> Out :
+  vol := 1;
+  volume: action Volume:[newV] ==>
+  do vol := newV; end
+  amplify: action In:[d] ==> Out:[d*vol] end
+  schedule fsm s0 :
+    s0 (volume)  --> s0;
+    s0 (amplify) --> s0;
+  end
+  priority volume > amplify; end
+end

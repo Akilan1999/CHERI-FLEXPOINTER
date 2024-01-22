@@ -1,0 +1,36 @@
+contigmalloc.c:104:23: warning: implicit declaration of function 'contigmalloc' is invalid in C99 [-Wimplicit-function-declaration]
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                      ^
+contigmalloc.c:104:23: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                      ^~~~~~~~~~~~
+contigmalloc.c:104:23: note: candidate function declaration needs parameter types
+contigmalloc.c:104:23: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:104:42: error: use of undeclared identifier 'M_FOO'
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                                         ^
+contigmalloc.c:104:23: warning: call to function 'contigmalloc' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                ptr = contigmalloc(size, M_FOO, M_NOWAIT, 0, ~0,
+                      ^~~~~~~~~~~~
+contigmalloc.c:104:23: note: candidate function declaration needs parameter types
+contigmalloc.c:104:23: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:113:25: error: non-void function 'main' should return a value [-Wreturn-type]
+                        return;
+                        ^
+contigmalloc.c:116:17: warning: implicit declaration of function 'contigfree' is invalid in C99 [-Wimplicit-function-declaration]
+                contigfree(ptr, size, M_FOO);
+                ^
+contigmalloc.c:116:17: warning: call to function 'contigfree' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                contigfree(ptr, size, M_FOO);
+                ^~~~~~~~~~
+contigmalloc.c:116:17: note: candidate function declaration needs parameter types
+contigmalloc.c:116:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+contigmalloc.c:116:39: error: use of undeclared identifier 'M_FOO'
+                contigfree(ptr, size, M_FOO);
+                                      ^
+contigmalloc.c:116:17: warning: call to function 'contigfree' with no prototype may lead to run-time stack corruption [-Wcheri-prototypes]
+                contigfree(ptr, size, M_FOO);
+                ^~~~~~~~~~
+contigmalloc.c:116:17: note: candidate function declaration needs parameter types
+contigmalloc.c:116:17: note: Calling functions without prototypes is dangerous because on some architectures (e.g. pure-capability MIPS) integer and pointer arguments are passed in different registers. If the call includes a parameter that does not match the function definition, the function will read uninitialized values from the argument registers.
+6 warnings and 3 errors generated.

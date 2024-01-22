@@ -1,0 +1,33 @@
+\usepackage{listings}
+\lstloadlanguages{C}
+\lstnewenvironment{cal-code}
+{
+    \lstset{
+      language=C,
+      % captionpos=b,
+      basicstyle=\tiny\ttfamily,
+      flexiblecolumns=false,
+      basewidth={0.5em,0.45em},
+      escapeinside={@}{@},
+      literate={action}{{$action$}}6 {schedule}{{$schedule$}}8
+      {fsm}{{$\textbf{fsm}$}}3 {actor}{{$actor$}}5
+      {end}{{$\textbf{end}$}}4 {repeat}{{$repeat$}}7 {var}{{$var$}}3
+      {foreach}{{$foreach$}}7 {guard}{{$guard$}}5
+      {schedule}{{$\textbf{schedule}$}}8 }
+  }
+  {} 
+
+% \lstnewenvironment{calsource}
+% {
+%     \lstset{ basicstyle=\ttfamily\scriptsize
+%       , language=C
+%       % , numberstyle=\numold
+%       % , numbers=right
+%       % , frame=lines
+%       , framexleftmargin=0.5em
+%       , framexrightmargin=0.5em
+%       , backgroundcolor=\color{white}
+%       , showstringspaces=false
+%       % , escapeinside={(*@}{@*)},#1}
+% }
+% {}

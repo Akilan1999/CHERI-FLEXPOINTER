@@ -1,0 +1,6 @@
+## Decision after the meeting
+- To adapt Hans-Wolfgang changes to the Poster.
+- To summarise the 2 papers listed above.
+- To work on 1 more iteration of the Poster on the (25th), This includes writing down a technical report.
+      -[ ] To Send email with structure plan with results and without results.
+- 27th October -> Back to porting the experiment.

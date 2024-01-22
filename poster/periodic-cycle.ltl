@@ -1,0 +1,1 @@
+property periodic_fsm_sequence is (s0 and [] (u01 or u12 or u20))

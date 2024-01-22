@@ -1,0 +1,2 @@
+property cyclic_store is
+ltl [] (net/1/state s0 and net/1/value (x=0) => <> net/1/state s0 and net/1/value (x=0))
