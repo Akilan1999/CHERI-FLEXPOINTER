@@ -77,7 +77,7 @@ void readExample()
 	// initialized to zero.
 	for(unsigned int i=0; i<mmapLen; i++)
 		printf("ptr[%u] is: '%c' (or %d)\n", i, ptr[i], ptr[i]);
-		print(&ptr);
+		printf(&ptr);
 	if(munmap(ptr, mmapLen) == -1)
 	{
 		perror("munmap");
