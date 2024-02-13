@@ -43,7 +43,7 @@ void readExample()
 
 	int fd = open
 	(FILENAME, O_RDWR | O_CREAT, 0600);
-	if (fd > 0) {
+	if (fd < 0) {
 		perror("open");
 		exit(EXIT_FAILURE);
 	}
