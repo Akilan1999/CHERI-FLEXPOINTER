@@ -39,11 +39,16 @@ void printFile()
 // File-backed, private example---read from file
 void readExample()
 {
-	createFile("hello world");
+	// createFile("hello world");
 
-	int fd = open(FILENAME, O_RDONLY);
+	int fd = open(FILENAME, O_RDWR);
 	size_t mmapLen = 15;
 	off_t offset = 0; // offset to seek to.
+
+	if (ftruncate(fd, mmapLen) < 0) {
+        close(fd);
+		exit(EXIT_FAILURE);
+	}
 
 	// We use MAP_PRIVATE since writes to the region of memory should
 	// not be written back to the file.
