@@ -71,6 +71,7 @@ void readExample()
 	// handle it).
 
 	printf("Should say hello world: %s\n", ptr);
+	ptr = "Helloworld";
 	// I don't think mmap() makes any guarantees to what bytes are
 	// past the end of the mmap(). But, on my machine they are
 	// initialized to zero.
