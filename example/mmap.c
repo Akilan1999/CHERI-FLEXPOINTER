@@ -47,6 +47,7 @@ void readExample()
 
 	if (ftruncate(fd, mmapLen) < 0) {
         close(fd);
+		perror("ftruncate");
 		exit(EXIT_FAILURE);
 	}
 
