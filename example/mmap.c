@@ -42,7 +42,11 @@ void readExample()
 	// createFile("hello world");
 
 	int fd = open
-	(FILENAME, O_CREAT|O_WRONLY, 0777);
+	(FILENAME, O_RDWR | O_CREAT, 0600);
+	if (fd > 0) {
+		perror("open");
+		exit(EXIT_FAILURE);
+	}
 	size_t mmapLen = 15;
 	off_t offset = 0; // offset to seek to.
 
