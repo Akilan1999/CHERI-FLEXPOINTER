@@ -13,7 +13,7 @@
 
 #define	LINUX_MADV_HUGEPAGE	14
 
-#define FILENAME "mmap.temp"
+#define FILENAME "/dev/contigmem"
 
 void createFile(char *string)
 {
