@@ -41,13 +41,14 @@ void readExample()
 {
 	// createFile("hello world");
 
-	int fd = open(FILENAME, O_RDWR, 0600);
+	int fd = open
+	(FILENAME, O_RDWR, 0600);
 	size_t mmapLen = 15;
 	off_t offset = 0; // offset to seek to.
 
 	if (ftruncate(fd, mmapLen) < 0) {
-        close(fd);
 		perror("ftruncate");
+		close(fd);
 		exit(EXIT_FAILURE);
 	}
 
