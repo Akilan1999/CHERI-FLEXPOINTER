@@ -1,39 +1,44 @@
-#include <sys/param.h>
+/*
+ * KLD Skeleton
+ * Inspired by Andrew Reiter's Daemonnews article
+ */
+
+#include <sys/types.h>
+#include <sys/systm.h>  /* uprintf */
+#include <sys/errno.h>
+#include <sys/param.h>  /* defines used in kernel.h */
 #include <sys/module.h>
-#include <sys/kernel.h>
-#include <sys/systm.h>
+#include <sys/kernel.h> /* types used in module initialization */
 
-static int lkm_event_handler(struct module *module, int event_type, void *arg) {
+/*
+ * Load handler that deals with the loading and unloading of a KLD.
+ */
 
-  int retval = 0;                   // function returns an integer error code, default 0 for OK
+static int
+skel_loader(struct module *m, int what, void *arg)
+{
+  int err = 0;
 
-  switch (event_type) {             // event_type is an enum; let's switch on it
-    case MOD_LOAD:                  // if we're loading
-      uprintf("LKM Loaded\n");      // spit out a loading message
-      break;
-
-    case MOD_UNLOAD:                // if were unloading
-      uprintf("LKM Unloaded\n");    // spit out an unloading messge
-      break;
-
-    default:                        // if we're doing anything else
-      retval = EOPNOTSUPP;          // return a 'not supported' error
-      break;
+  switch (what) {
+  case MOD_LOAD:                /* kldload */
+    uprintf("Skeleton KLD loaded.\n");
+    break;
+  case MOD_UNLOAD:
+    uprintf("Skeleton KLD unloaded.\n");
+    break;
+  default:
+    err = EOPNOTSUPP;
+    break;
   }
-
-  return(retval);                   // return the appropriate value
-
+  return(err);
 }
 
-static moduledata_t lkm_data = {
-  "freebsd_lkm",            // Name of our module
-  lkm_event_handler,        // Name of our module's 'event handler' function
-  NULL                      // Ignore for now :)
+/* Declare this module to the rest of the kernel */
+
+static moduledata_t skel_mod = {
+  "skel",
+  skel_loader,
+  NULL
 };
 
-// Register the module with the kernel using:
-//  the module name
-//  our recently defined moduledata_t struct with module info
-//  a module type (we're daying it's a driver this time)
-//  a preference as to when to load the module
-DECLARE_MODULE(freebsd_lkm, lkm_data, SI_SUB_DRIVERS, SI_ORDER_MIDDLE);
+DECLARE_MODULE(skeleton, skel_mod, SI_SUB_KLD, SI_ORDER_ANY);
