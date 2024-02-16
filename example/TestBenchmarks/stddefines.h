@@ -79,7 +79,7 @@ static inline void *MALLOC(size_t size)
 		exit(EXIT_FAILURE);
 	}
 
-	void *ptr = mmap(NULL, size,
+	int *ptr = mmap(NULL, size,
 	                         PROT_READ | PROT_WRITE, MAP_SHARED,
 	                         fd, offset);
 	if(ptr == MAP_FAILED)
