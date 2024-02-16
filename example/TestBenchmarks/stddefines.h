@@ -88,9 +88,9 @@ static inline void *MALLOC(size_t size)
 		exit(EXIT_FAILURE);
 	}
 
-    *ptr = size
+    *ptr = size;
 
-    return &ptr[1]
+    return &ptr[1];
 }
 
 static inline void *CALLOC(size_t num, size_t size)
@@ -116,9 +116,11 @@ static inline char *GETENV(char *envstr)
 
 static inline void *FREE(void *ptr)
 {
-    --ptr;
-    size=*ptr
-    if(munmap(ptr, size) == -1)
+    int *pt = ptr;
+    size_t size;
+    --pt;
+    size = *pt;
+    if(munmap(pt, size) == -1)
 	{
 		perror("munmap");
 		exit(EXIT_FAILURE);
