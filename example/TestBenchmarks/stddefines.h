@@ -79,18 +79,20 @@ static inline void *MALLOC(size_t size)
 	// 	exit(EXIT_FAILURE);
 	// }
 
-	int *ptr = mmap(NULL, size,
-	                         PROT_READ | PROT_WRITE, MAP_SHARED,
-	                         -1, offset);
-	if(ptr == MAP_FAILED)
-	{
-		perror("mmap");
-		exit(EXIT_FAILURE);
-	}
+	// int *ptr = mmap(NULL, size,
+	//                          PROT_READ | PROT_WRITE, MAP_SHARED,
+	//                          -1, offset);
+	// if(ptr == MAP_FAILED)
+	// {
+	// 	perror("mmap");
+	// 	exit(EXIT_FAILURE);
+	// }
 
-    *ptr = size;
+   //  *ptr = size;
 
-    return &ptr[1];
+   //  return &ptr[1];
+   void *ptr = malloc(size);
+   return &ptr;
 }
 
 static inline void *CALLOC(size_t num, size_t size)
@@ -116,15 +118,16 @@ static inline char *GETENV(char *envstr)
 
 static inline void *FREE(void *ptr)
 {
-    int *pt = ptr;
-    size_t size;
-    --pt;
-    size = *pt;
-    if(munmap(pt, size) == -1)
-	{
-		perror("munmap");
-		exit(EXIT_FAILURE);
-	}
+   //  int *pt = ptr;
+   //  size_t size;
+   //  --pt;
+   //  size = *pt;
+   //  if(munmap(pt, size) == -1)
+	// {
+	// 	perror("munmap");
+	// 	exit(EXIT_FAILURE);
+	// }
+   free(ptr);
 }
 
 #define GET_TIME(start, end, duration)                                     \
