@@ -92,7 +92,7 @@ static inline void *MALLOC(size_t size)
 
    //  return &ptr[1];
    void *ptr = malloc(size);
-   return &ptr;
+   return ptr;
 }
 
 static inline void *CALLOC(size_t num, size_t size)
