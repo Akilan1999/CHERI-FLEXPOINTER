@@ -44,7 +44,7 @@
 
 //#define TIMING
 
-#define FILENAME "/dev/contigmem"
+// #define FILENAME "/dev/contigmem"
 
 /* Debug printf */
 #define dprintf(...) fprintf(stdout, __VA_ARGS__)
@@ -64,24 +64,24 @@ static inline void *MALLOC(size_t size)
 //    return temp;
 
 // Ensuring malloc this is mmap and phyiscally contigous
-    int fd = open
-	(FILENAME, O_RDWR | O_CREAT, 0600);
-	if (fd < 0) {
-		perror("open");
-		exit(EXIT_FAILURE);
-	}
+   //  int fd = open
+	// (FILENAME, O_RDWR | O_CREAT, 0600);
+	// if (fd < 0) {
+	// 	perror("open");
+	// 	exit(EXIT_FAILURE);
+	// }
 
 	off_t offset = 0; // offset to seek to.
 
-	if (ftruncate(fd, size) < 0) {
-		perror("ftruncate");
-		close(fd);
-		exit(EXIT_FAILURE);
-	}
+	// if (ftruncate(fd, size) < 0) {
+	// 	perror("ftruncate");
+	// 	close(fd);
+	// 	exit(EXIT_FAILURE);
+	// }
 
 	int *ptr = mmap(NULL, size,
 	                         PROT_READ | PROT_WRITE, MAP_SHARED,
-	                         fd, offset);
+	                         -1, offset);
 	if(ptr == MAP_FAILED)
 	{
 		perror("mmap");
