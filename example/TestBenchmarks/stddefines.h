@@ -90,7 +90,7 @@ static inline void *MALLOC(size_t size)
 
     *ptr = size;
 
-    return ptr[1];
+    return ptr;
    // void *ptr = malloc(size);
    // return ptr;
 }
@@ -118,16 +118,16 @@ static inline char *GETENV(char *envstr)
 
 static inline void *FREE(void *ptr)
 {
-   //  int *pt = ptr;
-   //  size_t size;
-   //  --pt;
-   //  size = *pt;
-   //  if(munmap(pt, size) == -1)
-	// {
-	// 	perror("munmap");
-	// 	exit(EXIT_FAILURE);
-	// }
-   free(ptr);
+    int *pt = ptr;
+    size_t size;
+    --pt;
+    size = *pt;
+    if(munmap(pt, size) == -1)
+	{
+		perror("munmap");
+		exit(EXIT_FAILURE);
+	}
+   // free(ptr);
 }
 
 #define GET_TIME(start, end, duration)                                     \
