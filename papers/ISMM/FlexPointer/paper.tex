@@ -273,9 +273,10 @@ contiguous. Most implementations of huge pages are size
 aligned, For example for the x86 architecture the huge pages 
 size are 4KB, 2MB and 1GB pages. 
 % \subsection{Tailored page sizes}
-\subsection{TLB coalescing}
-This leverages the default OS allocator behavior to pack
-multiple PTEs into a single TLB entry.
+% TODO later
+% \subsection{TLB coalescing}
+% This leverages the default OS allocator behavior to pack
+% multiple PTEs into a single TLB entry.
 
 \subsection{Segment}
 A segment can be viewed as mapping between contiguous virtual
@@ -303,7 +304,7 @@ does eagerly allocate pages which are physically contiguous and stores the ID to
 to physical address on the remaining unused bits on the 64 bit virtual address. 
 The paper contribution mentions shifting the TLB lookup to an earlier stage to improve
 latency of accessing the TLB entries. FlexPointer immediate queries the 
-range TLB rather than the RMM paper which waits for the L1 TLB miss.
+range TLB for translations rather than the RMM paper which waits for the L1 TLB miss.
 
 
 
