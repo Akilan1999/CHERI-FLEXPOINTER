@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  15 FEB 2024 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  21 FEB 2024 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,8 +910,6 @@ tim
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-Excluding 'CCSXML' comment.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 266.
 LaTeX Font Info:    Trying to load font information for T1+LinuxBiolinumT-TLF o
@@ -979,219 +977,17 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 268.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 268.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 300.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 270.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 270.
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 28
-1.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/inconsolata/t1zi4.fd
-File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
-)
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 281.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `zi4' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 284.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.3pt on input line 296.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 306.
+(Font)              scaled to size 10.0pt on input line 300.
  [1.1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (1.46759pt too wide) in paragraph at lines 334--338
-[]\T1/zi4/m/n/10 anonymous,review\T1/LinuxLibertineT-TLF/m/n/10 (-20) : Suit-ab
-le for a ``double-anonymous'' con-fer-ence sub-mis-sion. Anonymizes
- []
-
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 356.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 390.
-[2.2]
-Overfull \hbox (1.8607pt too wide) in paragraph at lines 413--417
-[]\T1/LinuxLibertineT-TLF/m/n/10 (-20) The ar-ti-cle tem-plate's doc-u-men-ta-t
-ion, avail-able at [][]$https : / / www . acm . org / publications / proceeding
-s -[]
- []
-
-[3.3] [4.4]
-
-Package natbib Warning: Citation `Lamport:LaTeX' on page 5 undefined on input l
-ine 555.
-
-[5.5]
-
-Package natbib Warning: Citation `Abril07' on page 6 undefined on input line 67
-0.
-
-
-Package natbib Warning: Citation `Cohen07' on page 6 undefined on input line 67
-1.
-
-
-Package natbib Warning: Citation `JCohen96' on page 6 undefined on input line 6
-72.
-
-
-Package natbib Warning: Citation `Kosiur01' on page 6 undefined on input line 6
-72.
-
-
-Package natbib Warning: Citation `Harel79' on page 6 undefined on input line 67
-4.
-
-
-Package natbib Warning: Citation `Editor00' on page 6 undefined on input line 6
-75.
-
-
-Package natbib Warning: Citation `Editor00a' on page 6 undefined on input line 
-676.
-
-
-Package natbib Warning: Citation `Spector90' on page 6 undefined on input line 
-678.
-
-
-Package natbib Warning: Citation `Douglass98' on page 6 undefined on input line
- 679.
-
-
-Package natbib Warning: Citation `Knuth97' on page 6 undefined on input line 68
-0.
-
-
-Package natbib Warning: Citation `Andler79' on page 6 undefined on input line 6
-82.
-
-
-Package natbib Warning: Citation `Hagerup1993' on page 6 undefined on input lin
-e 682.
-
-
-Package natbib Warning: Citation `Smith10' on page 6 undefined on input line 68
-3.
-
-
-Package natbib Warning: Citation `VanGundy07' on page 6 undefined on input line
- 684.
-
-
-Package natbib Warning: Citation `Harel78' on page 6 undefined on input line 68
-5.
-
-
-Package natbib Warning: Citation `Bornmann2019' on page 6 undefined on input li
-ne 686.
-
-
-Package natbib Warning: Citation `AnzarootPBM14' on page 6 undefined on input l
-ine 686.
-
-
-Package natbib Warning: Citation `Clarkson85' on page 6 undefined on input line
- 686.
-
-
-Package natbib Warning: Citation `anisi03' on page 6 undefined on input line 68
-7.
-
-
-Package natbib Warning: Citation `Thornburg01' on page 6 undefined on input lin
-e 688.
-
-
-Package natbib Warning: Citation `Ablamowicz07' on page 6 undefined on input li
-ne 688.
-
-
-Package natbib Warning: Citation `Poker06' on page 6 undefined on input line 68
-8.
-
-
-Package natbib Warning: Citation `Obama08' on page 6 undefined on input line 68
-9.
-
-
-Package natbib Warning: Citation `Novak03' on page 6 undefined on input line 68
-9.
-
-
-Package natbib Warning: Citation `Lee05' on page 6 undefined on input line 689.
-
-
-
-Package natbib Warning: Citation `JoeScientist001' on page 6 undefined on input
- line 690.
-
-
-Package natbib Warning: Citation `rous08' on page 6 undefined on input line 691
-.
-
-
-Package natbib Warning: Citation `SaeediMEJ10' on page 6 undefined on input lin
-e 692.
-
-
-Package natbib Warning: Citation `SaeediJETC10' on page 6 undefined on input li
-ne 692.
-
-
-Package natbib Warning: Citation `Kirschmer:2010:AEI:1958016.1958018' on page 6
- undefined on input line 694.
-
-
-Package natbib Warning: Citation `MR781536' on page 6 undefined on input line 6
-95.
-
-
-Package natbib Warning: Citation `MR781537' on page 6 undefined on input line 6
-95.
-
-
-Package natbib Warning: Citation `2004:ITE:1009386.1010128' on page 6 undefined
- on input line 697.
-
-
-Package natbib Warning: Citation `Kirschmer:2010:AEI:1958016.1958018' on page 6
- undefined on input line 697.
-
-
-Package natbib Warning: Citation `TUGInstmem' on page 6 undefined on input line
- 698.
-
-
-Package natbib Warning: Citation `Thornburg01' on page 6 undefined on input lin
-e 698.
-
-
-Package natbib Warning: Citation `CTANacmart' on page 6 undefined on input line
- 698.
-
-
-Package natbib Warning: Citation `R' on page 6 undefined on input line 699.
-
-
-Package natbib Warning: Citation `UMassCitations' on page 6 undefined on input 
-line 699.
-
-[6.6]
-LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 10.0pt on input line 767.
- Processing 'acks' comment.
+Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
  Comment 'acks' writing to comment.cut.
 Straight input of comment.cut. (./comment.cut)
 No file paper.bbl.
-[7.7]
-
-Package natbib Warning: There were undefined citations.
-
 (/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
@@ -1200,45 +996,47 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 822.
+surrounding objects on input line 858.
 
-[8.8] (./paper.aux)
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 2B4A8C46FC02A8A701C735FE7CB987D4;4201.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 858.
+[2.2] (./paper.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `paper.out':
+(rerunfilecheck)             Before: 30881A5718E394724949E93AC61C0AD1;322
+(rerunfilecheck)             After:  C86409B96AA502933C7236302129279A;953.
  ) 
 Here is how much of TeX's memory you used:
- 20861 strings out of 478268
- 339674 string characters out of 5846347
- 701378 words of memory out of 5000000
- 38085 multiletter control sequences out of 15000+600000
- 635154 words of font info for 356 fonts, out of 8000000 for 9000
+ 20555 strings out of 478268
+ 333269 string characters out of 5846347
+ 698300 words of memory out of 5000000
+ 38017 multiletter control sequences out of 15000+600000
+ 591774 words of font info for 218 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 84i,17n,131p,1002b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{
-/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/
-usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/u
-sr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/us
-r/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr
-/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/
-local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
-a-zi4r.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/Liberti
-neMathMI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/Liber
-tineMathMI7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/Li
-bertineMathRM.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libert
-ine/LinBiolinumT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lib
-ertine/LinBiolinumTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/libertine/LinLibertineT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pu
-blic/libertine/LinLibertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/font
-s/type1/public/newtx/txexs.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/newtx/txmiaX.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-newtx/txsys.pfb>
-Output written on paper.pdf (8 pages, 481511 bytes).
+ 84i,17n,131p,1002b,570s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
+}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{
+/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/
+usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinLiberti
+neT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinLib
+ertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/L
+inLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/
+txsys.pfb>
+Output written on paper.pdf (2 pages, 348808 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 42 named destinations out of 1000 (max. 500000)
- 91377 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 67625 words of extra memory for PDF output out of 74296 (max. 10000000)
 
