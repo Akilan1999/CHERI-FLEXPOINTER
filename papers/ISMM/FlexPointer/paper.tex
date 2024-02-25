@@ -204,16 +204,29 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-  The gap between application workloads and capacity of TLB is on the 
-  rise. Previous work exploits this by physically contiguous 
-  memory. Capability-based addressing in the CHERI architecture is 
-  designed to improve hardware-level system security.
-  These security mechanisms designed in place can also 
-  behave as accelerators to standard user-space memory allocators. 
-  The property of CHERI which is to use FAT-Pointers to store
-  the upper and lower bounds can also be represented as ranges of 
-  memory addresses which are physically contiguous. 
-  <Talking about the results>.
+  % Draft 1
+  % The gap between application workloads and capacity of TLB is on the 
+  % rise. Previous work exploits this by physically contiguous 
+  % memory. Capability-based addressing in the CHERI architecture is 
+  % designed to improve hardware-level system security.
+  % These security mechanisms designed in place can also 
+  % behave as accelerators to standard user-space memory allocators. 
+  % The property of CHERI which is to use FAT-Pointers to store
+  % the upper and lower bounds can also be represented as ranges of 
+  % memory addresses which are physically contiguous. 
+  % <Talking about the results>.
+  % Draft 2
+  The increasing disparity between application workloads and the capacity of Translation Lookaside Buffers (TLB) 
+  has prompted researchers to explore innovative solutions to mitigate this gap. One such approach involves 
+  leveraging physically contiguous memory to optimize TLB utilization. Concurrently, advancements in hardware-level 
+  system security, exemplified by the Capability Hardware Enhanced RISC Instructions (CHERI) architecture, offer 
+  additional opportunities for improving memory management and security.
+
+ CHERI introduces capability-based addressing, a novel approach that enhances system security by associating capabilities 
+ with memory pointers. These capabilities restrict access to memory regions, thereby fortifying the system against various 
+ security threats. Importantly, the mechanisms implemented in CHERI for enforcing memory protection can also serve as 
+ accelerators for standard user-space memory allocators. By leveraging capability-based addressing, memory 
+ allocators can efficiently manage memory resources while ensuring robust security measures are in place.
 \end{abstract}
 
 %%
@@ -245,27 +258,46 @@
 % </ccs2012>
 % \end{CCSXML}
 
-\ccsdesc[500]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
-\ccsdesc[300]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
-\ccsdesc{Do Not Use This Code~Generate the Correct Terms for Your Paper}
-\ccsdesc[100]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc[500]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc[300]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc[100]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
 
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{Do, Not, Us, This, Code, Put, the, Correct, Terms, for,
-  Your, Paper}
+% \keywords{Do, Not, Us, This, Code, Put, the, Correct, Terms, for,
+%   Your, Paper}
 
-\received{20 February 2007}
-\received[revised]{12 March 2009}
-\received[accepted]{5 June 2009}
+% \received{20 February 2007}
+% \received[revised]{12 March 2009}
+% \received[accepted]{5 June 2009}
 
 %%
 %% This command processes the author and affiliation and title
 %% information and builds the first part of the formatted document.
 \maketitle
 
+\section{Introduction}
+
+\section{FAT-Pointer based range addresses}
+
+\subsection{Overview}
+
+\subsection{Range creation}
+
+\subsection{Allocation with huge pages}
+
+\section{Evaluation}
+
+\section{Limitations}
+
 \section{Related work}
+Efficient memory management, particularly in the context of 
+Translation Lookaside Buffer (TLB) optimization, has been a focal point of 
+research and development within computer architecture. Various techniques have been 
+proposed to mitigate TLB-related bottlenecks and improve overall system performance.
+
 \subsection{Huge Pages}
 This is used to map a very large region of memory to a 
 single entry. This small/large region of memory is physically
@@ -305,6 +337,9 @@ to physical address on the remaining unused bits on the 64 bit virtual address.
 The paper contribution mentions shifting the TLB lookup to an earlier stage to improve
 latency of accessing the TLB entries. FlexPointer immediate queries the 
 range TLB for translations rather than the RMM paper which waits for the L1 TLB miss.
+
+
+\section{Summary}
 
 
 
