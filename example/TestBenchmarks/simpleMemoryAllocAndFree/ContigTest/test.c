@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 
   // Custom free 
   int *pt = ptr;
-    size_t size;
+    // size_t size;
     --pt;
     size = *pt;
     if(munmap(pt, size) == -1)
