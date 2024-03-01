@@ -54,8 +54,8 @@ int main(int argc, char **argv)
     *ptr = size;
 
 
-  printf("Successfully malloc'd %zu bytes at addr %p\n", size, mem);
-  assert(mem != NULL);
+  printf("Successfully malloc'd %zu bytes at addr %p\n", size, ptr);
+  assert(ptr != NULL);
 
   // Custom free 
   int *pt = ptr;
@@ -67,8 +67,8 @@ int main(int argc, char **argv)
 		perror("munmap");
 		exit(EXIT_FAILURE);
   }
-  
-  printf("Successfully free'd %zu bytes from addr %p\n", size, mem);
+
+  printf("Successfully free'd %zu bytes from addr %p\n", size, ptr);
   return 0;
 }
 
