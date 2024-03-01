@@ -1,2 +1,4 @@
 .cherissh
 *.out
+*.o
+test

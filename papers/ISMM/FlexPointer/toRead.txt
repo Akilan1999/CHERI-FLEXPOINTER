@@ -1,0 +1,3 @@
+https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201904-asplos-cheriabi.pdf
+(CheriABI for reasoning MMU behavior)
+
