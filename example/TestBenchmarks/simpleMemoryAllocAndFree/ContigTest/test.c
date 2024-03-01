@@ -25,10 +25,10 @@ int main(int argc, char **argv)
   
   // smaller size
   size_t size = 1000;
-  void *mem = malloc(size);
+  void *mem = MALLOC(size);
   printf("Successfully malloc'd %zu bytes at addr %p\n", size, mem);
   assert(mem != NULL);
-  free(mem);
+  FREE(mem);
   printf("Successfully free'd %zu bytes from addr %p\n", size, mem);
   return 0;
 }
