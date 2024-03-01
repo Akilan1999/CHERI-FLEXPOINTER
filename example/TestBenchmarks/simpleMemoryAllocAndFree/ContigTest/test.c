@@ -58,15 +58,15 @@ int main(int argc, char **argv)
   assert(ptr != NULL);
 
   // Custom free 
-  int *pt = ptr;
-    // size_t size;
-    --pt;
-    size = *pt;
-    if(munmap(pt, size) == -1)
-	{
-		perror("munmap");
-		exit(EXIT_FAILURE);
-  }
+  // int *pt = ptr;
+  //   // size_t size;
+  //   --pt;
+  //   size = *pt;
+  //   if(munmap(pt, size) == -1)
+	// {
+	// 	perror("munmap");
+	// 	exit(EXIT_FAILURE);
+  // }
 
   printf("Successfully free'd %zu bytes from addr %p\n", size, ptr);
   return 0;
