@@ -21,10 +21,10 @@
 int main(int argc, char **argv)
 { 
   // 1 GB 
-  // size_t size = 1000000000;
+  size_t size = 1000000000;
   
   // smaller size
-  size_t size = 1000;
+  //size_t size = 1000;
 
   // Custom malloc
   int fd = open
