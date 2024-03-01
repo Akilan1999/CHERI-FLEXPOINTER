@@ -33,7 +33,7 @@ int main(int argc, char **argv)
   return 0;
 }
 
-static inline void *MALLOC(size_t size)
+void *MALLOC(size_t size)
 {
 //    void * temp = malloc(size);
 //    assert(temp);
@@ -72,7 +72,7 @@ static inline void *MALLOC(size_t size)
 }
 
 
-static inline void *FREE(void *ptr)
+void *FREE(void *ptr)
 {
     int *pt = ptr;
     size_t size;
