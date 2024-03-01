@@ -25,15 +25,54 @@ int main(int argc, char **argv)
   
   // smaller size
   size_t size = 1000;
-  void *mem = MALLOC(size);
+
+  // Custom malloc
+  int fd = open
+	(FILENAME, O_RDWR | O_CREAT, 0600);
+	if (fd < 0) {
+		perror("open");
+		exit(EXIT_FAILURE);
+	}
+
+	off_t offset = 0; // offset to seek to.
+
+	if (ftruncate(fd, size) < 0) {
+		perror("ftruncate");
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
+	int *ptr = mmap(NULL, size,
+	                         PROT_READ | PROT_WRITE, MAP_SHARED,
+	                         fd, offset);
+	if(ptr == MAP_FAILED)
+	{
+		perror("mmap");
+		exit(EXIT_FAILURE);
+	}
+
+    *ptr = size;
+
+
   printf("Successfully malloc'd %zu bytes at addr %p\n", size, mem);
   assert(mem != NULL);
-  FREE(mem);
+
+  // Custom free 
+  int *pt = ptr;
+    size_t size;
+    --pt;
+    size = *pt;
+    if(munmap(pt, size) == -1)
+	{
+		perror("munmap");
+		exit(EXIT_FAILURE);
+  }
+  
   printf("Successfully free'd %zu bytes from addr %p\n", size, mem);
   return 0;
 }
 
-void *MALLOC(size_t size)
+static inline void *MALLOC(size_t size)
 {
 //    void * temp = malloc(size);
 //    assert(temp);
@@ -72,7 +111,7 @@ void *MALLOC(size_t size)
 }
 
 
-void *FREE(void *ptr)
+static inline void *FREE(void *ptr)
 {
     int *pt = ptr;
     size_t size;
