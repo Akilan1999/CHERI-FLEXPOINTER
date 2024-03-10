@@ -47,6 +47,8 @@
 %%
 \documentclass[acmsmall,screen,review]{acmart}
 
+% \usepackage[style=authoryear, useprefix = false]{biblatex}
+
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
@@ -280,10 +282,10 @@
 
 \section{Introduction}
 
-\section{FAT-Pointer based range addresses}
-This expirement exploits the FAT pointer to enable 
-
 \subsection{Background}
+
+\section{FAT-Pointer based range addresses}
+This experiment exploits the FAT pointer to enable faster
 
 \subsection{Overview}
 
@@ -299,7 +301,7 @@ This expirement exploits the FAT pointer to enable
 
 \section{Related work}
 Efficient memory management, particularly in the context of 
-Translation Lookaside Buffer (TLB) optimization, has been a focal point of 
+Translation Lookaside Buffer (TLB) optimization \cite{ad-wood-2003}, has been a focal point of 
 research and development within computer architecture. Various techniques have been 
 proposed to mitigate TLB-related bottlenecks and improve overall system performance.
 
@@ -860,20 +862,21 @@ range TLB for translations rather than the RMM paper which waits for the L1 TLB 
 %% (and NOT an unnumbered section). This ensures the proper
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
+% \begin{acks}
+% To Robert, for the bagels and explaining CMYK and color spaces.
+% \end{acks}
+
 \begin{acks}
-To Robert, for the bagels and explaining CMYK and color spaces.
+  To Robert, for the bagels and explaining CMYK and color spaces.
 \end{acks}
 
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{sample-base}
+\bibliography{references}
 
-
-%%
-%% If your work has an appendix, this is the place to put it.
-\appendix
+% \appendix
 
 % \section{Research Methods}
 
@@ -904,6 +907,7 @@ To Robert, for the bagels and explaining CMYK and color spaces.
 % Nam interdum magna at lectus dignissim, ac dignissim lorem
 % rhoncus. Maecenas eu arcu ac neque placerat aliquam. Nunc pulvinar
 % massa et mattis lacinia.
+
 
 \end{document}
 \endinput
