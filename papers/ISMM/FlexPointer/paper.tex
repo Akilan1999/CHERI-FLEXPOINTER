@@ -275,19 +275,119 @@
 % \received[revised]{12 March 2009}
 % \received[accepted]{5 June 2009}
 
+% Sample citation
+% \cite{ad-wood-2003}
+
 %%
 %% This command processes the author and affiliation and title
 %% information and builds the first part of the formatted document.
 \maketitle
 
 \section{Introduction}
+In the dynamic landscape of computing, the pursuit of optimal performance is a constant endeavor, 
+especially as applications evolve to handle increasingly complex workloads. 
+One critical aspect influencing performance is memory management, where efficient 
+utilization of resources is paramount. Translation Lookaside Buffers (TLBs) play a 
+pivotal role in this regard, expediting memory access by storing recently accessed memory translations.
+However, as applications grow in size and complexity, the capacity of TLBs often struggles to 
+keep pace, leading to performance bottlenecks. To address this challenge, researchers have 
+turned to innovative solutions, one of which involves harnessing the benefits of huge pages.
+Huge pages, also known as large pages, allow for the allocation of memory in significantly 
+larger chunks compared to traditional small pages. By reducing the number of TLB entries 
+needed to access a given amount of memory, huge pages offer a potential avenue for optimizing 
+TLB utilization and thereby enhancing overall system performance.
 
+Simultaneously, advancements in hardware-level security, such as the Capability Hardware 
+Enhanced RISC Instructions (CHERI) architecture, present additional opportunities for 
+performance enhancement. CHERI's capability-based addressing approach not only strengthens 
+system security by tightly controlling memory access but also provides avenues for 
+accelerating memory management operations.
+
+In this context, the integration of huge pages into memory management 
+strategies alongside capability-based addressing in architectures like 
+CHERI offers a compelling synergy. By optimizing TLB utilization through the 
+utilization of huge pages and leveraging the security features of capability-based addressing, 
+significant performance improvements can be realized. This approach not only enhances 
+system security but also accelerates memory access
+
+% TODO: 
+% - Add references for FlexPointer, Range Memory Mapping (RMM), Direct Segment and Huge Pages
 \subsection{Background}
+Efficient memory management, particularly in the context of 
+Translation Lookaside Buffer (TLB) optimization, has been a focal point of 
+research and development within computer architecture. Various techniques have been 
+proposed to mitigate TLB-related bottlenecks and improve overall system performance.
+
+\subsubsection{Huge Pages:}
+This is used to map a very large region of memory to a 
+single entry. This small/large region of memory is physically
+contiguous. Most implementations of huge pages are size
+aligned, For example for the x86 architecture the huge pages 
+size are 4KB, 2MB and 1GB pages. 
+% \subsection{Tailored page sizes}
+% TODO later
+% \subsection{TLB coalescing}
+% This leverages the default OS allocator behavior to pack
+% multiple PTEs into a single TLB entry.
+
+\subsubsection{Segment:}
+A segment can be viewed as mapping between contiguous virtual
+memory and contiguous physical memory. The property of a 
+segment allows it to be larger than a page. Direct Segment
+<paper reference> allows the user to set a single segment
+for an application. Two registers are added to mark the start
+and end of the segment. Any virtual address within this region
+can be translated by adding the fixed offset between the virtual
+and physical address.
+
+\subsubsection{RMM:}
+RMM introduces the concept of adding an additional range table.
+For large allocations RMM eagerly allocates contiguous physical pages.
+The following allocations creates large memory ranges that are
+both virtually and physically contiguous. RMM builds on the concept
+of Direct segment <paper reference> by adding offset to translate a virtual address 
+to physical address. RMM compares address with range boundaries 
+to decide which range it belongs to. RMM queries the range table 
+ofter an L1 TLB miss.
+
+\subsubsection{FlexPointer:}
+FlexPointer is based on the RMM<paper reference RMM> paper. FlexPointer
+does eagerly allocate pages which are physically contiguous and stores the ID to translate a virtual address 
+to physical address on the remaining unused bits on the 64 bit virtual address. 
+The paper contribution mentions shifting the TLB lookup to an earlier stage to improve
+latency of accessing the TLB entries. FlexPointer immediate queries the 
+range TLB for translations rather than the RMM paper which waits for the L1 TLB miss.
 
 \section{FAT-Pointer based range addresses}
 This experiment exploits the FAT pointer to enable faster
 
+% TODO: 
+% - Add references for FlexPointer, Range Memory Mapping (RMM) and Direct segment
 \subsection{Overview}
+FAT-Pointers, combined with the capabilities of the CHERI (Capability Hardware Enhanced RISC Instructions) 
+architecture, introduce robust memory safety and security features by incorporating additional metadata 
+with memory pointers. This enhanced architecture utilizes concepts such as FlexPointer, 
+Range Memory Mapping (RMM), and Direct segment to manage memory effectively.
+
+Range addresses play a pivotal role within this framework, defining memory 
+regions bounded by a starting address (BASE) and an ending address (LIMIT). 
+These range addresses are encoded within FAT-pointers, allowing for precise 
+control over memory access permissions.
+
+The functionality of ranges encompasses several key aspects:
+\begin{itemize}
+\item \textbf{Creation of Physically Contiguous Memory Ranges}:
+By defining memory regions that are physically contiguous, systems can 
+achieve optimal memory access patterns, enhancing performance and efficiency.
+\item \textbf{Encoding Ranges as Bounds to the Pointer}:
+Integrating range bounds directly into FAT-pointers enables the architecture 
+to enforce memory access restrictions at the pointer level thus allowing 
+tracking of memory ranges on a pointer level.
+\item \textbf{Instrumenting Block-Based Allocators with Physically Contiguous Memory}:
+The integration of range-based memory concepts into memory allocation systems, such as block-based 
+allocators, facilitates the efficient management and utilization of physically contiguous memory blocks, 
+mitigating issues related to memory fragmentation.
+\end{itemize}
 
 \subsection{Range creation}
 
@@ -300,50 +400,6 @@ This experiment exploits the FAT pointer to enable faster
 \section{Limitations}
 
 \section{Related work}
-Efficient memory management, particularly in the context of 
-Translation Lookaside Buffer (TLB) optimization \cite{ad-wood-2003}, has been a focal point of 
-research and development within computer architecture. Various techniques have been 
-proposed to mitigate TLB-related bottlenecks and improve overall system performance.
-
-\subsection{Huge Pages}
-This is used to map a very large region of memory to a 
-single entry. This small/large region of memory is physically
-contiguous. Most implementations of huge pages are size
-aligned, For example for the x86 architecture the huge pages 
-size are 4KB, 2MB and 1GB pages. 
-% \subsection{Tailored page sizes}
-% TODO later
-% \subsection{TLB coalescing}
-% This leverages the default OS allocator behavior to pack
-% multiple PTEs into a single TLB entry.
-
-\subsection{Segment}
-A segment can be viewed as mapping between contiguous virtual
-memory and contiguous physical memory. The property of a 
-segment allows it to be larger than a page. Direct Segment
-<paper reference> allows the user to set a single segment
-for an application. Two registers are added to mark the start
-and end of the segment. Any virtual address within this region
-can be translated by adding the fixed offset between the virtual
-and physical address.
-
-\subsection{RMM}
-RMM introduces the concept of adding an additional range table.
-For large allocations RMM eagerly allocates contiguous physical pages.
-The following allocations creates large memory ranges that are
-both virtually and physically contiguous. RMM builds on the concept
-of Direct segment <paper reference> by adding offset to translate a virtual address 
-to physical address. RMM compares address with range boundaries 
-to decide which range it belongs to. RMM queries the range table 
-ofter an L1 TLB miss.
-
-\subsection{FlexPointer}
-FlexPointer is based on the RMM<paper reference RMM> paper. FlexPointer
-does eagerly allocate pages which are physically contiguous and stores the ID to translate a virtual address 
-to physical address on the remaining unused bits on the 64 bit virtual address. 
-The paper contribution mentions shifting the TLB lookup to an earlier stage to improve
-latency of accessing the TLB entries. FlexPointer immediate queries the 
-range TLB for translations rather than the RMM paper which waits for the L1 TLB miss.
 
 
 \section{Summary}
