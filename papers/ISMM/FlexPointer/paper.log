@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  10 MAR 2024 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  21 MAY 2024 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,6 +987,15 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 386.
  [2.2]
+Overfull \hbox (26.07695pt too wide) in paragraph at lines 407--418
+ [][] 
+ []
+
+
+Overfull \hbox (718.10602pt too wide) in paragraph at lines 422--432
+ [][] 
+ []
+
 Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
@@ -1009,14 +1018,14 @@ Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 [3.3] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 30FD5ECD825C767B707E45B1F8358341;1842.
+(rerunfilecheck)             Checksum: F524B8BCD081010FD7221209D74982D5;1842.
  ) 
 Here is how much of TeX's memory you used:
- 20649 strings out of 478268
- 335060 string characters out of 5846347
- 695408 words of memory out of 5000000
- 38039 multiletter control sequences out of 15000+600000
- 607439 words of font info for 256 fonts, out of 8000000 for 9000
+ 20657 strings out of 478268
+ 335222 string characters out of 5846347
+ 696665 words of memory out of 5000000
+ 38042 multiletter control sequences out of 15000+600000
+ 607712 words of font info for 258 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,17n,131p,1002b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
@@ -1032,10 +1041,10 @@ ertineT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/Li
 nLibertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/liberti
 ne/LinLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ne
 wtx/txsys.pfb>
-Output written on paper.pdf (3 pages, 390120 bytes).
+Output written on paper.pdf (3 pages, 393036 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  71809 words of extra memory for PDF output out of 74296 (max. 10000000)
 

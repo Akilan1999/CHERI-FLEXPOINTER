@@ -308,7 +308,7 @@ strategies alongside capability-based addressing in architectures like
 CHERI offers a compelling synergy. By optimizing TLB utilization through the 
 utilization of huge pages and leveraging the security features of capability-based addressing, 
 significant performance improvements can be realized. This approach not only enhances 
-system security but also accelerates memory access
+system security but also accelerates memory access.
 
 % TODO: 
 % - Add references for FlexPointer, Range Memory Mapping (RMM), Direct Segment and Huge Pages
@@ -390,12 +390,33 @@ mitigating issues related to memory fragmentation.
 \end{itemize}
 
 \subsection{Range creation}
+Ranges of memory are created based on bounds encoded to the FAT-Pointer. 
+The Chuck between the following bounds is physically contiguous.
+This is done via the FreeBSD kernel Contig memory allocator. 
 
 \subsection{Fragmentation}
+The problem with standard allocators which are physically contiguous
+is that they are mostly on the
 
 \subsection{Allocation with huge pages}
 
 \section{Evaluation}
+
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+  \hline
+      \textbf{Metric name} & \textbf{type of graph} & \textbf{tool used} & \textbf{x axis} & \textbf{y axis} \\ \hline
+      DTLB L1 read & line graph & Pmcstat & Time & DTLB L1 reads (each second) \\ \hline
+      DTLB L2 read & line graph & Pmcstat & Time & DTLB L2 reads (each second) \\ \hline
+      DTLB walk & line graph & Pmcstat & Time & DTLB Walks (each second) \\ \hline
+      L1 cache miss & line graph & Pmcstat & Time & L1 cache miss (each second) \\ \hline
+      Wall clock run time & bar graph & time & Benchmarks & Time \\ \hline
+      Resident memory usage & line graph & ps with rss & Time & Memory in MB \\ \hline
+      Speed ups & bar graph & time & Benchmarks & Time \\ \hline
+  \end{tabular}
+\end{table}
+
 
 \section{Limitations}
 
