@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  21 MAY 2024 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  24 MAY 2024 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -957,6 +957,10 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 284.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 284.
+
+
+LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 284.
+
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 284.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -965,7 +969,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.3pt on input line 284.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
+(/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -983,68 +987,53 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 322.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 379.
+(Font)              scaled to size 10.0pt on input line 380.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 386.
+(Font)              scaled to size 8.0pt on input line 387.
  [2.2]
-Overfull \hbox (26.07695pt too wide) in paragraph at lines 407--418
- [][] 
+<diagrams/HighOverviewArchitecture24.png, id=52, 710.655pt x 906.38625pt>
+File: diagrams/HighOverviewArchitecture24.png Graphic file (type png)
+<use diagrams/HighOverviewArchitecture24.png>
+Package pdftex.def Info: diagrams/HighOverviewArchitecture24.png  used on input
+ line 394.
+(pdftex.def)             Requested size: 316.65314pt x 403.87308pt.
+
+Overfull \hbox (158.32657pt too wide) in paragraph at lines 394--395
+[][] 
  []
 
-
-Overfull \hbox (718.10602pt too wide) in paragraph at lines 422--432
- [][] 
- []
-
-Processing 'acks' comment.
-\openout3 = `comment.cut'.
-
- Comment 'acks' writing to comment.cut.
-Straight input of comment.cut. (./comment.cut) (./paper.bbl
-
-Package natbib Warning: Empty `thebibliography' environment on input line 40.
-
-) (/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-)
-(/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-)
-
-Class acmart Warning: ACM keywords are mandatory for papers over two pages.
-
-
-Class acmart Warning: CCS concepts are mandatory for papers over two pages.
-
-[3.3] (./paper.aux)
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F524B8BCD081010FD7221209D74982D5;1842.
- ) 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.398 \begin{figure}[t]{0.4\linewidth}
+                                      
+? x
+ 
 Here is how much of TeX's memory you used:
- 20657 strings out of 478268
- 335222 string characters out of 5846347
- 696665 words of memory out of 5000000
- 38042 multiletter control sequences out of 15000+600000
- 607712 words of font info for 258 fonts, out of 8000000 for 9000
+ 20498 strings out of 478268
+ 333068 string characters out of 5846347
+ 671674 words of memory out of 5000000
+ 37914 multiletter control sequences out of 15000+600000
+ 607102 words of font info for 253 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  84i,17n,131p,1002b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
-}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{
-/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/
-usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinu
-mTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinLib
-ertineT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/Li
-nLibertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/liberti
-ne/LinLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ne
-wtx/txsys.pfb>
-Output written on paper.pdf (3 pages, 393036 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{
+/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/
+usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/u
+sr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/us
+r/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT
+I.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinLiber
+tineT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinL
+ibertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine
+/LinLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newt
+x/txsys.pfb>
+Output written on paper.pdf (2 pages, 360316 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 71809 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 71738 words of extra memory for PDF output out of 74296 (max. 10000000)
 

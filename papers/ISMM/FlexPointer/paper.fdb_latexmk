@@ -1,12 +1,5 @@
 # Fdb version 3
-["bibtex paper"] 1716297611 "paper.aux" "paper.bbl" "paper" 1716297612
-  "/usr/local/texlive/2022/texmf-dist/bibtex/bst/acmart/ACM-Reference-Format.bst" 1638825809 90330 871e55fb6d8dc37a22e9e4941a79e593 ""
-  "paper.aux" 1716297612 2987 ed1c33272c976e1bcf14ced6d2fe2afa "pdflatex"
-  "references.bib" 1710078562 5221 cd7b729e8e2265fcca97befe14a2bcfa ""
-  (generated)
-  "paper.bbl"
-  "paper.blg"
-["pdflatex"] 1716297611 "paper.tex" "paper.pdf" "paper" 1716297612
+["pdflatex"] 1716548278 "paper.tex" "paper.pdf" "paper" 1716548278
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490131464 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc" 1490131464 2934 a4a9158faed2e9e89c771b4e3b7fc12f ""
@@ -82,8 +75,6 @@
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty" 1576015897 19007 15924f7228aca6c6d184b115f4baa231 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pdftex/glyphtounicode.tex" 1353199370 216747 92ec6cf8e39216b4894417b5aa6f057a ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty" 1593379760 20089 80423eac55aa175305d35b49e04fe23b ""
-  "/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-pdfdoc.def" 1575152242 5108 8920602307ea1294ccbce2300c7c6ccb ""
-  "/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-utf8.def" 1575152242 11635 4fd2019d04ad095a0b1bde5aaed4a70e ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/stringenc.sty" 1575152242 21514 b7557edcee22835ef6b03ede1802dad4 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty" 1576624663 7008 f92eaa0a3872ed622bbf538217cd2ab7 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/xkeyval/keyval.tex" 1605910342 2725 9f5d0b27f1f9a620c6ea983d6d41501d ""
@@ -184,13 +175,11 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1661249257 2826440 c4fb37ef223f1d0b7571cc2822c67358 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "comment.cut" 1716297612 66 3467651b173a9a926c41555869ec4f60 "pdflatex"
-  "paper.aux" 1716297612 2987 ed1c33272c976e1bcf14ced6d2fe2afa "pdflatex"
-  "paper.bbl" 1716297611 1785 8ed37e936ba16de73718c10d329b7108 "bibtex paper"
-  "paper.out" 1716297612 1842 f524b8bcd081010fd7221209d74982d5 "pdflatex"
-  "paper.tex" 1716297606 42326 39deaf75d489ea9a44c2c65297e9b469 ""
+  "diagrams/HighOverviewArchitecture24.png" 1716534681 130556 88e633918b8edf01f71562f6a2710ffd ""
+  "paper.aux" 1716548246 1727 a8c9003d720b19eaaea87bb6e7306559 "pdflatex"
+  "paper.out" 1716548246 680 39c68b8e30658284f4eb3b16644a2730 "pdflatex"
+  "paper.tex" 1716548276 44782 8e5754340eb1df385aef53d0fbec41b5 ""
   (generated)
-  "comment.cut"
   "paper.aux"
   "paper.log"
   "paper.out"

@@ -364,6 +364,7 @@ This experiment exploits the FAT pointer to enable faster
 % TODO: 
 % - Add references for FlexPointer, Range Memory Mapping (RMM) and Direct segment
 \subsection{Overview}
+
 FAT-Pointers, combined with the capabilities of the CHERI (Capability Hardware Enhanced RISC Instructions) 
 architecture, introduce robust memory safety and security features by incorporating additional metadata 
 with memory pointers. This enhanced architecture utilizes concepts such as FlexPointer, 
@@ -389,16 +390,61 @@ allocators, facilitates the efficient management and utilization of physically c
 mitigating issues related to memory fragmentation.
 \end{itemize}
 
-\subsection{Range creation}
-Ranges of memory are created based on bounds encoded to the FAT-Pointer. 
-The Chuck between the following bounds is physically contiguous.
-This is done via the FreeBSD kernel Contig memory allocator. 
+\begin{minipage}[t]{0.4\linewidth}
+  \includegraphics[width=2\textwidth]{diagrams/HighOverviewArchitecture24.png}
+\end{minipage}
+
+\subsection{Range creation and huge pages}
+\begin{minipage}[t]{0.4\linewidth}
+  \includegraphics[width=2\textwidth]{diagrams/AllocationOverview24.png}
+\end{minipage}
+
+% Ranges of memory are created based on bounds encoded to the FAT-Pointer based on the CHERI 128 bit 
+% bounds compressed scheme. The Chuck between the specified upper and lower bounds are always physically
+% contiguous. In the following implementation an arbitrary size huge page is initially allocated and within 
+% this huge page custom size memory is allocated using a custom written mmap function which overwrites the existing block 
+% based mmap function. Once memory is physically allocated using the custom mmap function call then bounds are set to it for tracking 
+% the block of memory instead of using the TLB. 
+
+In this implementation, memory ranges are established using bounds encoded within the FAT-pointer, adhering 
+to the CHERI 128-bit bounds compression scheme. The memory chunk defined by the upper and lower bounds is 
+always physically contiguous. Initially, a huge page of arbitrary size is allocated. Within this huge page, 
+custom-sized memory segments are allocated using a custom-designed mmap function, which overrides the existing 
+block-based mmap function. Once the memory is physically allocated through this custom mmap function, bounds 
+are set to track the memory block, eliminating the need for traditional TLB usage for this purpose. Traditional TLB usage 
+involves maintaining numerous TLB entries, often supplemented by an L2 TLB and other hierarchical structures, 
+to translate virtual addresses to physical addresses. This approach requires multiple entries to handle various 
+memory segments, leading to increased overhead and complexity in address translation. Conversely, 
+the current approach streamlines this process by using a single TLB entry to translate multiple
+ addresses within a contiguous memory range. This reduces the number of required TLB entries, 
+ simplifying the translation process and improving efficiency. By consolidating address translations 
+ into a single TLB entry, this method minimizes the overhead associated with managing numerous TLB entries 
+ and leverages the bounds encoded within the FAT-pointer for efficient memory tracking and access. 
+ This approach allows for precise and efficient memory management within the allocated huge page. 
+
+%  The figure mentioned above demonstrates a simple use-case were the dark pink line refers to a huge page and 
+%  the orange and blue lines are 2 equivalent to 2 Malloc calls allocating memory in different regions which in turn
+%  emulates a block based memory allocator within a huge page using the bounds encoded in the FAT-Pointer.
+\smallskip\noindent
+The figure above illustrates a straightforward use-case in which the dark pink line represents a single, 
+large contiguous memory area, or huge page. Within this huge page, the orange and blue lines indicate 
+two separate memory allocations equivalent to invoking malloc twice to allocate memory in distinct regions. 
+This scenario simulates a block-based memory allocator operating within the confines of the huge page. 
+The allocations leverage the bounds encoded in the FAT-pointer, ensuring tracking and efficient 
+management of the allocated memory regions. By using the FAT-pointer bounds, this method maintains the 
+integrity and contiguity of the allocated blocks within the huge page.
+
+% This is done via the FreeBSD kernel Contiguous memory allocator. 
 
 \subsection{Fragmentation}
 The problem with standard allocators which are physically contiguous
 is that they are mostly on the
+% \subsection{Allocation with huge pages}
 
-\subsection{Allocation with huge pages}
+\subsection{Software Stack}
+\begin{minipage}[t]{0.4\linewidth}
+  \includegraphics[width=2\textwidth]{diagrams/SoftwareStack24.png}
+\end{minipage}
 
 \section{Evaluation}
 
