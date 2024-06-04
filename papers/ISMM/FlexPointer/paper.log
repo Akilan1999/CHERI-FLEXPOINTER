@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  24 MAY 2024 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.23)  4 JUN 2024 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -699,7 +699,6 @@ nuxLibertineT-TLF.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 3205.
 )
-Class acmart Info: Using journal code jacm on input line 71.
 Package hyperref Info: Option `colorlinks' set `true' on input line 112.
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 112
 .
@@ -957,10 +956,6 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 284.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 284.
-
-
-LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 284.
-
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 284.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -969,7 +964,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.3pt on input line 284.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -981,59 +976,116 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 286.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 315.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 315.
  [1.1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 322.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 380.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 387.
+(Font)              scaled to size 8.0pt on input line 382.
  [2.2]
-<diagrams/HighOverviewArchitecture24.png, id=52, 710.655pt x 906.38625pt>
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 401.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 401.
+<diagrams/HighOverviewArchitecture24.png, id=84, 710.655pt x 906.38625pt>
 File: diagrams/HighOverviewArchitecture24.png Graphic file (type png)
 <use diagrams/HighOverviewArchitecture24.png>
 Package pdftex.def Info: diagrams/HighOverviewArchitecture24.png  used on input
- line 394.
-(pdftex.def)             Requested size: 316.65314pt x 403.87308pt.
+ line 416.
+(pdftex.def)             Requested size: 316.6592pt x 403.8869pt.
 
-Overfull \hbox (158.32657pt too wide) in paragraph at lines 394--395
-[][] 
- []
 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.398 \begin{figure}[t]{0.4\linewidth}
-                                      
-? x
- 
+Class acmart Warning: A possible image without description on input line 420.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<diagrams/AllocationOverview24.png, id=88, 723.70375pt x 501.875pt>
+File: diagrams/AllocationOverview24.png Graphic file (type png)
+<use diagrams/AllocationOverview24.png>
+Package pdftex.def Info: diagrams/AllocationOverview24.png  used on input line 
+449.
+(pdftex.def)             Requested size: 316.6592pt x 219.6004pt.
+
+Class acmart Warning: A possible image without description on input line 452.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3.3]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 481.
+
+<diagrams/SoftwareStack24.png, id=98, 724.7075pt x 592.2125pt>
+File: diagrams/SoftwareStack24.png Graphic file (type png)
+<use diagrams/SoftwareStack24.png>
+Package pdftex.def Info: diagrams/SoftwareStack24.png  used on input line 501.
+(pdftex.def)             Requested size: 316.6592pt x 258.76701pt.
+
+Class acmart Warning: A possible image without description on input line 505.
+
+[4.4 <./diagrams/HighOverviewArchitecture24.png>] [5.5 <./diagrams/AllocationOv
+erview24.png> <./diagrams/SoftwareStack24.png>] [6.6]
+<diagrams/expirement-runs.png, id=118, 788.9475pt x 368.37625pt>
+File: diagrams/expirement-runs.png Graphic file (type png)
+<use diagrams/expirement-runs.png>
+Package pdftex.def Info: diagrams/expirement-runs.png  used on input line 575.
+(pdftex.def)             Requested size: 316.6592pt x 147.85376pt.
+
+
+Class acmart Warning: A possible image without description on input line 576.
+
+[7.7 <./diagrams/expirement-runs.png>] (./paper.bbl
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 8.0pt on input line 48.
+LaTeX Info: Redefining \tempurl on input line 73.
+LaTeX Info: Redefining \tempurl on input line 91.
+LaTeX Info: Redefining \tempurl on input line 113.
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+)
+
+Class acmart Warning: Some images may lack descriptions.
+
+
+Class acmart Warning: ACM keywords are mandatory for papers over two pages.
+
+
+Class acmart Warning: CCS concepts are mandatory for papers over two pages.
+
+[8.8] (./paper.aux)
+Package rerunfilecheck Info: File `paper.out' has not changed.
+(rerunfilecheck)             Checksum: A0488CC385FD77FD1E0652B5DCAA6D36;1609.
+ ) 
 Here is how much of TeX's memory you used:
- 20498 strings out of 478268
- 333068 string characters out of 5846347
- 671674 words of memory out of 5000000
- 37914 multiletter control sequences out of 15000+600000
- 607102 words of font info for 253 fonts, out of 8000000 for 9000
+ 20832 strings out of 478268
+ 339802 string characters out of 5846347
+ 695322 words of memory out of 5000000
+ 38112 multiletter control sequences out of 15000+600000
+ 621398 words of font info for 316 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 84i,17n,131p,1002b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{
-/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/
-usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/u
-sr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/us
-r/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT
-I.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinLiber
-tineT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinL
-ibertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine
-/LinLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newt
-x/txsys.pfb>
-Output written on paper.pdf (2 pages, 360316 bytes).
+ 84i,16n,131p,1002b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
+}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{
+/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/
+usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinBiolinu
+mTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/LinLib
+ertineT.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/libertine/Li
+nLibertineTB.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/liberti
+ne/LinLibertineTI.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ne
+wtx/txsys.pfb>
+Output written on paper.pdf (8 pages, 627878 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 71738 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 79997 words of extra memory for PDF output out of 89155 (max. 10000000)
 

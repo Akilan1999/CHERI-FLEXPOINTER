@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{0}
+\begin{thebibliography}{4}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -36,5 +36,82 @@
 \providecommand\bibinfo[2]{#2}
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Chen et~al\mbox{.}(2023)]%
+        {chen_flexpointer_2023}
+\bibfield{author}{\bibinfo{person}{Dongwei Chen}, \bibinfo{person}{Dong Tong},
+  \bibinfo{person}{Chun Yang}, \bibinfo{person}{Jiangfang Yi}, {and}
+  \bibinfo{person}{Xu Cheng}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{FlexPointer}: {Fast} {Address} {Translation}
+  {Based} on {Range} {TLB} and {Tagged} {Pointers}}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Architecture and Code
+  Optimization}} \bibinfo{volume}{20}, \bibinfo{number}{2}
+  (\bibinfo{date}{June} \bibinfo{year}{2023}), \bibinfo{pages}{1--24}.
+\newblock
+\showISSN{1544-3566, 1544-3973}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3579854}
+\showDOI{\tempurl}
+
+
+\bibitem[Karakostas et~al\mbox{.}(2015)]%
+        {karakostas_redundant_2015}
+\bibfield{author}{\bibinfo{person}{Vasileios Karakostas},
+  \bibinfo{person}{Jayneel Gandhi}, \bibinfo{person}{Furkan Ayar},
+  \bibinfo{person}{Adrián Cristal}, \bibinfo{person}{Mark~D. Hill},
+  \bibinfo{person}{Kathryn~S. McKinley}, \bibinfo{person}{Mario Nemirovsky},
+  \bibinfo{person}{Michael~M. Swift}, {and} \bibinfo{person}{Osman Ünsal}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Redundant memory mappings for fast access to large
+  memories}. In \bibinfo{booktitle}{\emph{Proceedings of the 42nd {Annual}
+  {International} {Symposium} on {Computer} {Architecture}}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{address}{Portland Oregon},
+  \bibinfo{pages}{66--78}.
+\newblock
+\showISBNx{978-1-4503-3402-0}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2749469.2749471}
+\showDOI{\tempurl}
+
+
+\bibitem[Panwar et~al\mbox{.}(2019)]%
+        {panwar_hawkeye_2019}
+\bibfield{author}{\bibinfo{person}{Ashish Panwar}, \bibinfo{person}{Sorav
+  Bansal}, {and} \bibinfo{person}{K. Gopinath}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{HawkEye}: {Efficient} {Fine}-grained {OS}
+  {Support} for {Huge} {Pages}}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the {Twenty}-{Fourth} {International} {Conference} on {Architectural}
+  {Support} for {Programming} {Languages} and {Operating} {Systems}}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{address}{Providence RI USA},
+  \bibinfo{pages}{347--360}.
+\newblock
+\showISBNx{978-1-4503-6240-5}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3297858.3304064}
+\showDOI{\tempurl}
+
+
+\bibitem[Woodruff et~al\mbox{.}(2019)]%
+        {woodruff_cheri_2019}
+\bibfield{author}{\bibinfo{person}{Jonathan Woodruff},
+  \bibinfo{person}{Alexandre Joannou}, \bibinfo{person}{Hongyan Xia},
+  \bibinfo{person}{Anthony Fox}, \bibinfo{person}{Robert~M. Norton},
+  \bibinfo{person}{David Chisnall}, \bibinfo{person}{Brooks Davis},
+  \bibinfo{person}{Khilan Gudka}, \bibinfo{person}{Nathaniel~W. Filardo},
+  \bibinfo{person}{A.~Theodore Markettos}, \bibinfo{person}{Michael Roe},
+  \bibinfo{person}{Peter~G. Neumann}, \bibinfo{person}{Robert N.~M. Watson},
+  {and} \bibinfo{person}{Simon~W. Moore}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{CHERI} {Concentrate}: {Practical} {Compressed}
+  {Capabilities}}.
+\newblock \bibinfo{journal}{\emph{IEEE Trans. Comput.}} \bibinfo{volume}{68},
+  \bibinfo{number}{10} (\bibinfo{date}{Oct.} \bibinfo{year}{2019}),
+  \bibinfo{pages}{1455--1469}.
+\newblock
+\showISSN{0018-9340, 1557-9956, 2326-3814}
+\urldef\tempurl%
+\url{https://doi.org/10.1109/TC.2019.2914037}
+\showDOI{\tempurl}
+
 
 \end{thebibliography}

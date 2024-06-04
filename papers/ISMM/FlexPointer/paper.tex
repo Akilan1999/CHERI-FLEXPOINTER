@@ -60,19 +60,19 @@
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
 %% complete the rights form.
-\setcopyright{acmlicensed}
-\copyrightyear{2018}
-\acmYear{2018}
-\acmDOI{XXXXXXX.XXXXXXX}
+% \setcopyright{acmlicensed}
+% \copyrightyear{2018}
+% \acmYear{2018}
+% \acmDOI{XXXXXXX.XXXXXXX}
 
 
 %%
 %% These commands are for a JOURNAL article.
-\acmJournal{JACM}
-\acmVolume{37}
-\acmNumber{4}
-\acmArticle{111}
-\acmMonth{8}
+% \acmJournal{JACM}
+% \acmVolume{37}
+% \acmNumber{4}
+% \acmArticle{111}
+% \acmMonth{8}
 
 %%
 %% Submission ID.
@@ -312,7 +312,7 @@ system security but also accelerates memory access.
 
 % TODO: 
 % - Add references for FlexPointer, Range Memory Mapping (RMM), Direct Segment and Huge Pages
-\subsection{Background}
+\subsection{TLB based approaches}
 Efficient memory management, particularly in the context of 
 Translation Lookaside Buffer (TLB) optimization, has been a focal point of 
 research and development within computer architecture. Various techniques have been 
@@ -321,7 +321,7 @@ proposed to mitigate TLB-related bottlenecks and improve overall system performa
 \subsubsection{Huge Pages:}
 This is used to map a very large region of memory to a 
 single entry. This small/large region of memory is physically
-contiguous. Most implementations of huge pages are size
+contiguous. Most implementations of huge pages \cite{panwar_hawkeye_2019} are size
 aligned, For example for the x86 architecture the huge pages 
 size are 4KB, 2MB and 1GB pages. 
 % \subsection{Tailored page sizes}
@@ -333,47 +333,68 @@ size are 4KB, 2MB and 1GB pages.
 \subsubsection{Segment:}
 A segment can be viewed as mapping between contiguous virtual
 memory and contiguous physical memory. The property of a 
-segment allows it to be larger than a page. Direct Segment
-<paper reference> allows the user to set a single segment
+segment allows it to be larger than a page. Direct Segment allows the user to set a single segment
 for an application. Two registers are added to mark the start
 and end of the segment. Any virtual address within this region
 can be translated by adding the fixed offset between the virtual
 and physical address.
 
-\subsubsection{RMM:}
-RMM introduces the concept of adding an additional range table.
+\subsubsection{Range Memory Mapping (RMM):}
+RMM\cite{karakostas_redundant_2015} introduces the concept of adding an additional range table.
 For large allocations RMM eagerly allocates contiguous physical pages.
 The following allocations creates large memory ranges that are
 both virtually and physically contiguous. RMM builds on the concept
-of Direct segment <paper reference> by adding offset to translate a virtual address 
+of Direct segment by adding offset to translate a virtual address 
 to physical address. RMM compares address with range boundaries 
 to decide which range it belongs to. RMM queries the range table 
 ofter an L1 TLB miss.
 
 \subsubsection{FlexPointer:}
-FlexPointer is based on the RMM<paper reference RMM> paper. FlexPointer
+FlexPointer\cite{chen_flexpointer_2023} is based on the RMM\cite{karakostas_redundant_2015} paper. FlexPointer
 does eagerly allocate pages which are physically contiguous and stores the ID to translate a virtual address 
 to physical address on the remaining unused bits on the 64 bit virtual address. 
 The paper contribution mentions shifting the TLB lookup to an earlier stage to improve
 latency of accessing the TLB entries. FlexPointer immediate queries the 
 range TLB for translations rather than the RMM paper which waits for the L1 TLB miss.
 
+\subsection{CHERI}
+A capability functions as a token that provides the holder with the authority to 
+execute specific actions. By carefully managing who possesses these capabilities, 
+it is possible to enforce security measures, such as ensuring that a particular
+section of software can only read from a designated range of memory addresses.
+
+The concept of capabilities has a rich history in computer science, tracing 
+back to early systems designed to enhance security and manage resources effectively.
+For instance, foundational work discussed in sources like [7] offers a comprehensive 
+narrative on the evolution of capability architectures. This historical perspective 
+can be further enriched by incorporating insights from more recent studies, 
+such as those found in [11].
+
+CHERI (Capability Hardware Enhanced RISC Instructions) represents a modern embodiment of this 
+long-standing idea. It introduces more granular control over permissions, allowing for finer 
+distinctions in what actions can be performed and by whom. Moreover, CHERI is designed to integrate 
+seamlessly with contemporary processor instruction sets, ensuring that these advanced security 
+features can be implemented on modern hardware platforms. This adaptation not only revitalizes 
+the capability concept but also significantly enhances its applicability and effectiveness 
+in current computing environments.
+
+
 \section{FAT-Pointer based range addresses}
-This experiment exploits the FAT pointer to enable faster
+% This experiment exploits the FAT pointer to enable faster
 
 % TODO: 
 % - Add references for FlexPointer, Range Memory Mapping (RMM) and Direct segment
-\subsection{Overview}
+% \subsection{Overview}
 
 FAT-Pointers, combined with the capabilities of the CHERI (Capability Hardware Enhanced RISC Instructions) 
 architecture, introduce robust memory safety and security features by incorporating additional metadata 
 with memory pointers. This enhanced architecture utilizes concepts such as FlexPointer, 
-Range Memory Mapping (RMM), and Direct segment to manage memory effectively.
+Range Memory Mapping (RMM) to manage memory effectively.
 
 Range addresses play a pivotal role within this framework, defining memory 
-regions bounded by a starting address (BASE) and an ending address (LIMIT). 
+regions bounded by a starting address (Upper) and an ending address (Lower). 
 These range addresses are encoded within FAT-pointers, allowing for precise 
-control over memory access permissions.
+control over memory regions.
 
 The functionality of ranges encompasses several key aspects:
 \begin{itemize}
@@ -390,14 +411,46 @@ allocators, facilitates the efficient management and utilization of physically c
 mitigating issues related to memory fragmentation.
 \end{itemize}
 
-\begin{minipage}[t]{0.4\linewidth}
-  \includegraphics[width=2\textwidth]{diagrams/HighOverviewArchitecture24.png}
-\end{minipage}
+% \begin{minipage}[t]{0.4\linewidth}
+\begin{figure}[h]
+  \includegraphics[width=0.8\textwidth]{diagrams/HighOverviewArchitecture24.png}
+  \caption{High overview architecture}
+  \label{fig:HighOverviewArchitecture}
+% \end{minipage}
+\end{figure}
+
+% The figure above demonstrates the approach taken for using CHERI 
+% 128bit FAT pointer scheme to allow a blocked based behavior on 
+% on physically contiguous memory which is on the right against the 
+% regular mmap approach which further elaborated in section (). The 
+% green highlighted refers to the excess space available between 
+% the 48th and 64th bit which can be used to store more meta-data which 
+% is elaborated in the future work section().
+
+
+Figure \ref{fig:HighOverviewArchitecture} illustrates the methodology employed to leverage the CHERI 
+128-bit FAT-pointer scheme for facilitating block-based memory management
+ on physically contiguous memory, which is depicted on the right side of the figure. 
+ This technique contrasts with the conventional mmap approach, the details of which 
+ are elaborated in section ("To be added later").
+
+In figure \ref{fig:HighOverviewArchitecture}, the green-highlighted section marks the unused space between the 48th and 64th bits
+within the FAT-pointer. This area of unused bits presents an opportunity to store additional metadata,
+potentially enhancing the capabilities of the memory management system. The potential applications of 
+this extra space are discussed in the future work section ("To be added later"), 
+where we explore how this additional metadata storage could be used to further optimize memory allocation.
+
+% By employing the CHERI 128-bit FAT-pointer scheme, the approach depicted aims to streamline the management of memory blocks, ensuring they are physically contiguous. This is in contrast to the traditional mmap approach, which typically does not guarantee physical contiguity of allocated memory regions.
+
 
 \subsection{Range creation and huge pages}
-\begin{minipage}[t]{0.4\linewidth}
-  \includegraphics[width=2\textwidth]{diagrams/AllocationOverview24.png}
-\end{minipage}
+% \begin{minipage}[t]{0.4\linewidth}
+\begin{figure}[h]
+  \includegraphics[width=0.8\textwidth]{diagrams/AllocationOverview24.png}
+  \caption{Range of memory}
+  \label{fig:RangeOfMemory}
+\end{figure}
+% \end{minipage}
 
 % Ranges of memory are created based on bounds encoded to the FAT-Pointer based on the CHERI 128 bit 
 % bounds compressed scheme. The Chuck between the specified upper and lower bounds are always physically
@@ -407,7 +460,7 @@ mitigating issues related to memory fragmentation.
 % the block of memory instead of using the TLB. 
 
 In this implementation, memory ranges are established using bounds encoded within the FAT-pointer, adhering 
-to the CHERI 128-bit bounds compression scheme. The memory chunk defined by the upper and lower bounds is 
+to the CHERI 128-bit bounds compression scheme\cite{woodruff_cheri_2019}. The memory chunk defined by the upper and lower bounds is 
 always physically contiguous. Initially, a huge page of arbitrary size is allocated. Within this huge page, 
 custom-sized memory segments are allocated using a custom-designed mmap function, which overrides the existing 
 block-based mmap function. Once the memory is physically allocated through this custom mmap function, bounds 
@@ -426,7 +479,7 @@ the current approach streamlines this process by using a single TLB entry to tra
 %  the orange and blue lines are 2 equivalent to 2 Malloc calls allocating memory in different regions which in turn
 %  emulates a block based memory allocator within a huge page using the bounds encoded in the FAT-Pointer.
 \smallskip\noindent
-The figure above illustrates a straightforward use-case in which the dark pink line represents a single, 
+Figure \ref{fig:RangeOfMemory} illustrates a straightforward use-case in which the dark pink line represents a single, 
 large contiguous memory area, or huge page. Within this huge page, the orange and blue lines indicate 
 two separate memory allocations equivalent to invoking malloc twice to allocate memory in distinct regions. 
 This scenario simulates a block-based memory allocator operating within the confines of the huge page. 
@@ -436,40 +489,169 @@ integrity and contiguity of the allocated blocks within the huge page.
 
 % This is done via the FreeBSD kernel Contiguous memory allocator. 
 
-\subsection{Fragmentation}
-The problem with standard allocators which are physically contiguous
-is that they are mostly on the
+% \subsection{Fragmentation}
+% % The problem with standard allocators which are physically contiguous
+% % is that they are mostly on the
+% todo
 % \subsection{Allocation with huge pages}
 
 \subsection{Software Stack}
-\begin{minipage}[t]{0.4\linewidth}
-  \includegraphics[width=2\textwidth]{diagrams/SoftwareStack24.png}
-\end{minipage}
+\begin{figure}[h]
+% \begin{minipage}[t]{0.4\linewidth}
+\includegraphics[width=0.8\textwidth]{diagrams/SoftwareStack24.png}
+\caption{Overview of the software stack}
+\label{fig:SoftwareStack}
+% \end{minipage}
+\end{figure}
+
+% The Software stack consists of CHERIBSD as the base operating system due to official 
+% support by ARM to the Morello's performance counters. As mentioned in the figure above 
+% there is a C program that is linked to the prototype memory allocator or allocators benchmarked 
+% against as mentioned in section (x) as either a Shared object file at compile time or as a header 
+% file for smaller memory allocators. The modified mmap function call which is designed to be physically 
+% contiguous is linked to the contigmem driver which is modified from the DPDK library (reference).
+% The contigmem driver is loaded on boot time and reserves arbitrary size of a huge page which is
+% set based on the experiment conducted. 
+
+The software stack is based on CHERIBSD, selected because ARM officially supports Morello's performance 
+counters on this operating system. As illustrated in the figure \ref{fig:SoftwareStack}, the setup includes a C program that 
+is linked to the prototype memory allocator or to various memory allocators being benchmarked, as described 
+in section ("Evaluation section"). This linkage can occur in two ways: either as a shared object file during compile time 
+for larger allocators, or as a header file for smaller allocators, ensuring flexibility and efficiency 
+in memory management.
+
+The custom mmap function, tailored to ensure physically contiguous memory allocation, is a key component 
+of this system. This function is linked to the contigmem driver, which has been modified from the DPDK library 
+to meet the specific needs of this implementation. The contigmem driver is essential for managing large contiguous 
+memory blocks and is loaded during the system boot process. It reserves a huge page of arbitrary size, with the 
+size parameter set based on the requirements of the conducted experiments.
+
+This integration ensures that the memory allocation process is optimized for performance, leveraging the contiguity 
+of memory blocks and the capabilities provided by the CHERI architecture and the Morello platform. By using the 
+contigmem driver and the custom mmap function, the system achieves efficient memory allocation and tracking, 
+crucial for the high-performance needs of the application.
 
 \section{Evaluation}
+To evaluate the performance of FAT-Pointer based range addresses a sample implementation we used
+the morello board with CheriBSD's Benchmark ABI compilation mode for accurate performance recordings. 
+The evaluation is to identify CheriBSD's default memory allocator SnMalloc against the prototype memory 
+allocator using the contribution of this paper in terms of: 
+To assess the performance of FAT-Pointer-based range addressing in the sample implementation, we utilized the 
+Morello board running CheriBSD in Benchmark ABI compilation mode to ensure precise performance measurements. 
+The evaluation focuses on comparing CheriBSD's default memory allocator, SnMalloc, against the prototype 
+memory allocator developed in this study, with particular attention to the following aspects:
 
 \begin{table}[!ht]
   \centering
   \begin{tabular}{|l|l|l|l|l|}
   \hline
-      \textbf{Metric name} & \textbf{type of graph} & \textbf{tool used} & \textbf{x axis} & \textbf{y axis} \\ \hline
+      Metric name & type of graph & tool used & x axis & y axis \\ \hline
       DTLB L1 read & line graph & Pmcstat & Time & DTLB L1 reads (each second) \\ \hline
       DTLB L2 read & line graph & Pmcstat & Time & DTLB L2 reads (each second) \\ \hline
       DTLB walk & line graph & Pmcstat & Time & DTLB Walks (each second) \\ \hline
       L1 cache miss & line graph & Pmcstat & Time & L1 cache miss (each second) \\ \hline
       Wall clock run time & bar graph & time & Benchmarks & Time \\ \hline
-      Resident memory usage & line graph & ps with rss & Time & Memory in MB \\ \hline
-      Speed ups & bar graph & time & Benchmarks & Time \\ \hline
   \end{tabular}
 \end{table}
 
+\subsection{Benchmarks used}:
+To conduct the evaluations, we utilized the COZ benchmark suite, a well-regarded tool specifically designed 
+to measure and analyze performance improvements in concurrent programs. The COZ benchmark suite provides a
+robust framework for identifying bottlenecks and evaluating the performance impact of various optimization
+techniques. By leveraging COZ, developers can gain precise insights into the efficiency and scalability of
+their concurrent code, making it an ideal choice for rigorous performance analysis.
 
-\section{Limitations}
+From the extensive set of benchmarks provided by COZ, we selected four representative C programs. 
+These programs were chosen based on their relevance to common concurrent programming patterns and
+their ability to effectively demonstrate the strengths and weaknesses of different optimization 
+strategies. The selected programs cover a range of concurrency scenarios, ensuring a comprehensive
+evaluation of performance improvements.
 
-\section{Related work}
+By implementing these modifications, we ensured that the selected C programs not only adhered to
+CHERI's security model but also maintained their functional and performance characteristics. 
+This allowed us to effectively use the COZ benchmark suite to analyze the performance in a CHERI-enhanced environment.
+
+\begin{figure}[h]
+  \includegraphics[width=0.8\textwidth]{diagrams/expirement-runs.png}
+\end{figure}
 
 
-\section{Summary}
+% \begin{itemize} % Coz C programs
+%   \item Kmeans
+%   \item Histogram
+%   \item Matrix multiply
+% \end{itemize}
+
+
+\subsection{Future work}
+% The future plan is to transition from the current experiment, which involves working on the ARM architecture on the ARM Morello board. 
+% The current limitation is that all memory reads must go through the TLB for translations. The future plan involves storing 
+% the offset directly on the pointer and using the bounds in CHERI to enable block-based allocator behavior. This phase of the 
+% experiment is intended to be conducted on the RISC-V implementation of CHERI, known as Tooba. 
+
+% In the RISC-V implementation, the hardware Verilog design will be modified to allow bypassing the TLB. Once this concept is 
+% integrated into the RISC-V Verilog implementation, the OS layer will be changed to a single-address-space operating system, 
+% where there is no distinction between user space and kernel space. In this implementation, the kernel allocator will be the 
+% same as the user space allocator since both can utilize a single contiguous chunk of memory.
+The current experimental setup on the ARM Morello board is constrained by the requirement that all memory reads must 
+pass through the Translation Lookaside Buffer (TLB) for address translation. This necessitates frequent TLB lookups, potentially 
+leading to performance bottlenecks. The planned future work aims to address this by leveraging CHERI 
+(Capability Hardware Enhanced RISC Instructions) extensions on the RISC-V architecture, specifically using the 
+Tooba implementation.
+
+\subsubsection{Storing Offsets Directly on Pointers}
+In the current ARM Morello setup, address translations rely on the TLB.
+The future approach on RISC-V Tooba involves storing the offset directly within the pointer. This is possible due to CHERI's capability model, which supports fine-grained memory protection and can encode bounds within pointers.
+Utilizing Bounds in CHERI for Block-Based Allocation:
+
+CHERI capabilities allow pointers to carry metadata about memory bounds, providing hardware-enforced memory safety.
+By encoding the offset and bounds within the pointer, the system can directly access memory without needing intermediate translations via the TLB.
+This enables the implementation of a block-based allocator that can efficiently manage memory allocations and deallocations within defined bounds.
+Bypassing the TLB in RISC-V Tooba.
+\subsubsection{Hardware Modifications}:
+The Verilog design of the RISC-V processor will be modified to allow certain memory operations to bypass the TLB. This means that when a pointer with encoded offset and bounds is used, the system can directly compute the physical address from the capability information.
+This modification reduces the dependency on the TLB, decreasing latency and improving performance, especially for frequent memory operations.
+Transition to a Single-Address-Space Operating System (SASOS).
+\subsubsection{Concept of SASOS}:
+In traditional operating systems, there is a clear separation between user space and kernel space. This separation is enforced by memory protection mechanisms and address translation through the TLB.
+In a Single-Address-Space Operating System, this distinction is removed. Both user applications and the kernel share the same contiguous address space.
+\subsubsection{Advantages of SASOS with CHERI}:
+\begin{itemize}
+  \item Simplified Memory Management : Without the need to switch between user and kernel spaces, memory management becomes simpler and more efficient.
+The kernel allocator can be the same as the user space allocator, operating on a single, contiguous chunk of memory.
+  \item Unified Allocator: The unified memory allocator can efficiently manage memory for both kernel and user applications, leveraging CHERI's capability-based protection to prevent unauthorized access.
+This reduces overhead and potential fragmentation issues associated with maintaining separate memory spaces.
+\end{itemize}
+
+% Explain contig module in detail 
+
+
+% Graphs 
+
+ 
+
+  % \begin{table}[!ht]
+  %   \centering
+  %   \begin{tabular}{|l|l|l|l|l|}
+  %   \hline
+  %       \textbf{Metric name} & \textbf{type of graph} & \textbf{tool used} & \textbf{x axis} & \textbf{y axis} \\ \hline
+  %       DTLB L1 read & line graph & Pmcstat & Time & DTLB L1 reads (each second) \\ \hline
+  %       DTLB L2 read & line graph & Pmcstat & Time & DTLB L2 reads (each second) \\ \hline
+  %       DTLB walk & line graph & Pmcstat & Time & DTLB Walks (each second) \\ \hline
+  %       L1 cache miss & line graph & Pmcstat & Time & L1 cache miss (each second) \\ \hline
+  %       Wall clock run time & bar graph & time & Benchmarks & Time \\ \hline
+  %       Resident memory usage & line graph & ps with rss & Time & Memory in MB \\ \hline
+  %       Speed ups & bar graph & time & Benchmarks & Time \\ \hline
+  %   \end{tabular}
+  % \end{table}
+
+
+  % \section{Limitations}
+
+  % \section{Related work}
+
+
+  % \section{Summary}
 
 
 
@@ -989,9 +1171,9 @@ is that they are mostly on the
 % To Robert, for the bagels and explaining CMYK and color spaces.
 % \end{acks}
 
-\begin{acks}
-  To Robert, for the bagels and explaining CMYK and color spaces.
-\end{acks}
+% \begin{acks}
+%   To Robert, for the bagels and explaining CMYK and color spaces.
+% \end{acks}
 
 %%
 %% The next two lines define the bibliography style to be used, and
